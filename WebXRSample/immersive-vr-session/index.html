@@ -1,0 +1,310 @@
+<!doctype html>
+<!--
+Copyright 2018 The Immersive Web Community Group
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+
+		<title>Immersive VR Session</title>
+
+		<style>
+			html,
+			body {
+				margin: 0;
+				min-height: 100%;
+				background: #000;
+				color: #fff;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			header {
+				box-sizing: border-box;
+				padding: 16px;
+				position: relative;
+				z-index: 1;
+			}
+
+			main {
+				padding: 24px;
+				text-align: center;
+			}
+
+			a {
+				color: #8ff;
+			}
+
+			details {
+				background: rgba(0, 0, 0, 0.65);
+				border: 1px solid rgba(255, 255, 255, 0.25);
+				border-radius: 6px;
+				margin: 0 auto;
+				max-width: 680px;
+				padding: 12px 16px;
+			}
+
+			summary {
+				cursor: pointer;
+				font-weight: 700;
+			}
+
+			.back {
+				margin-left: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<details open>
+				<summary>Immersive VR Session</summary>
+				<p>
+					This sample demonstrates an immersive-vr XRSession with a black feather overlay
+					rendered around each eye viewport.
+					<a class="back" href="../../index.html">Back</a>
+				</p>
+			</details>
+		</header>
+		<main>
+			<p>Click "Enter XR" to see content.</p>
+		</main>
+
+		<script type="module">
+			import {WebXRButton} from 'https://immersive-web.github.io/webxr-samples/js/util/webxr-button.js';
+			import {Scene} from 'https://immersive-web.github.io/webxr-samples/js/render/scenes/scene.js';
+			import {Renderer, createWebGLContext} from 'https://immersive-web.github.io/webxr-samples/js/render/core/renderer.js';
+			import {Gltf2Node} from 'https://immersive-web.github.io/webxr-samples/js/render/nodes/gltf2.js';
+			import {SkyboxNode} from 'https://immersive-web.github.io/webxr-samples/js/render/nodes/skybox.js';
+			import {QueryArgs} from 'https://immersive-web.github.io/webxr-samples/js/util/query-args.js';
+
+			import WebXRPolyfill from 'https://immersive-web.github.io/webxr-samples/js/third-party/webxr-polyfill/build/webxr-polyfill.module.js';
+
+			const SAMPLE_ROOT = 'https://immersive-web.github.io/webxr-samples/';
+			const FEATHER_START = 0.58;
+			const FEATHER_END = 1.0;
+			const FEATHER_OPACITY = 0.82;
+
+			if (QueryArgs.getBool('usePolyfill', true)) {
+				new WebXRPolyfill();
+			}
+
+			let xrButton = null;
+			let xrRefSpace = null;
+
+			let gl = null;
+			let renderer = null;
+			let featherOverlay = null;
+			let scene = new Scene();
+			scene.addNode(new Gltf2Node({url: SAMPLE_ROOT + 'media/gltf/space/space.gltf'}));
+			scene.addNode(new SkyboxNode({url: SAMPLE_ROOT + 'media/textures/milky-way-4k.png'}));
+
+			function initXR() {
+				xrButton = new WebXRButton({
+					onRequestSession: onRequestSession,
+					onEndSession: onEndSession
+				});
+				document.querySelector('header').appendChild(xrButton.domElement);
+
+				if (navigator.xr) {
+					navigator.xr.isSessionSupported('immersive-vr').then((supported) => {
+						xrButton.enabled = supported;
+					});
+				}
+			}
+
+			function onRequestSession() {
+				return navigator.xr.requestSession('immersive-vr').then(onSessionStarted);
+			}
+
+			function onSessionStarted(session) {
+				xrButton.setSession(session);
+				session.addEventListener('end', onSessionEnded);
+
+				gl = createWebGLContext({
+					xrCompatible: true
+				});
+
+				renderer = new Renderer(gl);
+				scene.setRenderer(renderer);
+				featherOverlay = createFeatherOverlay(gl);
+
+				session.updateRenderState({baseLayer: new XRWebGLLayer(session, gl)});
+
+				session.requestReferenceSpace('local').then((refSpace) => {
+					xrRefSpace = refSpace;
+					session.requestAnimationFrame(onXRFrame);
+				});
+			}
+
+			function onEndSession(session) {
+				session.end();
+			}
+
+			function onSessionEnded() {
+				xrButton.setSession(null);
+
+				if (featherOverlay) {
+					featherOverlay.dispose();
+					featherOverlay = null;
+				}
+
+				renderer = null;
+				gl = null;
+			}
+
+			function createFeatherOverlay(gl) {
+				const vertexSource = `
+					attribute vec2 position;
+					varying vec2 vUv;
+
+					void main() {
+						vUv = position * 0.5 + 0.5;
+						gl_Position = vec4(position, 0.0, 1.0);
+					}
+				`;
+
+				const fragmentSource = `
+					precision mediump float;
+
+					varying vec2 vUv;
+					uniform float featherStart;
+					uniform float featherEnd;
+					uniform float opacity;
+
+					void main() {
+						vec2 p = vUv * 2.0 - 1.0;
+						float edge = max(abs(p.x), abs(p.y));
+						float alpha = smoothstep(featherStart, featherEnd, edge) * opacity;
+						gl_FragColor = vec4(0.0, 0.0, 0.0, alpha);
+					}
+				`;
+
+				const program = createProgram(gl, vertexSource, fragmentSource);
+				const buffer = gl.createBuffer();
+				const positionLocation = gl.getAttribLocation(program, 'position');
+				const featherStartLocation = gl.getUniformLocation(program, 'featherStart');
+				const featherEndLocation = gl.getUniformLocation(program, 'featherEnd');
+				const opacityLocation = gl.getUniformLocation(program, 'opacity');
+
+				gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+					-1, -1,
+					 1, -1,
+					-1,  1,
+					-1,  1,
+					 1, -1,
+					 1,  1
+				]), gl.STATIC_DRAW);
+				gl.bindBuffer(gl.ARRAY_BUFFER, null);
+
+				return {
+					draw(viewport) {
+						gl.viewport(viewport.x, viewport.y, viewport.width, viewport.height);
+						gl.useProgram(program);
+						gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+						gl.enableVertexAttribArray(positionLocation);
+						gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+						gl.uniform1f(featherStartLocation, FEATHER_START);
+						gl.uniform1f(featherEndLocation, FEATHER_END);
+						gl.uniform1f(opacityLocation, FEATHER_OPACITY);
+						gl.disable(gl.DEPTH_TEST);
+						gl.depthMask(false);
+						gl.enable(gl.BLEND);
+						gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+						gl.drawArrays(gl.TRIANGLES, 0, 6);
+						gl.disableVertexAttribArray(positionLocation);
+						gl.bindBuffer(gl.ARRAY_BUFFER, null);
+						gl.disable(gl.BLEND);
+						gl.enable(gl.DEPTH_TEST);
+						gl.depthMask(true);
+					},
+
+					dispose() {
+						gl.deleteBuffer(buffer);
+						gl.deleteProgram(program);
+					}
+				};
+			}
+
+			function createShader(gl, type, source) {
+				const shader = gl.createShader(type);
+				gl.shaderSource(shader, source);
+				gl.compileShader(shader);
+
+				if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+					const message = gl.getShaderInfoLog(shader);
+					gl.deleteShader(shader);
+					throw new Error(message);
+				}
+
+				return shader;
+			}
+
+			function createProgram(gl, vertexSource, fragmentSource) {
+				const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexSource);
+				const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentSource);
+				const program = gl.createProgram();
+
+				gl.attachShader(program, vertexShader);
+				gl.attachShader(program, fragmentShader);
+				gl.linkProgram(program);
+				gl.deleteShader(vertexShader);
+				gl.deleteShader(fragmentShader);
+
+				if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+					const message = gl.getProgramInfoLog(program);
+					gl.deleteProgram(program);
+					throw new Error(message);
+				}
+
+				return program;
+			}
+
+			function onXRFrame(t, frame) {
+				let session = frame.session;
+
+				scene.startFrame();
+				session.requestAnimationFrame(onXRFrame);
+
+				let pose = frame.getViewerPose(xrRefSpace);
+
+				if (pose) {
+					let glLayer = session.renderState.baseLayer;
+
+					gl.bindFramebuffer(gl.FRAMEBUFFER, glLayer.framebuffer);
+					gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+					for (let view of pose.views) {
+						let viewport = glLayer.getViewport(view);
+						gl.viewport(viewport.x, viewport.y, viewport.width, viewport.height);
+						scene.draw(view.projectionMatrix, view.transform);
+						featherOverlay.draw(viewport);
+					}
+				}
+
+				scene.endFrame();
+			}
+
+			initXR();
+		</script>
+	</body>
+</html>
