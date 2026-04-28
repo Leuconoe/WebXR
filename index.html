@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Static crawl of https://www.wolvic.com/en/start/ at 2026-04-28 13:26:54 +09:00. -->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wolvic - start</title>
+<link rel="alternate" href="blog/feed.xml" title="Wolvic Blog" type="application/atom+xml">
+<link rel="icon" type="image/png" href="assets/img/metalense-favicon.png">
+<meta property="og:title" content="Wolvic - start">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wolvic.com/en/start/">
+<meta property="og:image" content="assets/img/metalense-logo.png">
+<style>
+@import url('assets/remote/334d5609c117.bin');
+@font-face {
+	font-family: 'ElektraText';
+	src: url('assets/font/ElektraTextPro.otf') format('opentype');
+}
+
+:root {
+	--black: #07080a;
+	--primary-grey: #1e1e1e;
+	--mid-grey: #434550;
+    --light-grey: #888;
+	--white: #fff;
+    --purple-step-2: hsl(259, 82%, 36%); 
+ 	--primary-purple: #6924FF;
+    --purple-step-0:  hsl(259, 100%, 83%);
+    --purple-step--1: hsl(259deg 100% 94.69%);
+	--title: clamp(3rem, 2.4783rem + 2.6087vw, 4.5rem);
+	--subtitle: clamp(2rem, 1.6522rem + 1.7391vw, 3rem);
+	--subheading: clamp(1.125rem, 0.9946rem + 0.6522vw, 1.5rem);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--black: #FFF;
+		--primary-grey: #e1e1e1;
+		--white: #000;
+		--primary-grey: hsl(0, 0%, 88.2%);
+		--mid-grey: hsl(230.8, 8.8%, 71.2%);
+		--light-grey: hsl(0, 0%, 46.7%);
+	}
+	html header, html footer, :is(header, footer) [href]:any-link:not([class]) {
+		color: var(--black);
+		background: var(--white);
+	}
+	a[class^="fake-btn"]:any-link {
+		color: var(--black);
+		background: var(--primary-purple);
+	}
+	.feature-card img {
+		filter: invert(1);
+	}
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	min-height: 100vh;
+	font-family: "Space Grotesk", serif;
+	font-weight: 400;
+	font-size: 1rem;
+}
+body {
+	background-color: var(--primary-grey);
+	color: var(--white);
+	height: 100vh;
+	
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: normal;
+}
+
+h1 {font-size: var(--title);}
+h2 {font-size: var(--subtitle);}
+h3 {font-size: var(--subheading);}
+
+p {
+	margin: 1.25rem 0;
+}
+
+a:any-link,
+header a {
+	color: var(--white);
+	text-underline-offset: 0.2em;
+}
+
+.site-container {
+	padding: 0 1.25rem;
+}
+
+.inner-wrap {
+	padding: 2.25rem;
+}
+
+
+header,
+footer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+}
+
+.header,
+.footer {
+	max-width: 1680px;
+	width: 100%;
+}
+
+header nav {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+header nav a[href]:is(:hover, :focus) {
+	color: rgb(224 224 224);
+	background-color: rgb(0 0 0 / 0.75);
+	filter: invert(1);
+}
+
+header .logo {
+	max-width: min(42rem, 82vw);
+	width: 100%;
+}
+
+section {
+	padding: 3rem 2.25rem;
+}
+
+img {
+	width: 100%;
+}
+
+p:first-child {
+	margin-top: 0;
+}
+
+.two-column {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1.5em;
+}
+
+.two-column__descriptor {
+	font-size: 1.25em;
+}
+
+
+
+/* Top hero */
+.leadoff {
+	text-align: center;
+}
+
+.fake-btn__primary {
+	display: inline-block;
+	background-color: var(--primary-purple);
+	padding: .8125em 1.5em; /* 58 height */
+	border-radius: 36px;
+	font-size: 1.2em;
+}
+
+.fake-btn__secondary {
+	display: inline-block;
+	background-color: var(--primary-purple);
+	padding: .625em 1.25em; /* 44 height */
+	border-radius: 24px;
+	max-width: fit-content;
+    width: 100%;
+}
+
+.fake-btn__outline {
+	display: inline-block;
+	border: 2px solid var(--primary-purple);
+	padding: .625em 1.25em;
+	border-radius: 36px;
+	height: fit-content;
+	max-width: 6em;
+	width: 100%;
+	text-align: center;
+	font-size: 1.25rem;
+}
+
+.fake-btn__primary:is(:hover, :focus) {
+	color: rgb(224 224 224);
+    background-color: rgb(0 0 0 / 0.75);
+    filter: invert(1);
+}
+
+.fake-btn__outline:hover {
+	background-color: var(--primary-purple);
+}
+
+
+a[class*="fake-btn__"] {
+	text-decoration: none;
+	max-width: fit-content;
+}
+
+/* subpage structure */
+
+.subpage-container {
+	display: flex;
+	justify-content: center;
+	justify-self: center;
+	width: 100%;
+	flex-direction: column;
+	max-width: 1680px;
+	padding-top: 1.25rem;
+	font-size: 1.25rem;
+}
+
+.subpage-container h1 {
+	margin-block: 0; margin-inline: 0;
+}
+
+.subpage-content {
+	max-width: 48em;
+	width: 100%;
+}
+
+/* Footer */
+
+footer {
+	background-color: var(--black);
+	padding: 2.25rem 0;
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-self: center;
+	gap: 2.25rem;
+}
+
+.footer-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+	.links-container {
+		display: flex;
+		gap: 1em;
+	}
+
+	.links {
+		display: flex;
+		flex-direction: column;
+		gap: .5rem;
+	}
+
+	.copyright {
+		display: block;
+	}
+
+	.social-links {
+		display: flex;
+		gap: 1em;
+		max-width: 12rem;
+		width: 100%;
+	}
+
+
+
+/* Styles From Old Site */
+svg .cls-1 {fill:#808285;}
+svg .cls-2 {fill:#2b3990;}
+
+code {
+	margin-inline: 0.25ch;
+	font-size: 0.95em;
+	font-size: calc(1em - 1px);
+	color: #337;
+}
+
+div.gallery {display: flex; gap: 1em; width: 100%;}
+div.gallery figure {max-inline-size: 50%; margin: 0;}
+div.gallery figure:only-child {max-inline-size: 100%;}
+div.gallery figure img {display: block; max-inline-size: 100%; margin-block-end: 0.25em; border: 1px solid hsla(0deg,0%,0%,0.33);}
+div.gallery figcaption {text-align: center; text-wrap: balance; font-style: italic; padding-block-end: 1em;}
+video {max-width: 100%;}
+
+
+/* Typography */
+
+.title {
+	font-size: var(--title);
+	font-weight: 400;
+	line-height: 1;
+	margin: 0;
+}
+
+.subtitle {
+	font-size: var(--subtitle);
+}
+
+.subheading {
+	font-size: var(--subheading);
+	text-wrap: balance;
+}
+
+@media screen and (min-width: 65em) {
+
+	header nav a[href] {
+		color: var(--white);
+		text-decoration-thickness: 0.1ch;
+		text-decoration-color: #FFFA;
+		text-underline-offset: 0.1em;
+	}
+	header nav a[href] img {
+		display: block;
+		height: 1.75em;
+		aspect-ratio: 1/1;
+		margin-inline: auto;
+	}
+
+}
+
+@media (min-width: 45em) {
+	header nav {
+		translate: 0;
+	}
+
+	footer {
+		font-weight: 400;
+		color: var(--light-grey);
+
+	}
+
+	footer .logo {
+		max-width: 3.5rem;
+	}
+
+	.small {
+		max-width: 2rem;
+		max-height: 2rem;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 48em) {
+
+	.header {
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	.inner-wrap {
+		padding: 2.25rem 1.25rem;
+	}
+ 
+}
+
+
+@import url('assets/remote/3e7a4ca7518a.bin');
+
+header {
+ text-align: center;
+ padding: 1vh;
+ background: linear-gradient(0deg, #141316, transparent 70%), #121738;
+ display: block;
+}
+
+img.logo {
+	margin-top: 1vh;
+}
+
+footer {
+	border-top: 1px solid var(--white);
+}
+
+spicy-sections {
+ /* See 
+    https://spicy-sections.glitch.me/SpicySections.html
+    for concrete stuff about this prototype
+  */  
+  --const-mq-affordances:
+    [screen and (max-width: 49em) ] collapse |
+    [screen and (min-width: 50em) ] tab-bar
+  ;
+  display: block;
+  padding-bottom: 2em;
+}
+
+:where(spicy-sections > [affordance*="collapse"])::before { 
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='10px' height='10px' viewBox='0 0 270 240' enable-background='new 0 0 270 240' xml:space='preserve'%3e%3cpolygon fill='white' points='5,235 135,10 265,235 '/%3e%3c/svg%3e ");
+}
+
+[affordance="tab-bar"] h3 {
+  padding: 0.125em 0.5em;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+[affordance="collapse"] :nth-child(2n) {
+	margin-bottom:  5em;
+}
+
+[affordance="tab-bar"] h2:not([tabindex="0"]) {
+  color: gray;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background: #014fc5;
+}
+
+::-webkit-scrollbar-track {
+	background: #363636;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #666666;
+	border-radius: 10px;
+	border: 0;
+}
+
+
+h2, h3 {
+	margin: 0;
+	font-weight: 400;
+}
+
+main {
+	background: transparent;
+	padding-top: 1rem;
+}
+
+main > h2 {
+	padding: 0.5em;
+	margin: 0 1em 0.5em;
+	font-size: 2em;
+	text-transform: uppercase;
+	letter-spacing: 0.5ch;
+}
+
+p {
+	color: #aaa;
+}
+
+a:any-link {
+	color: unset;
+}
+
+main {
+	text-align: center;
+	user-select: none;
+}
+
+#gallery > label[for] {
+	display: inline-flex;
+	gap: 0.5em;
+	align-items: center;
+	border: 2px solid;
+	border-radius: 5em;
+	padding-block: 0.5em;
+	padding-inline: 0.5em 1em;
+	margin-block: 0 1em;
+	margin-inline: 0.5em;
+	background: #FFF2;
+	transition: 150ms;
+}
+#gallery > label[for].off {
+	opacity: 0.5;
+}
+#gallery > label[for]:focus-within {
+	outline: 0.33em solid #007AFF;
+}
+#gallery > label[for]:not(.off) {
+	border-color: hsl(120deg,50%,80%);
+	opacity: 1;
+}
+#gallery > label[for] input[type="checkbox"] {
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	position: absolute;
+}
+
+/* adapted from https://codepen.io/markmead/pen/rbXygL */
+#gallery > label[for] span.slider {
+	display: inline-block;
+	position: relative;
+	height: 1.25em;
+	width: 2em;
+	border-radius: 5em;
+	border: 2px solid #FFF8;
+}
+#gallery > label[for] span.slider span {
+	position: absolute;
+	top: 0.125em;
+	left: 0.125em;
+	display: inline-block;
+	height: 1em;
+	width: 1em;
+	border-radius: 5em;
+	background: gray;
+}
+#gallery > label[for]:not(.off) span.slider {
+	border-color: hsl(120deg,50%,50%);
+}
+#gallery > label[for]:not(.off) span.slider span {
+	left: auto;
+	right: 0.125em;
+	background: hsl(120deg,50%,50%);
+}
+
+.tags::part(tab-list) {
+	justify-content: center;
+	align-items: start;
+	margin-bottom: 0;
+	border-bottom: 2px solid;
+}
+
+.tags tab-list {
+	align-items: start;
+}
+
+.tags h3 {
+	cursor: pointer;
+	display: block;	
+	border-radius: 1em;
+	padding-top: 0.33em;
+	padding-bottom: 0.5em;
+	padding-left: 1em;
+	padding-right: 1em;
+	margin: 0 0.33em;
+	border: 1px solid #373737;
+	background: #242424;
+	color: #d9d9d9;
+	transition: all 0.2s ease;
+}
+
+.tags.filtering {
+	border-bottom: 0.125em solid;
+}
+
+.tags.filtering h3 {
+	opacity: .5;
+}
+
+.tags a:hover,
+.tags a.selected {
+	background: #343434;
+	opacity: 1;
+}
+.tags [aria-selected="true"] {
+	border-color: #555;
+	border-bottom: 1em solid;
+	border-radius: 1em 1em 0 0;
+	margin-bottom: 0;
+}
+.tags [aria-selected="false"] {
+	margin-bottom: 1em;
+}
+
+.grid {
+	display: grid;
+	grid-gap: 4px;
+	grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+	grid-auto-rows: 13em;
+	grid-auto-flow: row dense;
+	margin-bottom: 4rem;
+}
+.featured {
+	display: grid;
+	grid-gap: 4px;
+	grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+}
+
+.grid a.item {
+	cursor: pointer;
+	position: relative;
+	display: block;
+	min-width: 100%;
+	min-height: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	transition: all 0.2s ease;
+	/* opacity: 0; */
+	/* visibility: hidden; */
+}
+
+[affordance*="collapse"] .grid a.item {
+	display:  block;
+}
+
+
+.grid a.item.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.grid a.item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: all 0.2s ease;
+}
+.grid.streaming a.item img {
+	object-fit: contain;
+	max-width: 80%;
+}
+
+.grid a.item .info {
+	position: absolute;
+	z-index: 3;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-auto-flow: column;
+	grid-template-rows: min-content minmax(25%,min-content) minmax(33%,auto);
+	width: 100%;
+	height: 100%;
+	background: #000000cc;
+	opacity: 0;
+	transition: all 0.2s ease;
+}
+
+.grid a.item .info h4 {
+	font-weight: bold;
+	font-size: 1.33em;
+	margin: 0;
+	padding: 0.5em 1em 0.33em;
+	color: black;
+	background: white;
+}
+
+.grid a.item .info p {
+	margin: 0;
+	padding: 1em;
+	text-shadow: 0 0 3px #000, 0 0 1px #000, 0 0 3px #000, 0 0 3px #000, 0 0 3px #000;
+	z-index: 11;
+}
+
+.grid a.item .info img.play_vr {
+	display: inline-block;
+	width: 60px;
+	height: auto;
+	margin: 0.5em auto;
+}
+
+.grid a.item:hover > img {
+	transform: scale( 1.2 );
+}
+
+.grid a.item .info:hover {
+	opacity: 1;
+	z-index: 10;
+}
+
+footer {
+	background: transparent;
+}
+
+footer :any-link {
+	color:  white;
+}
+#gallery .hide, #gallery [hidden] {
+	display: none;
+}
+</style>
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.igalia.com/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '5']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+</head>
+
+<body>
+	<header>
+		<a href="index.html"><img class="full logo" src="assets/img/metalense-logo.png" alt="METALENSE"></a>
+	</header>
+	<main id="gallery">
+		<h2>Explore</h2>
+		<spicy-sections class="tags"><h3>Experiences</h3>
+			<div class="explore grid experiences"><!-- SAMPLE: Magical Reflections | classes: item dof3 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 " href="https://www.magische-spiegelungen.de/">
+					<div class="info">
+						<h4>Magical Reflections</h4>
+						<p>An exhibition of the painter Johann Erdmann Hummel (1786–1822)</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/magical-reflections_480x270.webp">
+				</a><!-- SAMPLE: The National Gallery | classes: item dof3 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 " href="https://www.nationalgallery.org.uk/visiting/virtual-tours">
+					<div class="info">
+						<h4>The National Gallery</h4>
+						<p>A selection of virtual museum tours</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/national-gallery_480x270.webp">
+				</a><!-- SAMPLE: Dreamwave | classes: item dof3 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 " href="https://dreamwave.live/">
+					<div class="info">
+						<h4>Dreamwave</h4>
+						<p>Web-based XR 'microverses'</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/dreamwave_480x270.webp">
+				</a><!-- SAMPLE: ExposéXR | classes: item dof3 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 " href="https://www.exposexr.com/webxr-showcase.html">
+					<div class="info">
+						<h4>ExposéXR</h4>
+						<p>A collection of WebXR games, videos and showcases</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/expose-xr.png">
+				</a><!-- SAMPLE: The Magic of Flight | classes: item dof3 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 " href="https://liquidcinemavr.com/fly/">
+					<div class="info">
+						<h4>The Magic of Flight</h4>
+						<p>A series of educational experiences centred around theme of flying.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/magicofflight_480x270.webp">
+				</a><!-- SAMPLE: XR Dinosaurs | classes: item dof3 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 " href="https://www.xrdinosaurs.com/">
+					<div class="info">
+						<h4>XR Dinosaurs</h4>
+						<p>Move around cartoony renderings of dinosaurs (and some later mammals).</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/xrdinosaurs_480x270.webp">
+				</a><!-- SAMPLE: FLOW immersive | classes: item dof3 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 " href="https://a.flow.gl/">
+					<div class="info">
+						<h4>FLOW immersive</h4>
+						<p>An exploration of ways to present data in different ways while inside a VR environment.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/babytime_480x270.webp">
+				</a><!-- SAMPLE: Raw Emotions | classes: item dof3 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 " href="https://raw-emotions.phoria.com.au/">
+					<div class="info">
+						<h4>Raw Emotions</h4>
+						<p>Embody the heart and mind of a Paralympian</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/raw_480x270.webp">
+				</a><!-- SAMPLE: Hello WebXR! | classes: item dof3 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 " href="https://msub2.github.io/hello-webxr/">
+					<div class="info">
+						<h4>Hello WebXR!</h4>
+						<p>A WebXR experience originally created for Firefox Reality by a team at Mozilla.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/mixedreality_480x270.webp">
+				</a><!-- SAMPLE: Ball Shooter | classes: item dof3 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 " href="https://threejs.org/examples/#webxr_xr_ballshooter">
+					<div class="info">
+						<h4>Ball Shooter</h4>
+						<p>Shoot a stream of balls against the walls and watch physics at work.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/ballshooter_480x270.webp">
+				</a><!-- SAMPLE: Matterport | classes: item dof3 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 " href="https://matterport.com/discover">
+					<div class="info">
+						<h4>Matterport</h4>
+						<p>Virtual tours of museums, art galleries, historical sites, and more.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/matterport_480x270.jpg">
+				</a></div><h3>Games</h3>
+			<div class="explore grid games"><!-- SAMPLE: Castle Builder | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6 " href="https://castle.needle.tools/">
+					<div class="info">
+						<h4>Castle Builder</h4>
+						<p>Put together your own 3D castle</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/game-castle-builder.jpg">
+				</a><!-- SAMPLE: Jumpy Balls | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6 " href="https://msub2.github.io/jumpy-balls/">
+					<div class="info">
+						<h4>Jumpy Balls</h4>
+						<p>Use the boxes to guide the balls through the ring!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/jumpy-balls.webp">
+				</a><!-- SAMPLE: Moon Rider | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6 " href="https://moonrider.xyz/">
+					<div class="info">
+						<h4>Moon Rider</h4>
+						<p>Similar to Beat Saber, with song maps sourced from beatsaver.com with express support from Beat Saber community admins.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/moonrider_480x270.webp">
+				</a><!-- SAMPLE: Rogue Saber | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6 " href="https://roguesaber.rvdleun.com">
+					<div class="info">
+						<h4>Rogue Saber</h4>
+						<p>Use a lightsaber to deflect lasers!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/roguesaber.jpg">
+				</a><!-- SAMPLE: Plockle | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6 " href="https://plockle.com/play">
+					<div class="info">
+						<h4>Plockle</h4>
+						<p>A puzzle game that challenges you to fit different blocks into a compact space.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/plockle.jpg">
+				</a><!-- SAMPLE: Worlds Demolisher | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6 " href="https://worldsdemolisher.totalviz.com/">
+					<div class="info">
+						<h4>Worlds Demolisher</h4>
+						<p>Knock down towers and conquer the universe in this Breakout-like game.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/worldsdemolisher.jpg">
+				</a><!-- SAMPLE: City Sling VR Experience | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6 " href="https://cityslingvr.arvr.social/">
+					<div class="info">
+						<h4>City Sling VR Experience</h4>
+						<p>Swing around the city in this fan-made VR experience!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/spidermain_box.jpg">
+				</a></div><h3>Painting</h3>
+			<div class="explore grid painting"><!-- SAMPLE: Brush Work | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6 " href="https://brushworkvr.com/webxr">
+					<div class="info">
+						<h4>Brush Work</h4>
+						<p>Start painting in a relaxed setting!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/brushworkvr.jpg">
+				</a><!-- SAMPLE: VARTISTE | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6 " href="https://vartiste.xyz/">
+					<div class="info">
+						<h4>VARTISTE</h4>
+						<p>Paint with a wide variety of tools and any color your computer can create.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/vartiste.jpg">
+				</a></div><h3>Videos</h3>
+			<div class="explore grid videos"><!-- SAMPLE: Airline Pilot's View | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.youtube.com/watch?v=f2vpuTU7sio">
+					<div class="info">
+						<h4>Airline Pilot's View</h4>
+						<p>Experience a flight from Miami to the Bahamas</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/360-video-airline-pilots-view_480x270.webp">
+				</a><!-- SAMPLE: Oreo Cookies | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.youtube.com/watch?v=ENau7AkayN8">
+					<div class="info">
+						<h4>Oreo Cookies</h4>
+						<p>It's an ad, but it's full of chocolate!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/360-video-oreo-cookies_480x270.webp">
+				</a><!-- SAMPLE: Tails VR Flight on Sky Sanctuary | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.youtube.com/watch?v=VnAcrtLGM08">
+					<div class="info">
+						<h4>Tails VR Flight on Sky Sanctuary</h4>
+						<p>Cinema 4D graphics let you experience Sonic animations in a new way.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/tailsflight_480x270.webp">
+				</a><!-- SAMPLE: Kobe Bryant's Last Game | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.youtube.com/watch?v=ydBKIXWXxsk">
+					<div class="info">
+						<h4>Kobe Bryant's Last Game</h4>
+						<p>See highlights from Kobe Bryant's final farewell as a player in 360 video.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/kobebryant_480x270.webp">
+				</a><!-- SAMPLE: Bright Side VR | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.youtube.com/c/BrightSideVR360/featured">
+					<div class="info">
+						<h4>Bright Side VR</h4>
+						<p>A 360° VR video channel covering a variety of themes</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/brightside-vr.png">
+				</a><!-- SAMPLE: AirPano VR | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.youtube.com/c/AirPanoVR/videos">
+					<div class="info">
+						<h4>AirPano VR</h4>
+						<p>High-resolution aerial 360° photographs and 360° video by a team of Russian photographers.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/airpano_480x270.webp">
+				</a><!-- SAMPLE: 360cities | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.360cities.net/">
+					<div class="info">
+						<h4>360cities</h4>
+						<p>Large collection of immersive images and videos from all over the world.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/360cities.png">
+				</a><!-- SAMPLE: Hugh Hou | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.youtube.com/@hughhou">
+					<div class="info">
+						<h4>Hugh Hou</h4>
+						<p>Immersive storytelling community</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/hughhou_480x270.webp">
+				</a><!-- SAMPLE: Virtual Reality | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.youtube.com/@360/videos">
+					<div class="info">
+						<h4>Virtual Reality</h4>
+						<p>Large curated collection of immersive videos by multiple authors.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/360_yt.png">
+				</a><!-- SAMPLE: VR Gorilla | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.youtube.com/@Vrgorilla1/videos">
+					<div class="info">
+						<h4>VR Gorilla</h4>
+						<p>Immersive videos about travel, music, nature, and human stories.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/vrgorilla.png">
+				</a><!-- SAMPLE: Chengdu Giant Panda Base | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.youtube.com/watch?v=XYLQFCqM4Dc">
+					<div class="info">
+						<h4>Chengdu Giant Panda Base</h4>
+						<p>Virtual tour of Chengdu Giant Panda Base, where you can fly over the forest and see the pandas.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/panda_yt.jpg">
+				</a><!-- SAMPLE: Lions | National Geographic | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.youtube.com/watch?v=sPyAQQklc1s">
+					<div class="info">
+						<h4>Lions | National Geographic</h4>
+						<p>Come face to face with a lion cub and his mother as they struggle to survive.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/lions_natgeo.jpg">
+				</a></div><h3>Streaming</h3>
+			<div class="explore grid streaming"><!-- SAMPLE: Amazon Prime Video | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://primevideo.com">
+					<div class="info">
+						<h4>Amazon Prime Video</h4>
+						<p></p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/amazon_prime.png">
+				</a><!-- SAMPLE: AppleTV+ | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://tv.apple.com/">
+					<div class="info">
+						<h4>AppleTV+</h4>
+						<p></p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/apple_tv_plus.svg">
+				</a><!-- SAMPLE: Disney+ | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.disneyplus.com/">
+					<div class="info">
+						<h4>Disney+</h4>
+						<p></p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/disney_plus.png">
+				</a><!-- SAMPLE: filmin | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.filmin.es/">
+					<div class="info">
+						<h4>filmin</h4>
+						<p>Spanish- and Portuguese-language film service</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/filmin.svg">
+				</a><!-- SAMPLE: HBOmax | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.hbomax.com/">
+					<div class="info">
+						<h4>HBOmax</h4>
+						<p></p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/hbomax.svg">
+				</a><!-- SAMPLE: YouTube | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.youtube.com/">
+					<div class="info">
+						<h4>YouTube</h4>
+						<p></p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/youtube.png">
+				</a><!-- SAMPLE: Spotify | classes: item dof3 cn- | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn-" href="https://www.spotify.com/">
+					<div class="info">
+						<h4>Spotify</h4>
+						<p></p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/spotify.png">
+				</a><!-- SAMPLE: iQiyi | classes: item dof3 cn+ | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn+" href="https://www.iqiyi.com/">
+					<div class="info">
+						<h4>iQiyi</h4>
+						<p></p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/iqiyi.svg">
+				</a><!-- SAMPLE: 腾讯视频 | classes: item dof3 cn+ | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn+" href="https://v.qq.com/">
+					<div class="info">
+						<h4>腾讯视频</h4>
+						<p></p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/tencent.svg">
+				</a><!-- SAMPLE: Youku | classes: item dof3 cn+ | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn+" href="https://www.youku.com">
+					<div class="info">
+						<h4>Youku</h4>
+						<p></p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/youku.png">
+				</a><!-- SAMPLE: bilibili | classes: item dof3 cn+ | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn+" href="https://www.bilibili.com/">
+					<div class="info">
+						<h4>bilibili</h4>
+						<p></p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/bilibili.png">
+				</a><!-- SAMPLE: 西瓜视频 | classes: item dof3 cn+ | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof3 cn+" href="https://www.ixigua.com/">
+					<div class="info">
+						<h4>西瓜视频</h4>
+						<p></p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/img/thumbnails/ixigua.svg">
+				</a></div>
+			<h3>heyVR.io</h3>
+			<div class="explore grid heyvr"><!-- SAMPLE: Exit | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/exit">
+					<div class="info">
+						<h4>Exit</h4>
+						<p>Guide your friends to the exit without them being found!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/ffbe69cebd02.webp">
+				</a><!-- SAMPLE: Don’t leave ‘em hanging | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/dont-leave-em-hanging">
+					<div class="info">
+						<h4>Don’t leave ‘em hanging</h4>
+						<p>Give as many high fives and fist bumps as humanly possible!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/6d968aee1243.webp">
+				</a><!-- SAMPLE: Boulderworld | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/boulderworld">
+					<div class="info">
+						<h4>Boulderworld</h4>
+						<p>Hang your way through many different bouldering halls.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/059e3deb33c3.webp">
+				</a><!-- SAMPLE: Cloud 9 | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/cloud-9">
+					<div class="info">
+						<h4>Cloud 9</h4>
+						<p>How many coins will you collect?</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/adf6c4e36101.webp">
+				</a><!-- SAMPLE: The Trap | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/the_trap">
+					<div class="info">
+						<h4>The Trap</h4>
+						<p>VR maze adventure. Face darkness, avoid the butcher and evade traps.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/5fe3ac05691d.webp">
+				</a><!-- SAMPLE: Cadenza!! | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/cadenza">
+					<div class="info">
+						<h4>Cadenza!!</h4>
+						<p>Test your rhythm skills</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/bfe0da535c15.webp">
+				</a><!-- SAMPLE: Blobball Dodgeball | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/blobball-dodgeball">
+					<div class="info">
+						<h4>Blobball Dodgeball</h4>
+						<p>An Intense Dodgeball Experience in a Unique Perspective!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/5386c982e057.webp">
+				</a><!-- SAMPLE: Wonderbricks | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/wonderbricks">
+					<div class="info">
+						<h4>Wonderbricks</h4>
+						<p>A peaceful block-building experience.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/f0707cd1c35d.webp">
+				</a><!-- SAMPLE: Backorder Storehouse | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/backorder-storehouse">
+					<div class="info">
+						<h4>Backorder Storehouse</h4>
+						<p>It's black friday, you need to search and send orders to different countries.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/5023ab46e43a.webp">
+				</a><!-- SAMPLE: f60 - Escape Room | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/f60">
+					<div class="info">
+						<h4>f60 - Escape Room</h4>
+						<p>Episode 1 of a cross-platform, WebXR escape room set in a Soviet insane asylum in the 1960s.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/890e747c97b5.webp">
+				</a><!-- SAMPLE: Santa’s Workshop | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/santas-workshop">
+					<div class="info">
+						<h4>Santa’s Workshop</h4>
+						<p>Become an Elf and take control of Santa's Workshop. Fulfill the wishes of the children by wrapping gifts and try not to make them cry...</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/13ef85b55125.webp">
+				</a><!-- SAMPLE: RedLight GreenLight | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/redlight-greenlight">
+					<div class="info">
+						<h4>RedLight GreenLight</h4>
+						<p>Race against time to reach finish line! Remember to stay still while we are watching, else you will be eliminated!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/c46479a66356.webp">
+				</a><!-- SAMPLE: HoverFit | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/hoverfit">
+					<div class="info">
+						<h4>HoverFit</h4>
+						<p>HoverFit – Get Fit with Friends in VR!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/1851353c24b1.webp">
+				</a><!-- SAMPLE: QUAK | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/quak">
+					<div class="info">
+						<h4>QUAK</h4>
+						<p>QUAKE and Duck Hunt mashup</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/a0fb67d65ed5.webp">
+				</a><!-- SAMPLE: ARENAWARS | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/arena-wars">
+					<div class="info">
+						<h4>ARENAWARS</h4>
+						<p>Pure skill VR shooter. Instant action. No download. Click to play.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/65e8c586bde9.webp">
+				</a><!-- SAMPLE: Mouse Defense | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/mouse-defense">
+					<div class="info">
+						<h4>Mouse Defense</h4>
+						<p>A simple fast pace game, get the mice before they eat up the crop.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/ac6f09066f69.webp">
+				</a><!-- SAMPLE: Barista Express | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/barista-express">
+					<div class="info">
+						<h4>Barista Express</h4>
+						<p>Virtually be a barista in your very own café!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/5105bf68e95a.webp">
+				</a><!-- SAMPLE: Ski Fit 365 | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/ski-fit-365">
+					<div class="info">
+						<h4>Ski Fit 365</h4>
+						<p>Enjoy Ski Fit 365? You’ll Love HoverFit!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/b64f3db9a5d7.webp">
+				</a><!-- SAMPLE: Get off my lawn! | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/get-off-my-lawn">
+					<div class="info">
+						<h4>Get off my lawn!</h4>
+						<p>Use your water hose to prevent the neighbor kids from throwing trash on your beautiful lawn!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/7a9a9fd3ea0e.webp">
+				</a><!-- SAMPLE: Asteroid Storm | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/asteroid-storm">
+					<div class="info">
+						<h4>Asteroid Storm</h4>
+						<p>Shoot lasers and rockets to collect resources from oncoming asteroid fields. Avoid collisions and be wary of distracting alien attacks!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/1eee07b50d65.webp">
+				</a><!-- SAMPLE: Trajectile Command | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/trajectile-command">
+					<div class="info">
+						<h4>Trajectile Command</h4>
+						<p>Trajectile Command is inspired by an old arcade classic called *Missile Command*.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/35d87c8583d6.webp">
+				</a><!-- SAMPLE: Construct Chess | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/construct-chess">
+					<div class="info">
+						<h4>Construct Chess</h4>
+						<p>It's Chess! Playable on desktop, mobile, VR and MR. Can be played both in Multiplayer and AI mode.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/527792d2c050.webp">
+				</a><!-- SAMPLE: Flappy Bird VR | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/flappy-bird-vr">
+					<div class="info">
+						<h4>Flappy Bird VR</h4>
+						<p>Become a bird and find your way.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/7e94804d02c3.webp">
+				</a><!-- SAMPLE: Getaway Car | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/getaway-car">
+					<div class="info">
+						<h4>Getaway Car</h4>
+						<p>Honk and weave through traffic to evade the police as long as possible!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/fe63290ac0cc.webp">
+				</a><!-- SAMPLE: Robot Arena | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/RobotArena">
+					<div class="info">
+						<h4>Robot Arena</h4>
+						<p>Step inside the cockpit of your very own combat robot! Shoot, duck and dodge your friend's attacks in ROBOT ARENA: CHAOZ COMBAT.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/1a83c3748532.webp">
+				</a><!-- SAMPLE: Archery Dungeon | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/archery-dungeon">
+					<div class="info">
+						<h4>Archery Dungeon</h4>
+						<p>Defend the magical portal from the attack of the evil orcs with your trusted bow and arrows!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/4ee35edde15c.webp">
+				</a><!-- SAMPLE: Back to Space | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/back-to-space">
+					<div class="info">
+						<h4>Back to Space</h4>
+						<p>Shoot the invaders out of the sky in this space invaders inspired game.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/08834aaa2ab6.webp">
+				</a><!-- SAMPLE: WXR-M100 Virtual Theremin | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/wxr-m100-virtual-theremin">
+					<div class="info">
+						<h4>WXR-M100 Virtual Theremin</h4>
+						<p>Experience the charm and mystique of this rare electronic instrument!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/0b538fb23ff9.webp">
+				</a><!-- SAMPLE: Swipe Surfers VR | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/swipe-surfers-vr">
+					<div class="info">
+						<h4>Swipe Surfers VR</h4>
+						<p>Take on an adventure as a Swipe surfer with a thrilling running experience!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/f7e7cfaa29be.webp">
+				</a><!-- SAMPLE: FryPan:Snatch | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/frypansnatch">
+					<div class="info">
+						<h4>FryPan:Snatch</h4>
+						<p>The Egg Overlord EggBburt is hungry and you must feed him!!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/8fbe4ca47e35.webp">
+				</a><!-- SAMPLE: Ned Snow | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/ned-snow">
+					<div class="info">
+						<h4>Ned Snow</h4>
+						<p>Infiltrate in a prison of a dystopian future trying to rescue Ned Snow.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/810c45b280c9.webp">
+				</a><!-- SAMPLE: mr NOT - enough IS enough | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/enough-is-enough">
+					<div class="info">
+						<h4>mr NOT - enough IS enough</h4>
+						<p>don't make me wait</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/014b415d27f3.webp">
+				</a><!-- SAMPLE: Cyberwaves: The Arrival | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/cyberwaves-the-arrival">
+					<div class="info">
+						<h4>Cyberwaves: The Arrival</h4>
+						<p>You have landed on an abandoned space station, what expects you within?</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/9a7382258a49.webp">
+				</a><!-- SAMPLE: Drum Simulator XR | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/drum-simulator-vr">
+					<div class="info">
+						<h4>Drum Simulator XR</h4>
+						<p>Have you always wanted to play drums but never had access to the equipment? Now is your time to shine. Unleash your inner drummer!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/1971b7b29e68.webp">
+				</a><!-- SAMPLE: Iron Rails | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/iron-rails">
+					<div class="info">
+						<h4>Iron Rails</h4>
+						<p>Ride the train, shoot for fame.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/c72c57f83355.webp">
+				</a><!-- SAMPLE: Earth Defender | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/earth-defender">
+					<div class="info">
+						<h4>Earth Defender</h4>
+						<p>Shoot the asteroids in the order they appear.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/e3ede7009b74.webp">
+				</a><!-- SAMPLE: Elysian | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/elysian">
+					<div class="info">
+						<h4>Elysian</h4>
+						<p>Experience the thrill in Elysian, a multiplayer shooter crafted by Felix Z.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/18e8d08ec2fd.webp">
+				</a><!-- SAMPLE: Maze Challenge | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/maze-challenge">
+					<div class="info">
+						<h4>Maze Challenge</h4>
+						<p>A difficult game in which you try to navigate a ball through a maze.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/42fafb02da6d.webp">
+				</a><!-- SAMPLE: Voyager Simulator | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/voyager-simulator">
+					<div class="info">
+						<h4>Voyager Simulator</h4>
+						<p>Defend deep space from cosmic junk. Scan asteroids, destroy debris, survive.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/e17c97fd1a45.webp">
+				</a><!-- SAMPLE: Sorskoot’s House of the Dead | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/sorskoots-house-of-the-dead">
+					<div class="info">
+						<h4>Sorskoot’s House of the Dead</h4>
+						<p>Survive and find you way out of the zombie filled mansion!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/4d4dd0c83070.webp">
+				</a><!-- SAMPLE: Avoid the Dark | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/avoid-the-dark">
+					<div class="info">
+						<h4>Avoid the Dark</h4>
+						<p>Collect fuel while avoiding buildings of a post-apocalyptic city.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/f7ba6477f4a7.webp">
+				</a><!-- SAMPLE: Desperados: VR Duels | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/desperados">
+					<div class="info">
+						<h4>Desperados: VR Duels</h4>
+						<p>Face off in a 1v1 duel in the Wild West to see who’s the fastest gun.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/daf0f97b7579.webp">
+				</a><!-- SAMPLE: Wackarmadiddle | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/wackarmadiddle">
+					<div class="info">
+						<h4>Wackarmadiddle</h4>
+						<p>Wack-A-Mole with Armadillos wearing X-Mas hats.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/49cafdf41626.webp">
+				</a><!-- SAMPLE: Maze-Man | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/maze-man">
+					<div class="info">
+						<h4>Maze-Man</h4>
+						<p>Experience Maze-Man... in VR!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/4abe7551210a.webp">
+				</a><!-- SAMPLE: Archery Evolution: Showdown (Alpha) | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/archery-evolution-showdown">
+					<div class="info">
+						<h4>Archery Evolution: Showdown (Alpha)</h4>
+						<p>Draw your bow and challenge players worldwide in intense duels</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/6a1a0481343b.webp">
+				</a><!-- SAMPLE: Storage Space 13 | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/storage-space-13">
+					<div class="info">
+						<h4>Storage Space 13</h4>
+						<p>Can you push the crates to close off the leaking vents on your spaceship?</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/d95b26334ba6.webp">
+				</a><!-- SAMPLE: Gridlz | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/gridlz">
+					<div class="info">
+						<h4>Gridlz</h4>
+						<p>The Gridlz are a nation of monsters that live in the underground. You fell into their trap!</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/da57f68630f6.webp">
+				</a><!-- SAMPLE: LabyRoots | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/labyroots">
+					<div class="info">
+						<h4>LabyRoots</h4>
+						<p>The mother of all trees must succumb.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/6f5b16ba98e1.webp">
+				</a><!-- SAMPLE: WebXR Arcade | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/webxr-arcade">
+					<div class="info">
+						<h4>WebXR Arcade</h4>
+						<p>Play arcade games, earn tokens, and climb the leaderboards.</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/ac4aa30e2dd1.webp">
+				</a><!-- SAMPLE: Blocks Arcade | classes: item dof6 | 제외하려면 바로 아래 <a class="item..."> 전체 블록을 HTML 주석으로 감싸세요. -->
+<a class="item dof6" href="https://heyvr.io/arcade/games/blocks-arcade">
+					<div class="info">
+						<h4>Blocks Arcade</h4>
+						<p>An immersive VR Arcade filled with a range of Falling Blocks Games in 2D & 3D</p>
+						<img class="play_vr" src="assets/img/play_vr2.svg">
+					</div>
+					<img src="assets/remote/9f325e75d2c7.webp">
+				</a>
+			</div>
+		</spicy-sections>
+
+	</main>
+
+	<footer>
+	<div class="footer inner-wrap">
+		<div class="footer-row">	
+			<div class="links-container">
+				<div class="links">
+					<a href="/en/support">Support</a>
+					<a href="/en/faq">FAQ</a>
+					<a href="/blog">Blog</a>
+					<a href="/dl">Downloads</a>
+				</div>
+				<div class="links">
+					<a href="/en/legal/terms">Legal terms</a>
+					<a href="/en/legal/privacy">Privacy</a> 
+				</div>
+			</div>
+			<div class="social-links">
+				<a href="https://github.com/Igalia/wolvic" rel="me"><svg class="small social" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/></svg></a><a href="https://floss.social/@WolvicXR" rel="me"><svg class="small social" viewBox="0 0 74 79" fill="white" xmlns="http://www.w3.org/2000/svg">
+					<path d="M73.7014 17.4323C72.5616 9.05152 65.1774 2.4469 56.424 1.1671C54.9472 0.950843 49.3518 0.163818 36.3901 0.163818H36.2933C23.3281 0.163818 20.5465 0.950843 19.0697 1.1671C10.56 2.41145 2.78877 8.34604 0.903306 16.826C-0.00357854 21.0022 -0.100361 25.6322 0.068112 29.8793C0.308275 35.9699 0.354874 42.0498 0.91406 48.1156C1.30064 52.1448 1.97502 56.1419 2.93215 60.0769C4.72441 67.3445 11.9795 73.3925 19.0876 75.86C26.6979 78.4332 34.8821 78.8603 42.724 77.0937C43.5866 76.8952 44.4398 76.6647 45.2833 76.4024C47.1867 75.8033 49.4199 75.1332 51.0616 73.9562C51.0841 73.9397 51.1026 73.9184 51.1156 73.8938C51.1286 73.8693 51.1359 73.8421 51.1368 73.8144V67.9366C51.1364 67.9107 51.1302 67.8852 51.1186 67.862C51.1069 67.8388 51.0902 67.8184 51.0695 67.8025C51.0489 67.7865 51.0249 67.7753 50.9994 67.7696C50.9738 67.764 50.9473 67.7641 50.9218 67.7699C45.8976 68.9569 40.7491 69.5519 35.5836 69.5425C26.694 69.5425 24.3031 65.3699 23.6184 63.6327C23.0681 62.1314 22.7186 60.5654 22.5789 58.9744C22.5775 58.9477 22.5825 58.921 22.5934 58.8965C22.6043 58.8721 22.621 58.8505 22.6419 58.8336C22.6629 58.8167 22.6876 58.8049 22.714 58.7992C22.7404 58.7934 22.7678 58.794 22.794 58.8007C27.7345 59.9796 32.799 60.5746 37.8813 60.5733C39.1036 60.5733 40.3223 60.5733 41.5447 60.5414C46.6562 60.3996 52.0437 60.1408 57.0728 59.1694C57.1983 59.1446 57.3237 59.1233 57.4313 59.0914C65.3638 57.5847 72.9128 52.8555 73.6799 40.8799C73.7086 40.4084 73.7803 35.9415 73.7803 35.4523C73.7839 33.7896 74.3216 23.6576 73.7014 17.4323ZM61.4925 47.3144H53.1514V27.107C53.1514 22.8528 51.3591 20.6832 47.7136 20.6832C43.7061 20.6832 41.6988 23.2499 41.6988 28.3194V39.3803H33.4078V28.3194C33.4078 23.2499 31.3969 20.6832 27.3894 20.6832C23.7654 20.6832 21.9552 22.8528 21.9516 27.107V47.3144H13.6176V26.4937C13.6176 22.2395 14.7157 18.8598 16.9118 16.3545C19.1772 13.8552 22.1488 12.5719 25.8373 12.5719C30.1064 12.5719 33.3325 14.1955 35.4832 17.4394L37.5587 20.8853L39.6377 17.4394C41.7884 14.1955 45.0145 12.5719 49.2765 12.5719C52.9614 12.5719 55.9329 13.8552 58.2055 16.3545C60.4017 18.8574 61.4997 22.2371 61.4997 26.4937L61.4925 47.3144Z" fill="inherit"/>
+					</svg></a>
+				<a href="https://bsky.app/profile/wolvic.com"><svg xmlns="http://www.w3.org/2000/svg" class="small social" width="600" height="530" version="1.1" viewBox="0 0 600 530">
+  					<path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z" fill="#fff"></path>
+					</svg></a>
+			</div>
+		</div>
+		<div class="copyright">
+			2025 <a href="https://igalia.com/">Igalia SL</a>
+		</div>
+	</div>
+</footer>
+
+
+<dialog id="splash">
+<p>Let us know what you think of the Wolvic experience, how it could be better, or problems you’ve run into, with our feedback button!  Look for the question mark icon right next to the address bar.</p>
+<div><button id="dismiss">Got it</button></div>
+<img src="assets/img/posts/1.4-feedback.jpg" alt="">
+</dialog>
+
+
+<script src="assets/js/SpicySections.js" type="module"></script>
+<style>
+#splash {max-width: 600px; min-width: min-content; border-radius: 1em; padding-inline: 2em; outline: 50vmax solid #141316D0; background: #EEE;}
+#splash p {font-size: 1.13em; color: inherit;}
+#splash img {max-width: 60vw; max-height: 50vh; aspect-ratio: 1.88/1;}
+@media (max-width: 600px) {
+	#splash img {object-fit: contain; object-position: 100% 100%;}
+}
+#splash div {margin-block: 1em 1.5em; text-align: center;}
+#splash button {font-size: 1.33em; border-radius: 1em; padding-inline: 0.75em; padding-block: 0.2em; border: 0; background: navy; color: #EEE;}
+</style>
+<script>
+if (storageAvailable("localStorage")) {
+	if (localStorage.getItem("feedback-icon") != "dismissed") {
+		splash.showModal();
+		if (localStorage.getItem("feedback-icon") == "seen") {
+			dismiss.innerText = "Don’t show this again";
+		} else {
+			localStorage.setItem("feedback-icon","seen");
+		}
+	}
+	try {
+		dismiss.onclick = function() {
+			splash.close();
+			localStorage.setItem("feedback-icon","dismissed");
+		}
+	} catch (error) {
+		// don’t do anything, I guess? --EAM 2023-10-25
+	}
+}
+function storageAvailable(type) {
+	// https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
+  let storage;
+  try {
+    storage = window[type];
+    const x = "__storage_test__";
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  } catch (e) {
+    return (
+      e instanceof DOMException &&
+      // everything except Firefox
+      (e.code === 22 ||
+        // Firefox
+        e.code === 1014 ||
+        // test name field too, because code might not be present
+        // everything except Firefox
+        e.name === "QuotaExceededError" ||
+        // Firefox
+        e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+      // acknowledge QuotaExceededError only if there's something already stored
+      storage &&
+      storage.length !== 0
+    );
+  }
+}
+function startup() {
+	let switches = document.querySelectorAll('input.switch');
+	switches.forEach(listenup);
+
+	function listenup(item, index, array) {
+		array[index].addEventListener("change", filter); 
+	}
+	// Random ordering is disabled during sample validation.
+	let headers = document.querySelectorAll('spicy-sections > h3');
+	let categories = document.querySelectorAll('spicy-sections > div');
+
+	function filter(event) {
+		for (var i = 0; i < items.length; i++) {
+			let item = items[i];
+			if (item.classList.contains(this.id)) {
+				item.hidden = !item.hidden;
+			}
+		}
+		for (var j = 0; j < categories.length; j++) {
+			let category = categories[j];
+			let children = category.children;
+			let count = 0;
+			for (var k = 0; k < children.length; k++) {
+				let child = children[k];
+				if (child.hidden) count++;
+			}
+			let title = headers[j];
+			title.hidden = (count == children.length) ? true : false
+		}
+		this.parentElement.classList.toggle('off');
+	}
+}
+
+const galleryDiv = document.getElementById('gallery');
+let items =	document.querySelectorAll('#gallery .item');
+startup()
+</script>
+</body>
+
+</html>
+

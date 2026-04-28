@@ -1,0 +1,8 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="256" height="256">
+	<title>play_vr2-svg</title>
+	<style>
+		tspan { white-space:pre }
+		.s0 { fill: #ffffff } 
+	</style>
+	<path id="Layer" class="s0" d="m1 2c0-0.55 0.46-1 1-1c0.34 0 0.67 0.23 1 0.38l11.26 5.63c0.27 0.13 0.74 0.41 0.74 1c0 0.59-0.47 0.87-0.74 1l-11.26 5.63c-0.33 0.15-0.66 0.38-1 0.38c-0.54 0-1-0.45-1-1v-12z" />
+</svg>

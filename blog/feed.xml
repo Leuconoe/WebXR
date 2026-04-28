@@ -1,0 +1,2027 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xml:base="https://wolvic.com" xmlns="http://www.w3.org/2005/Atom">
+  <title>Wolvic Blog</title>
+  <subtitle>All the entries in the Wolvic blog, which should mostly be release notes.</subtitle>
+  <link href="https://wolvic.com/blog/feed.xml" rel="self"/>
+  <link href="https://wolvic.com"/>
+  <updated>2025-12-29T14:34:04Z</updated>
+  <id>https://wolvic.com</id>
+  <author>
+    <name>Wolvic XR Team</name>
+    <email>info@wolvic.com</email>
+  </author>
+  <entry>
+    <title>Wolvic 1.4.2 Released</title>
+    <link href="https://wolvic.com/blog/release_1.4.2/"/>
+    <updated>2023-08-11T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/release_1.4.2/</id>
+    <content xml:lang="en" type="html">&lt;style&gt;
+main ol li {margin-block-end: 0.5em;}
+main ol li a img {max-width: 25%; float: right; clear: right; margin-inline: 1em -1em; margin-block-end: 1em;}
+div.gallery {display: flex; gap: 1em; width: 100%;}
+div.gallery figure {max-inline-size: 50%; margin: 0;}
+div.gallery figure:only-child {max-inline-size: 100%;}
+div.gallery figure img {display: block; max-inline-size: 100%; margin-block-end: 0.25em; border: 1px solid hsla(0deg,0%,0%,0.33);}
+div.gallery figcaption {text-align: center; font-style: italic;}
+video {max-width: 100%;}
+main ul {padding-inline-start: 1.25em;}
+&lt;/style&gt;
+&lt;p&gt;It’s that time: welcome to the second minor release of the Wolvic 1.4.x series. This release includes bug fixes, small but noticeable UI improvements, and enhanced stability.&lt;/p&gt;
+&lt;p&gt;Starting with this version, downloaded files will be stored in the device’s public Downloads folder.  Previously, they had been stored in an app-specific folder, with its own interface and so on, which we admit was a bit clumsy and too app-specific.  This change makes Wolvic more useful and convenient, as it places any files downloaded by Wolvic in with all downloads, which follows the generally expected behaviour of a Web browser.  It also means users don’t have deal with a special process to copy files from Wolvic’s downloads to the general downloads folder, as was the case before.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.4.2-downloads-wolvic.jpg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.4.2-downloads-wolvic.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;A downloaded image available in Wolvic’s Downloads tab&lt;/figcaption&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.4.2-downloads-device.jpg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.4.2-downloads-device.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;The same downloaded image seen in the device’s Downloads tab&lt;/figcaption&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;We’re continuing to make hand tracking detection more reliable. Furthermore, the code that tracks gestures has been refactored to greatly reduce the unintended triggering of gestures and to give us a more flexible foundation going forward.  We have also fixed a bug in the Lynx R1 where the controllers were not visible while visiting an immersive WebXR experience, and another where the left hand gesture was not triggering the Menu button.&lt;/p&gt;
+&lt;p&gt;In the realm of other input channels, the keyboard’s layout will follow the system’s language by default, unless the user changes their preferred language and/or layout within Wolvic.  Also, search suggestions in the URL bar will no longer omit some characters.&lt;/p&gt;
+&lt;p&gt;As ever, if you’ve found a problem or have another issue, please &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;send us your feedback&lt;/a&gt; or, if you prefer, &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;file an issue on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;changelog&quot; tabindex=&quot;-1&quot;&gt;Changelog&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/722&quot;&gt;PR #722&lt;/a&gt; Fix &lt;code&gt;assert()&lt;/code&gt; on Mac compilation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/767&quot;&gt;PR #767&lt;/a&gt; Right palm gestures to exit Wolvic&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/769&quot;&gt;PR #769&lt;/a&gt; [OpenXR] Invert the logic of detecting hand tracking detection&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/773&quot;&gt;PR #773&lt;/a&gt; Fix build with JDK 17&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/793&quot;&gt;PR #793&lt;/a&gt; Reduce the size of PNGs with pngquant&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/794&quot;&gt;PR #794&lt;/a&gt; Gracefully handle &lt;code&gt;SocketTimeout when&lt;/code&gt; MLS not available&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/812&quot;&gt;PR #812&lt;/a&gt; Fix deprecated &lt;code&gt;android.inputmethodservice.Keyboard&lt;/code&gt; and &lt;code&gt;keyboardView&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/813&quot;&gt;PR #813&lt;/a&gt; Introducing the GestureManager&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/827&quot;&gt;PR #827&lt;/a&gt; Wait until Privacy Policy has been accepted&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/828&quot;&gt;PR #828&lt;/a&gt; Fix warnings in PlatformActivity&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/829&quot;&gt;PR #829&lt;/a&gt; Initial flow for mainland China&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/834&quot;&gt;PR #834&lt;/a&gt; Use the OculusTouch3 controllers for WebXR session in Lynx R1&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/836&quot;&gt;PR #836&lt;/a&gt; Define the &amp;quot;mainlandChina&amp;quot; store flavour&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/837&quot;&gt;PR #837&lt;/a&gt; Fix duplicated toolbars in phone UI&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/838&quot;&gt;PR #838&lt;/a&gt; Fix keyboard icon displaying&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/840&quot;&gt;PR #840&lt;/a&gt; Avoid collecting Wifi related data without user consent&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/842&quot;&gt;PR #842&lt;/a&gt; Fix left hand action button on Lynx&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/844&quot;&gt;PR #844&lt;/a&gt; Implement POST resubmission confirmation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/851&quot;&gt;PR #851&lt;/a&gt; [OpenXR] Add support for &lt;code&gt;XR_EXTX_overlay&lt;/code&gt; extension&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/852&quot;&gt;PR #852&lt;/a&gt; Fix several issues related to Download List&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/853&quot;&gt;PR #853&lt;/a&gt; Use left alignment for the download Confirmation Dialog&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/855&quot;&gt;PR #855&lt;/a&gt; Make keyboard follow the system locale if never manual select&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/866&quot;&gt;PR #866&lt;/a&gt; Remove overlay extension support for Pico&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/873&quot;&gt;PR #873&lt;/a&gt; Disable hand tracking extension in Lenovo VRX&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/876&quot;&gt;PR #876&lt;/a&gt; Meta store fixes&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/878&quot;&gt;PR #878&lt;/a&gt; Fix to keep the selected options for &lt;code&gt;&amp;amp;lt;select&amp;amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/880&quot;&gt;PR #880&lt;/a&gt; Use &lt;code&gt;getNonAutocompleteText&lt;/code&gt; to fix awesomebar&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/885&quot;&gt;PR #885&lt;/a&gt; Fix Language change issues when change language in Wolvic&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Igalia/wolvic/pull/894&quot;&gt;PR #894&lt;/a&gt; Add support for &lt;code&gt;mgzf.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wolvic Conferences: Autumn 2023</title>
+    <link href="https://wolvic.com/blog/2023_Autumn/"/>
+    <updated>2023-09-07T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/2023_Autumn/</id>
+    <content xml:lang="en" type="html">&lt;style&gt;
+div.gallery {display: flex; gap: 1em; width: 100%;}
+div.gallery figure {max-inline-size: 50%; margin: 0;}
+div.gallery figure:only-child {max-inline-size: 100%;}
+div.gallery figure img {display: block; max-inline-size: 100%; margin-block-end: 0.25em; border: 1px solid hsla(0deg,0%,0%,0.33);}
+div.gallery figcaption {text-align: center; font-style: italic;}
+&lt;/style&gt;
+&lt;p&gt;Felipe Erias from the Wolvic team attended &lt;a href=&quot;https://www.aweasia.com/&quot;&gt;AWE Asia 2023&lt;/a&gt; in Singapore on the 27th-28th of August, where he delivered a talk on “Web Browsing in Extended Reality”.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/felipe_speaking.jpeg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/felipe_speaking.jpeg&quot; alt=&quot;Felipe speaking at AWE Asia 2023&quot; /&gt;
+&lt;figcaption&gt;Felipe speaking at AWE Asia 2023&lt;/figcaption&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Felipe’s talk focused on showing how Web browsing on Extended Reality enables users to navigate and interact with traditional web-based content as well as immersive WebXR experiences. The session explored the technical challenges and design opportunities of creating a Web browser designed specifically for XR devices, drawing on our experience building Wolvic, a multiplatform and open source Web browser for XR.&lt;/p&gt;
+&lt;p&gt;Felipe will also be in Shanghai in September attending several GOSIM (“Global Open-Source Innovation Meetup”) events, including a &lt;a href=&quot;https://workshop2023.gosim.org/schedule#metaverse&quot;&gt;Metaverse workshop&lt;/a&gt; on the 23rd-24th and a &lt;a href=&quot;https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/co-located-events/sponsor-hosted-co-located-events/&quot;&gt;conference&lt;/a&gt; on the 26th.&lt;/p&gt;
+&lt;p&gt;The Wolvic team will also attend &lt;a href=&quot;https://www.awexr.com/eu-2023/&quot;&gt;AWE Europe 2023&lt;/a&gt; in Vienna on the 24th-25th of October, where we will showcase Wolvic on different XR devices and use cases.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wolvic 1.5 Released</title>
+    <link href="https://wolvic.com/blog/release_1.5/"/>
+    <updated>2023-09-25T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/release_1.5/</id>
+    <content xml:lang="en" type="html">&lt;style&gt;
+main ol li {margin-block-end: 0.5em;}
+main ol li a img {max-width: 25%; float: right; clear: right; margin-inline: 1em -1em; margin-block-end: 1em;}
+div.gallery {display: flex; gap: 1em; width: 100%;}
+div.gallery figure {max-inline-size: 50%; margin: 0;}
+div.gallery figure:only-child {max-inline-size: 100%;}
+div.gallery figure img {display: block; max-inline-size: 100%; margin-block-end: 0.25em; border: 1px solid hsla(0deg,0%,0%,0.33);}
+div.gallery figcaption {text-align: center; font-style: italic;}
+video {max-width: 100%;}
+&lt;/style&gt;
+&lt;p&gt;Hello, and welcome to Wolvic 1.5!  This is a big update, albeit mostly behind the scenes, and so we have a fair bit to share with you.&lt;/p&gt;
+&lt;p&gt;Up front, we’ve made a number of user interface (UI) improvements, such as the new hand models we show on all hand-tracking devices.  These looks a fair bit like actual hands, which is useful when trying to manipulate virtual objects.&lt;/p&gt;
+&lt;p&gt;The second major UI improvement is the Find in Page feature, which works like it does in 2D browsers: you input a bit of text and Wolvic will highlight all occurrences of it in the page.  You use arrow buttons to jump from one occurrence to the next (or to the previous) which can be very useful for finding specific bits of text in long pages like Wikipedia articles.&lt;/p&gt;
+&lt;p&gt;Third but by no means last, we’ve added a brand new date and time pickers, which are designed to be easily usable in virtual environments.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5-findinpage.jpg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.5-findinpage.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Search for text on any page.&lt;/figcaption&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5-datetimepicker.jpeg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.5-datetimepicker.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;The date-and-time picker being invoked one of our test pages.&lt;/figcaption&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;There are many other UI improvements, like better updates of the Wifi icon when connectivity changes, and updated translations of our Chinese and Korean interface translations.  We’ve enabled YouTube captions, landed a fix for white flashes when frames are dropped, and you can open a new page in Wolvic from external programs without interrupting in-progress video playback.  There’s also a new link to our &lt;a href=&quot;https://opencollective.com/wolvic&quot;&gt;funding collective&lt;/a&gt; — many thanks to all who support our continued development!&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.5-white-flashes2.jpg&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.5-white-flashes2.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5-white-flashes2.mp4&quot;&gt;
+Left: a dropped frame causes a white flash. Right: the same dropped frame causes no flash in Wolvic 1.5. (2.4MB MP4, no audio)
+&lt;/a&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;The biggest changes are really behind the scenes, though.  We upgraded both the Gecko and Android Components versions to 116, much more recent (and thus feature-rich) than previous versions.  Along with that, a great deal of work went into upgrading or removing deprecated API calls in favor of more modern APIs.  This has greatly increased the health of our codebase, and keeps users as up to date as possible with new web capabilities.&lt;/p&gt;
+&lt;p&gt;We hope you enjoy using Wolvic 1.5!  As usual, this has been a high-level overview, so there are more changes and fixes listed in the notes below. If you’ve found a new problem or have another issue, please &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;send us your feedback&lt;/a&gt; (which will now open in a new tab or window!) or, if you prefer, &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;file an issue on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Upgraded Gecko to v116&lt;/li&gt;
+&lt;li&gt;Upgraded Android Components to v116&lt;/li&gt;
+&lt;li&gt;Removed white flashes appearing with low FPS&lt;/li&gt;
+&lt;li&gt;Massive modernization of codebase including a large upgrade of deprecated APIs&lt;/li&gt;
+&lt;li&gt;New DateTime picker dialog&lt;/li&gt;
+&lt;li&gt;Find in page&lt;/li&gt;
+&lt;li&gt;Hands rendering with &lt;code&gt;XR_MSFT_hand_tracking_mesh&lt;/code&gt; where available&lt;/li&gt;
+&lt;li&gt;New flavour for generic AOSP devices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;details&quot; tabindex=&quot;-1&quot;&gt;Details&lt;/h3&gt;
+&lt;h4 id=&quot;gecko&quot; tabindex=&quot;-1&quot;&gt;Gecko&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Upgraded to Gecko 116.0.3 (from 103)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;web-browsing&quot; tabindex=&quot;-1&quot;&gt;Web Browsing&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Removed white flashes with discarded frames&lt;/li&gt;
+&lt;li&gt;Implemented DateTime picker dialog&lt;/li&gt;
+&lt;li&gt;Pass only valid URIs to &lt;code&gt;loadURI&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Enable blob:// downloads&lt;/li&gt;
+&lt;li&gt;Enable local file navigation (file://)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;ui&quot; tabindex=&quot;-1&quot;&gt;UI&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Reenabled automatic projection selection for YouTube VR videos&lt;/li&gt;
+&lt;li&gt;Properly update the WiFi icon after connectivity changes&lt;/li&gt;
+&lt;li&gt;Open feedback form in a new tab/window&lt;/li&gt;
+&lt;li&gt;Open URLs from Intents in another tab/window&lt;/li&gt;
+&lt;li&gt;Added support to Find in Page&lt;/li&gt;
+&lt;li&gt;Fixed 3D side by side video playback on curved mode&lt;/li&gt;
+&lt;li&gt;Updated translations: Chinese, Korean&lt;/li&gt;
+&lt;li&gt;Fixed disable auto-complete setting&lt;/li&gt;
+&lt;li&gt;Automatically select search engine based on region if not set&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;openxr&quot; tabindex=&quot;-1&quot;&gt;OpenXR&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Added support for &lt;code&gt;XR_EXTX_overlay&lt;/code&gt; allowing Wolvic to be composited with other OpenXR apps&lt;/li&gt;
+&lt;li&gt;Properly map controller primary action with hand tracking&lt;/li&gt;
+&lt;li&gt;Added support to render the hand mesh using &lt;code&gt;XR_MSFT_hand_tracking_mesh&lt;/code&gt; extension&lt;/li&gt;
+&lt;li&gt;Refactored OpenXR hand mesh rendering with a strategy pattern&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;media&quot; tabindex=&quot;-1&quot;&gt;Media&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Added support for YouTube captions&lt;/li&gt;
+&lt;li&gt;Fixed AppleTV playback&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;stability&quot; tabindex=&quot;-1&quot;&gt;Stability&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed a crash in HTML select element&lt;/li&gt;
+&lt;li&gt;Fixed restart of Wolvic after changes in settings&lt;/li&gt;
+&lt;li&gt;Fixed a crash when WiFi signal strength cannot be retrieved&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;code-health&quot; tabindex=&quot;-1&quot;&gt;Code health&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Upgraded Mozilla Android Components from v75 to v116&lt;/li&gt;
+&lt;li&gt;Migrated from browser-search component to feature-search&lt;/li&gt;
+&lt;li&gt;Modernized code to detect WiFi status changes&lt;/li&gt;
+&lt;li&gt;Migrated &lt;code&gt;SearchEngineWrapper&lt;/code&gt; to Kotlin&lt;/li&gt;
+&lt;li&gt;Modernize deprecated AsyncTask&lt;/li&gt;
+&lt;li&gt;Modernize deprecated &lt;code&gt;dispatchConfigurationChanged()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Modernize deprecated &lt;code&gt;OnSystemUiVisibilityChangeListener&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Removed API&amp;lt;24 codepaths&lt;/li&gt;
+&lt;li&gt;Migrate code to the new zip4j version&lt;/li&gt;
+&lt;li&gt;Modernize deprecated &lt;code&gt;setSystemUiVisibility()&lt;/code&gt; and related flags&lt;/li&gt;
+&lt;li&gt;Fix deprecated methods in API 33&lt;/li&gt;
+&lt;li&gt;Fix deprecated Fragment and &lt;code&gt;FragmentTransaction&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use androidx’s &lt;code&gt;PreferenceManager&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Remove deprecated &lt;code&gt;cookieLifetime&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fixed several deprecations and add comments for deprecation&lt;/li&gt;
+&lt;li&gt;Fixed deprecated &lt;code&gt;android.preference.PreferenceManager&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fixed Kotlin build warnings&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;PackagingOptions.jniLibs.useLegacyPackaging = true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;infra&quot; tabindex=&quot;-1&quot;&gt;Infra&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Added OpenCollective funding link to github&lt;/li&gt;
+&lt;li&gt;Removed WaveVR build dependency for non-WaveVR flavours&lt;/li&gt;
+&lt;li&gt;Added support for CMake &amp;gt;=3.10.2+&lt;/li&gt;
+&lt;li&gt;Disable fail-fast in CI&lt;/li&gt;
+&lt;li&gt;Setup github’s dependabot&lt;/li&gt;
+&lt;li&gt;Added machinery to create Huawei and Pico packages for mainland China&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;chromium-backend&quot; tabindex=&quot;-1&quot;&gt;Chromium backend&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Implemented incognito mode&lt;/li&gt;
+&lt;li&gt;Set WebGL MSAA level on startup&lt;/li&gt;
+&lt;li&gt;Added Downloads support via &lt;code&gt;DownloadManagerDelegate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Mute tabs when inactive&lt;/li&gt;
+&lt;li&gt;Fix aim pose on WebXR&lt;/li&gt;
+&lt;li&gt;Use Wolvic’s User Agent&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;pico&quot; tabindex=&quot;-1&quot;&gt;Pico&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Allow Wolvic to read from Downloads folder&lt;/li&gt;
+&lt;li&gt;Fixed hand tracking support for PicoOS &amp;gt;= 5.7.1&lt;/li&gt;
+&lt;li&gt;Do not go back when clicking on “take screenshot” button&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;magicleap2&quot; tabindex=&quot;-1&quot;&gt;MagicLeap2&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Added controller support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;aosp&quot; tabindex=&quot;-1&quot;&gt;AOSP&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;New flavour for generic AOSP devices (supporting both arm64 and x64)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;snapdragonspaces&quot; tabindex=&quot;-1&quot;&gt;SnapdragonSpaces&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Do not enable passthrough by default on the VRX (only in the Lenovo A3)&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>AWE EU 2023</title>
+    <link href="https://wolvic.com/blog/AWE_Vienna_2023/"/>
+    <updated>2023-10-23T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/AWE_Vienna_2023/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;On Tuesday and Wednesday of this week, we’ll be at &lt;a href=&quot;https://www.awexr.com/eu-2023/&quot;&gt;AWE EU 2023 in Vienna, Austria&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;On Tuesday at 14:30 - 14:55 CEST, our colleague Juan José Sánchez Penas will be presenting “&lt;a href=&quot;https://www.awexr.com/eu-2023/agenda/4119-wolvic-web-browsing-through-xr&quot;&gt;Wolvic: Web browsing through XR&lt;/a&gt;”.&lt;/p&gt;
+&lt;p&gt;We’ll also be in &lt;a href=&quot;https://www.awexr.com/eu-2023/exhibitors&quot;&gt;booth #266 in the expo&lt;/a&gt; where we’ll be showing off Wolvic on several devices, and give attendees the first-ever peeks at an early Chromium-based backend for Wolvic and our new 3D environment, “Spring”.&lt;/p&gt;
+&lt;p&gt;Come by and check it out!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wolvic 1.5.1 Released</title>
+    <link href="https://wolvic.com/blog/release_1.5.1/"/>
+    <updated>2023-10-23T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/release_1.5.1/</id>
+    <content xml:lang="en" type="html">&lt;style&gt;
+main ol li {margin-block-end: 0.5em;}
+main ol li a img {max-width: 25%; float: right; clear: right; margin-inline: 1em -1em; margin-block-end: 1em;}
+div.gallery {display: flex; gap: 1em; width: 100%;}
+div.gallery figure {max-inline-size: 50%; margin: 0;}
+div.gallery figure:only-child {max-inline-size: 100%;}
+div.gallery figure img {display: block; max-inline-size: 100%; margin-block-end: 0.25em; border: 1px solid hsla(0deg,0%,0%,0.33);}
+div.gallery figcaption {text-align: center; font-style: italic;}
+video {max-width: 100%;}
+&lt;/style&gt;
+&lt;p&gt;Welcome to the release notes for Wolvic 1.5.1.  Some of the bigger changes in this version surround the 3D environment that a user is in while running Wolvic.  Environments can be chosen by selecting the Environment cell in Wolvic’s Settings. Here, you’ll find a new environment called “Spring”:&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.5.1-pico_spring_02.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.5.1-pico_spring_02.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.1-pico_spring_02.mp4&quot;&gt;Switching from the default environment to the new Spring environment&lt;/a&gt; (5.3MB MP4, no audio)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;The other major change is how all of this works.  Previously, the available environments would be packaged up with each release.  With the release of 1.5.1, whenever you open the Environment cell, Wolvic will check to see if new environments are available, and let you download and install any you like.&lt;/p&gt;
+&lt;p&gt;Don’t see an environment you want to switch to?  We’d love to have you create your own environment and share with the community!  There’s now a GitHub repository called &lt;a href=&quot;https://github.com/Igalia/wolvic-3D-environments&quot;&gt;Wolvic 3D Environments&lt;/a&gt; where you can contribute an environment you’ve created.  Environments are essentially six images named and processed in a specific way, so that Wolvic can assemble them into what’s called a “skybox”.  The README for the repository has a stripped-down guide to creating your own environments, and improvements to the guide are welcome.&lt;/p&gt;
+&lt;p&gt;If you find keyboard input a bit of a challenge in XR, we’ve added a microphone button to the virtual keyboard, which allows you to use speech recognition as input.  Need to search for something?  Hit the button, speak your search terms, and get results.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.5.1-pico-voice.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/pico_voice_01.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/pico_voice_01.mp4&quot;&gt;Using speech recognition to run a web search&lt;/a&gt; (4.8MB MP4, no audio)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;By default, this feature uses &lt;a href=&quot;https://meetkai.com/&quot;&gt;MeetKai&lt;/a&gt; to do the voice-to-speech translation, except on Huawei devices, where Huawei’s &lt;a href=&quot;https://developer.huawei.com/consumer/en/doc/hiai-Guides/ml-asr-0000001050066212&quot;&gt;Automatic Speech Recognition&lt;/a&gt; service is used instead.&lt;/p&gt;
+&lt;p&gt;That’s not all, though!  We’ve added support for the Meta Quest 3, passthrough support for Pico devices, and the use of trusted root certificates on your system, which makes it much easier to use Wolvic in corporate settings.  We also made it so that a video set to “fullscreen” is played on a curved display surface.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.5.1-pico_curved_02.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.5.1-pico_curved_02.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.1-pico_curved_02.mp4&quot;&gt;Playing a “fullscreen” video in a curved display&lt;/a&gt; (4.6MB MP4, audio)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;We’ve further enhanced video handling, including fixes to pause behavior, support for the top-bottom format in VR videos, active time labels to jump to the beginning or end of a video, and more.&lt;/p&gt;
+&lt;p&gt;There are a variety of other changes and updates, listed in the notes below, including better support of Chinese and Japanese keyboards.  If you’ve found a new problem or have another issue, please &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;send us your feedback&lt;/a&gt; or, if you prefer, &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;file an issue on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The keyboard now includes voice input, allowing users to dictate text directly into website fields.&lt;/li&gt;
+&lt;li&gt;Wolvic now supports downloading new 3D environments online. Access this feature through the “Environment” section in the Settings.&lt;/li&gt;
+&lt;li&gt;A new “Spring” environment is ready for download. Visit our repository at &lt;a href=&quot;https://github.com/Igalia/wolvic-3D-environments&quot;&gt;Wolvic 3D Environments on GitHub&lt;/a&gt; for updates and suggestions.&lt;/li&gt;
+&lt;li&gt;Added compatibility with the Meta Quest 3.&lt;/li&gt;
+&lt;li&gt;Added passthrough support for Pico devices.&lt;/li&gt;
+&lt;li&gt;Wolvic is now also compatible with different phones when using Huawei Glasses.&lt;/li&gt;
+&lt;li&gt;Multiple enhancements and fixes for Chinese and Japanese keyboards.&lt;/li&gt;
+&lt;li&gt;Enabled the use of your system’s trusted root certificates (fixes &lt;a href=&quot;https://github.com/Igalia/wolvic/issues/489&quot;&gt;issue #489&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;Added option to clear all user data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;Notes&lt;/h2&gt;
+&lt;h3 id=&quot;meta&quot; tabindex=&quot;-1&quot;&gt;Meta&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added compatibility with the Meta Quest 3.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;pico&quot; tabindex=&quot;-1&quot;&gt;Pico&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added passthrough support for Pico devices.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;huawei&quot; tabindex=&quot;-1&quot;&gt;Huawei&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Wolvic is now also compatible with different phones when using Huawei Glasses.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;media&quot; tabindex=&quot;-1&quot;&gt;Media&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple fixes in video playback including curved fullscreen display, pause behavior and seeking bar time.&lt;/li&gt;
+&lt;li&gt;Added top-bottom format support for VR video playback.&lt;/li&gt;
+&lt;li&gt;Allow users to jump to the start/end of a video by clicking on time labels.&lt;/li&gt;
+&lt;li&gt;Added capability to play different projection types of VR videos continuously.&lt;/li&gt;
+&lt;li&gt;Support playing fullscreen video on a curved screen (fixes &lt;a href=&quot;https://github.com/Igalia/wolvic/issues/1055&quot;&gt;issue #1055&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;input&quot; tabindex=&quot;-1&quot;&gt;Input&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The keyboard now includes voice input, allowing users to dictate text directly into website fields&lt;/li&gt;
+&lt;li&gt;Multiple enhancements and fixes for Chinese and Japanese keyboards.&lt;/li&gt;
+&lt;li&gt;Resolved issues with voice input when the keyboard uses composing text.&lt;/li&gt;
+&lt;li&gt;Various other fixes and improvements in voice input, including default language selection.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;ui&quot; tabindex=&quot;-1&quot;&gt;UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Wolvic now supports downloading new 3D environments online. Access this feature through the “Environment” section in the Settings.&lt;/li&gt;
+&lt;li&gt;A new “Spring” environment is ready for download. Visit our repository at &lt;a href=&quot;https://github.com/Igalia/wolvic-3D-environments&quot;&gt;Wolvic 3D Environments on GitHub&lt;/a&gt; for updates and suggestions.&lt;/li&gt;
+&lt;li&gt;Enabled starting the app on passthrough mode.&lt;/li&gt;
+&lt;li&gt;Tray date now uses a dynamic format instead of hardcoded values.&lt;/li&gt;
+&lt;li&gt;Small UI improvements to the date/time picker.&lt;/li&gt;
+&lt;li&gt;Pointer’s appearance remains consistent when using hands or controllers&lt;/li&gt;
+&lt;li&gt;Unify tooltip sizes across devices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;security&quot; tabindex=&quot;-1&quot;&gt;Security&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Enabled the use of your system’s trusted root certificates (fixes &lt;a href=&quot;https://github.com/Igalia/wolvic/issues/489&quot;&gt;issue #489&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;Added option to clear all user data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;others&quot; tabindex=&quot;-1&quot;&gt;Others&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Build variants can now use different default homepages.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wolvic Enters Huawei App Gallery</title>
+    <link href="https://wolvic.com/blog/huawei-store/"/>
+    <updated>2023-10-25T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/huawei-store/</id>
+    <content xml:lang="en" type="html">&lt;style&gt;
+figure {max-inline-size: 100%; margin: auto;}
+figure.vert {max-width: 500px; margin: auto;}
+figure img {display: block; max-inline-size: 100%; margin-block-end: 0.25em; border: 1px solid hsla(0deg,0%,0%,0.33);}
+figcaption {text-align: center; font-style: italic;}
+&lt;/style&gt;
+&lt;p&gt;Today, we’re pleased to announce Wolvic has begun to land in mainland China with its approval to the Huawei App Gallery!&lt;/p&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://appgallery.huawei.com/#/app/C109193243&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/huawei_lens.png&quot; alt=&quot;Wolvic on Huawei VR Lens in Mainland China&quot; /&gt;
+&lt;/a&gt;
+&lt;figcaption&gt;Wolvic on Huawei VR Lens in Mainland China&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Until today, Wolvic was available for Huawei devices only by finding it through &lt;a href=&quot;https://wolvic.com/dl/&quot;&gt;our downloads page&lt;/a&gt; and installing the APK.  This required users to know about Wolvic, how to switch their device into developer mode, and how to install APKs.  There are many who fit those criteria, but many more who don’t.&lt;/p&gt;
+&lt;p&gt;We’re happy to be entering the Huawei App Gallery as an approved app, having passed review by the store’s curators and been cleared for wide availability.  This is a significant step forward for us, as it significantly lowers barriers to discovery, and opens another major market. Now, anyone in mainland China can find Wolvic by searching for Wolvic by name, or even just searching for the term “web browser” (whether in English or Chinese).  We can also provide &lt;a href=&quot;https://appgallery.huawei.com/#/app/C106964279&quot;&gt;a link right to it in the App Gallery&lt;/a&gt;!&lt;/p&gt;
+&lt;figure class=&quot;vert&quot;&gt;
+&lt;a href=&quot;https://appgallery.huawei.com/#/app/C109193243&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/huawei_app_gallery.jpg&quot; alt=&quot;Wolvic in the Huawei App Gallery&quot; /&gt;
+&lt;/a&gt;
+&lt;figcaption&gt;Wolvic in the Huawei App Gallery&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;The Wolvic pack continues to grow.  Pass it on!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Community Support</title>
+    <link href="https://wolvic.com/blog/Community/"/>
+    <updated>2023-11-13T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/Community/</id>
+    <content xml:lang="en" type="html">&lt;style&gt;
+figure {max-inline-size: 100%; margin: auto;}
+figure.vert {max-width: 500px; margin: auto;}
+figure img {display: block; max-inline-size: 100%; margin-block-end: 0.25em; border: 1px solid hsla(0deg,0%,0%,0.33);}
+figcaption {text-align: center; font-style: italic;}
+&lt;/style&gt;
+&lt;p&gt;We love hearing from our users.  There are already &lt;em&gt;lots&lt;/em&gt; of ways to get in touch with us:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Any of our social media accounts (&lt;a href=&quot;https://floss.social/@WolvicXR&quot;&gt;Mastodon&lt;/a&gt;, &lt;a href=&quot;https://bsky.app/profile/wolvicxr.bsky.social/&quot;&gt;BlueSky&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/wolvicxr&quot;&gt;X&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Filing &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;an issue on GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Our &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;feedback form&lt;/a&gt; - which you can even access easily from the speech bubble next to the URL bar in Wolvic itself!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Today, we’re expanding the community by creating a &lt;a href=&quot;https://discord.com/invite/WAuqrbAVbX&quot;&gt;Wolvic Discord&lt;/a&gt;.  We hope that people will come and share interesting sites and demos, discuss the browser and open source, ask questions, provide answers and really help build the community of Wolvic users.&lt;/p&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://discord.com/invite/WAuqrbAVbX&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/discord.png&quot; alt=&quot;The Wolvic Discord&quot; /&gt;
+&lt;/a&gt;
+&lt;figcaption&gt;Wolvic Discord: https://wolvic.com/en/discord&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&quot;support-swag&quot; tabindex=&quot;-1&quot;&gt;Support Swag&lt;/h2&gt;
+&lt;p&gt;We’ve also launched &lt;a href=&quot;https://wolvic.creator-spring.com/&quot;&gt;a cool swag store&lt;/a&gt; where you can buy some Wolvic-branded merch.  All proceeds go toward the development of Wolvic.&lt;/p&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.creator-spring.com/&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/swag.png&quot; alt=&quot;Our Swag Store&quot; /&gt;
+&lt;/a&gt;
+&lt;figcaption&gt;Our new swag store&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Did you know that Wolvic is developed by an open source cooperative, and does not currently receive any of the default-search funding that generally keeps similar projects going?  &lt;a href=&quot;https://opencollective.com/wolvic&quot;&gt;Donations directly to our open collective fund&lt;/a&gt; are very efficient, and appreciated as well.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wolvic 1.5.2 Released</title>
+    <link href="https://wolvic.com/blog/release_1.5.2/"/>
+    <updated>2023-12-11T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/release_1.5.2/</id>
+    <content xml:lang="en" type="html">&lt;style&gt;
+main ol li {margin-block-end: 0.5em;}
+main ol li a img {max-width: 25%; float: right; clear: right; margin-inline: 1em -1em; margin-block-end: 1em;}
+div.gallery {display: flex; gap: 1em; width: 100%;}
+div.gallery + div.gallery {margin-block-start: 1em;}
+div.gallery figure {max-inline-size: 50%; margin: 0;}
+div.gallery figure:only-child {max-inline-size: 100%;}
+div.gallery figure img {display: block; max-inline-size: 100%; margin-block-end: 0.25em; border: 1px solid hsla(0deg,0%,0%,0.33);}
+div.gallery figcaption {text-align: center; font-style: italic;}
+video {max-width: 100%;}
+
+.my-two-up {
+  --accent-colour: #56D;
+  --track-color: #56D;
+  --thumb-color: #56D;
+  --thumb-background: #CCF;
+  --thumb-size: 2rem;
+  --bar-size: 0.5rem;
+  --bar-touch-size: 4rem;
+}
+
+.my-two-up [class*=&quot;styles_two-up-handle&quot;]::before {
+	box-shadow: 0 0 0.5rem #FFFC, 0 0 0.75rem #FFFC, 0 0 1rem #FFFC;
+}
+&lt;/style&gt;
+&lt;p&gt;Hello, and welcome to Wolvic 1.5.2!  In this release, we’ve added some major quality of life improvements that allow users to move Wolvic windows aside or push them away from your viewpoint, vertical alignment of windows with different heights, a headlock ability to keep windows fixed directly in front of you at all times, and high-resolution rendering of web content.  In addition, we’ve added six new 3D environments to envelop you while you’re using Wolvic.  Let’s get into the details!&lt;/p&gt;
+&lt;p&gt;First, let’s talk about resolution.  Up until now, Wolvic’s windows on the Web used a default width and height of 768x432 “CSS pixels”, which essentially means the windows had the same visual appearance as a physical monitor with that resolution sitting a small distance away from the user.      Starting in 1.5.2, we are raising the default window dimensions from 768x432 to 1024x576, providing a great deal more room for Web content.  On some devices, we are also increasing the resolution that we use to render Web pages so they will look even crispier and more readable.  The combination of these two features makes for a dramatic improvement in visual quality of Web pages.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;two-up class=&quot;my-two-up&quot;&gt;
+  &lt;div&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.5.2-resolution-02.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.5.2-resolution-01.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;
+&lt;/two-up&gt;
+&lt;script src=&quot;https://wolvic.com/assets/js/two-up-min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+const twoUp = document.querySelector(&#39;.my-two-up&#39;);
+&lt;/script&gt;
+&lt;figcaption&gt;&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.2-resolution-02.jpeg&quot;&gt;Old&lt;/a&gt; vs. &lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.2-resolution-01.jpeg&quot;&gt;new&lt;/a&gt; resolution (drag slide bar to compare)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.2-res-old.png&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.5.2-res-old.png&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Old resolution&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.2-res-high.jpeg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.5.2-res-high.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;New resolution&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;With the change in resolution, you might want to change the apparent distance between yourself and Wolvic’s windows.  Fortunately, we’ve added an experimental setting that allows you to set that distance yourself, as shown in the following video clip.  This feature is still under development, so it may change a bit in future releases.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.5.2-distance.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.5.2-distance.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.2-distance.mp4&quot;&gt;Moving Wolvic’s windows further away&lt;/a&gt; (7.3 MB MP4, no audio)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;In addition to moving the windows further away, you can also slide them to one side or the other using the arrow-cross icon found in the window toolbar.  See the following video for a demonstration, which also shows off how differently-sized windows are vertically centered with each other.  This will hopefully reduce the amount of neck-craning you need to do to read tall windows.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.5.2-move-align-thumb.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.5.2-move-align.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.2-move-align.mp4&quot;&gt;Moving Wolvic’s vertically centered windows from side to side&lt;/a&gt; (15.2 MB MP4, no audio)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Yet another experimental feature is our new “headlock” setting, which anchors Wolvic windows to the center of your view no matter how you move your head.  This will cause an apparently rock-solid window to appear in front of a moving background, so if you’re prone to motion sickness, proceed with caution on this one.  On the flip side, if this is enabled, videos in fullscreen mode won’t be stuck in the environment, but will instead always appear in front of you, making it easier to recline or even lie down while watching video without losing sight of the window.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.5.2-headlock-thumb.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.5.2-headlock.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.2-headlock.mp4&quot;&gt;Fixing Wolvic to the center of the view&lt;/a&gt; (9.7 MB MP4, no audio)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;We’ve also added six new environments to our &lt;a href=&quot;https://github.com/Igalia/wolvic-3D-environments&quot;&gt;Wolvic 3D Environments&lt;/a&gt; GitHub repository, where you can contribute environments you’ve created (see the repository README for details).  To get access to these, open the Environment cell in Wolvic’s Settings menu, and Wolvic will automatically check the repository for any new environments.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.2-environments-03.jpeg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.5.2-environments-03-thumb.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Autumn Forest&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.2-environments-04.jpeg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.5.2-environments-04-thumb.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Basic Sky&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.2-environments-05.jpeg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.5.2-environments-05-thumb.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Barcelona Rooftops&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.2-environments-06.jpeg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.5.2-environments-06-thumb.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Night Forest With Aurora Sky&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.2-environments-07.jpeg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.5.2-environments-07-thumb.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Pretville Cinema&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.5.2-environments-08.jpeg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.5.2-environments-08-thumb.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Winter Night&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;As is usual, there are still more changes and updates listed in the notes below, including improved refresh rates on Oculus devices and improved desktop-mode handling on popular Chinese websites.  If you’ve found a new problem or have another issue, please &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;send us your feedback&lt;/a&gt; or, if you prefer, &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;file an issue on GitHub&lt;/a&gt;.  Thanks, and we hope you enjoy Wolvic 1.5.2!&lt;/p&gt;
+&lt;h2 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Increased the logical size and resolution of Web pages. The default window has a logical size of 1024x576 CSS pixels. We also use a higher resolution to render the Web page (the exact value depends on the device)&lt;/li&gt;
+&lt;li&gt;Added four new experimental features to provide more detailed control of the window environment:
+&lt;ul&gt;
+&lt;li&gt;Users can adjust the distance of browser windows, moving them closer or farther away&lt;/li&gt;
+&lt;li&gt;Vertically align browser windows of different heights&lt;/li&gt;
+&lt;li&gt;Ability to move windows horizontally around the user&lt;/li&gt;
+&lt;li&gt;Head lock: the browser window remains centered in the user’s view, which is useful for watching videos and also in the case of devices with a narrow field of view&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Added six new 3D environments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;Notes&lt;/h2&gt;
+&lt;h3 id=&quot;ui&quot; tabindex=&quot;-1&quot;&gt;UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Increased the logical size and resolution of Web pages. The default window has a logical size of 1024x576 CSS pixels. We also use a higher resolution to render the Web page (the exact value depends on the device)&lt;/li&gt;
+&lt;li&gt;Added four new experimental features to provide more detailed control of the window environment:
+&lt;ul&gt;
+&lt;li&gt;Users can adjust the distance of browser windows, moving them closer or farther away&lt;/li&gt;
+&lt;li&gt;Vertically align browser windows of different heights&lt;/li&gt;
+&lt;li&gt;Ability to move windows horizontally around the user&lt;/li&gt;
+&lt;li&gt;Head lock: the browser window remains centered in the user’s view, which is useful for watching videos and also in the case of devices with a narrow field of view&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Added six new 3D environments:
+&lt;ul&gt;
+&lt;li&gt;Autumn Forest&lt;/li&gt;
+&lt;li&gt;Basic Sky&lt;/li&gt;
+&lt;li&gt;Barcelona Rooftops&lt;/li&gt;
+&lt;li&gt;Night Forest With Aurora Sky&lt;/li&gt;
+&lt;li&gt;Pretville Cinema&lt;/li&gt;
+&lt;li&gt;Winter Night&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Now hiding brightness button when playing video in Passthrough&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;meta&quot; tabindex=&quot;-1&quot;&gt;Meta&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Adjusted device detection in the case of the Meta Quest 3&lt;/li&gt;
+&lt;li&gt;Moved to 90Hz refresh rate for Meta Quest 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;input&quot; tabindex=&quot;-1&quot;&gt;Input&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Removed duplicated suggestions in the URL bar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;others&quot; tabindex=&quot;-1&quot;&gt;Others&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added desktop-mode overrides for popular Chinese websites&lt;/li&gt;
+&lt;li&gt;Enabled setting the device name in Mozilla account and presenting it correctly to the user&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wolvic 1.6 Released</title>
+    <link href="https://wolvic.com/blog/release_1.6/"/>
+    <updated>2024-02-07T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/release_1.6/</id>
+    <content xml:lang="en" type="html">&lt;style&gt;
+main ol li {margin-block-end: 0.5em;}
+main ol li a img {max-width: 25%; float: right; clear: right; margin-inline: 1em -1em; margin-block-end: 1em;}
+div.gallery {display: flex; gap: 1em; width: 100%;}
+div.gallery figure {max-inline-size: 50%; margin: 0;}
+div.gallery figure:only-child {max-inline-size: 100%;}
+div.gallery figure img {display: block; max-inline-size: 100%; margin-block-end: 0.25em; border: 1px solid hsla(0deg,0%,0%,0.33);}
+div.gallery figcaption {text-align: center; font-style: italic;}
+video {max-width: 100%;}
+&lt;/style&gt;
+&lt;p&gt;Hello, and welcome to Wolvic 1.6!  Our focus for this release was mainly on bringing aboard a new supported device and firming up various things of core importance, and addressing lots of things that our users have helpfully provided feedback on, rather than adding too many splashy new features.  Let’s jump in and review.&lt;/p&gt;
+&lt;p&gt;First off, we’ve added the Pico Neo3 to our list of supported devices, so welcome to the pack, Neo3 users!  If you know someone with a Neo3, be sure to tell them!&lt;/p&gt;
+&lt;p&gt;We’ve also taken many suggestions toward improving fullscreen video viewing, including fixing problems some people were encountering with vertical videos on YouTube.  We think we’ve cleared this up, but if you run into fullscreen video viewing problems, let us know &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;via our feedback form&lt;/a&gt; or &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;file an issue on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.6-pico-shaikra.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.6-pico-shakira.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;Fully-visible vertical video (2.6MB MP4, audio)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;The upstream dependencies used in Wolvic have been upgraded to Gecko 121 and Android Components 121.1, bringing Wolvic up to the very end of 2023 in terms of standards support and relevant patches.  At the same time, we removed the telemetry privacy option on non-Huawei devices, since the Mozilla telemetry service we were using has already been disabled in Wolvic.  Those running Wolvic on Huawei devices retain their telemetry privacy option, as Huawei platforms have their own telemetry system.&lt;/p&gt;
+&lt;p&gt;Wolvic is interested in working everywhere, for everyone so we’ve also expanded our translations. Currently Wolvic is fully translated to English, Spanish, Portuguese (Portugal and Brazil), Chinese (traditional and simplified), Japanese, Korean, French, Danish, Swedish, and Galician. We’ve also focused a bit on the keyboard in general this release, improving the responsiveness and stability of the keyboard, and added an experimental autocomplete implementation for Latin-language keyboards.  You can enable it by going to &lt;strong&gt;Settings &amp;gt; Display&lt;/strong&gt; and then enabling “Latin Keyboard Input Auto-complete”.   The dictionaries for each language will be downloaded on demand.  Try it out, and send us feedback.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.6-text_autocomplete.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.6-text_autocomplete.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;Autocompleting text (5.9MB MP4, no audio)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;We’ve also added three new VR environments, from a calm country meadow to the depths of outer space.  To get access to these or any of the other available environments, go to &lt;strong&gt;Settings &amp;gt; Environment&lt;/strong&gt;, where Wolvic will automatically check the &lt;a href=&quot;https://github.com/Igalia/wolvic-3D-environments&quot;&gt;Wolvic 3D Environments&lt;/a&gt; GitHub repository for any new additions.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.6-abovetheclouds.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.6-abovetheclouds.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;Above the Clouds (8.9MB MP4, no audio)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.6-milkyway2020.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.6-milkyway2020.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;Milky Way (2020) (13.8MB MP4, no audio)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Those are the highlights for this release, but as always, there are still more changes and updates listed in the notes below.  If you’ve found a new problem or have another issue, please &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;send us your feedback&lt;/a&gt; or, if you prefer, &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;file an issue on GitHub&lt;/a&gt;.  Thanks, and we hope you enjoy Wolvic 1.6!&lt;/p&gt;
+&lt;h2 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Support fullscreen vertical videos.&lt;/li&gt;
+&lt;li&gt;Auto-completion support for Latin keyboards.&lt;/li&gt;
+&lt;li&gt;Better responsiveness and stability of keyboard input.&lt;/li&gt;
+&lt;li&gt;Support for the Pico Neo3.&lt;/li&gt;
+&lt;li&gt;Add new environments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;Notes&lt;/h2&gt;
+&lt;h3 id=&quot;ui&quot; tabindex=&quot;-1&quot;&gt;UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Support fullscreen vertical videos.&lt;/li&gt;
+&lt;li&gt;Improved support for fullscreen content in general.&lt;/li&gt;
+&lt;li&gt;Don’t use a fixed-width viewport for desktop mode. Note that desktop mode will still affect the browser’s User-Agent.&lt;/li&gt;
+&lt;li&gt;The preset buttons (1x, 2x, etc.) will resize a window according to its current aspect ratio.&lt;/li&gt;
+&lt;li&gt;Lower the maximum display DPI to 300, since larger values don’t work on most devices.&lt;/li&gt;
+&lt;li&gt;Curved display does not affect VR video.&lt;/li&gt;
+&lt;li&gt;Fix small issues when experimental UI settings are applied.&lt;/li&gt;
+&lt;li&gt;Fix and issue with display density when exiting VR video mode.&lt;/li&gt;
+&lt;li&gt;Fix a bug where the browser window may be transparent at startup.&lt;/li&gt;
+&lt;li&gt;Remove the telemetry privacy option, as the Mozilla telemetry service is currently disabled in Wolvic. This option remains on Huawei platforms, which use their own telemetry system.&lt;/li&gt;
+&lt;li&gt;Remove the unused crash-report setting.&lt;/li&gt;
+&lt;li&gt;Support courses.certify-ed.com&lt;/li&gt;
+&lt;li&gt;Add new environments.&lt;/li&gt;
+&lt;li&gt;Expanded translations. Currently Wolvic is fully translated to English, Spanish, Portuguese (Portugal and Brazil), Chinese (traditional and simplified), Japanese, Korean, French, Danish, Swedish, and Galician.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;input&quot; tabindex=&quot;-1&quot;&gt;Input&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Auto-completion support for Latin keyboards. This feature is currently disabled by default as we continue testing and polishing it. You can enable it in Settings, Display, Latin Keyboard Input Auto-complete. The dictionaries for each language will be downloaded on demand.&lt;/li&gt;
+&lt;li&gt;Better responsiveness and stability of keyboard input.&lt;/li&gt;
+&lt;li&gt;Don’t go back with the B and Y buttons in the controllers. This was rarely used and prevented WebXR apps from using those buttons.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;pico&quot; tabindex=&quot;-1&quot;&gt;Pico&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Support for the Pico Neo3.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;others&quot; tabindex=&quot;-1&quot;&gt;Others&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Improved stability at application launch, including error handling for voice recognition, session initialization, and VR infrastructure.&lt;/li&gt;
+&lt;li&gt;Upgrade our version of the Gecko Web engine to 121.0.1. Upgrade the Mozilla Android Components to 121.1.0.&lt;/li&gt;
+&lt;li&gt;Shrink the size of resources in release builds.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Chromium Backend Beta</title>
+    <link href="https://wolvic.com/blog/Chromium_Beta_APKs/"/>
+    <updated>2024-04-09T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/Chromium_Beta_APKs/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;We are very excited to announce our first beta of Chromium-backed Wolvic. We’re making early APKs available for sideloading via our &lt;a href=&quot;https://wolvic.com/dl/&quot;&gt;downloads page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The Chromium backend has some real technical advantages in terms of allowing our team to compete in the arenas where Wolvic is installed (AOS-based devices). This is a big deal since we are a small team, competing with giants who are already the de-facto defaults on their devices.  Let’s have a look…&lt;/p&gt;
+&lt;h2 id=&quot;performance-comparison&quot; tabindex=&quot;-1&quot;&gt;Performance Comparison&lt;/h2&gt;
+&lt;p&gt;First, there is an exciting boost in performance with the switch to a Chromium-based backend as you can see in the demo below:&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/chromium-v-gecko-fishes-poster.png&quot; muted=&quot;&quot; style=&quot;width: 100%;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/wolvichromium_medium.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;Chromium backend vs Gecko Backend WebGL Performance (2.6MB MP4, no audio)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;additional-apis%2Factive-support&quot; tabindex=&quot;-1&quot;&gt;Additional APIs/Active Support&lt;/h2&gt;
+&lt;p&gt;Because of when work stopped on Wolvic’s predecessor, and the fact that there weren’t other active downstream products funding development, the Gecko implementation also trailed feature-wise.  Because many parties who are building XR have been investing in Chromium, it has a lot of work upstream and adds support for the WebXR AR module, WebXR layers, hand tracking, and there is even more as under active development.&lt;/p&gt;
+&lt;p&gt;All of this means that Wolvic can be more competitive, more efficiently.&lt;/p&gt;
+&lt;h3 id=&quot;engine-diversity-and-future-plans&quot; tabindex=&quot;-1&quot;&gt;Engine Diversity and Future Plans&lt;/h3&gt;
+&lt;p&gt;We know that while this is very exciting and planned since our first announcement, many will have questions.  We wanted to offer a little more than just our excitement to help answer some of them.&lt;/p&gt;
+&lt;p&gt;This beta release is not a complete picture of our plans with Chromium. It does not, for example, support extensions or sync. It will as it matures.&lt;/p&gt;
+&lt;p&gt;We’re not immediately abandoning the Gecko version, we’ll continue to release Gecko-based APKs for some time.  That said, over time, its maintenance will slowly give way to maintenance of the Chromium version, unless we can find funding to specifically keep the Gecko version going (and make it competitive) long-term.&lt;/p&gt;
+&lt;p&gt;We do currently plan to ultimately switch to the Chromium build as our primary offering in stores in the near- to mid-term future as it matures.&lt;/p&gt;
+&lt;p&gt;The main reason for this is that Chromium is (currently) very advantaged, and doubly so in AOS-based devices.  Gecko simply does not have the same level of maintenance or development of its WebXR implementation. It doesn’t integrate well with the engine’s GPU process, nor does it currently receive development priority from Mozilla, which means no new features. Further, there is (&lt;a href=&quot;https://blogs.igalia.com/jani/bringing-webkit-back-to-android/&quot;&gt;currently, at least&lt;/a&gt;) no viable WebKit for Android competitor on which to build.&lt;/p&gt;
+&lt;p&gt;That said, Igalia remains committed to engine diversity, as exemplified by our work advancing &lt;a href=&quot;https://servo.org/&quot;&gt;Servo&lt;/a&gt; and &lt;a href=&quot;https://wpewebkit.org/&quot;&gt;WPE-WebKit&lt;/a&gt;, as well as our long &lt;a href=&quot;https://www.igalia.com/2023/08/14/Analyzing-Codebase-Contributions.html&quot;&gt;track record&lt;/a&gt; of merging improvements and new web features to WebKit, Gecko, and Chromium.  We also remain committed to using the best available solution for a given context, and in this context, Chromium is currently the best choice.  If that changes over time, we will be able to switch engines without breaking the Wolvic experience for our users, thanks to our work to make Wolvic engine-agnostic.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Magic Leap Joins the Pack</title>
+    <link href="https://wolvic.com/blog/magicleap/"/>
+    <updated>2024-04-09T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/magicleap/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;We are pleased to announce we are working with Magic Leap to bring our open source multi-window XR browser, built on the new Chromium backend, to a true AR device - Magic Leap 2 - for the first time.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://wolvic.com/assets/img/partners/magicleap.png&quot; alt=&quot;The Magic Leap Logo&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Magic Leap 2 is a true Augmented Reality device designed specifically for enterprise use. The lightweight headset is built for comfortable extended use, without compromising its robust compute capabilities. We are proud to be working with Magic Leap to provide their users with access to the Wolvic XR browser.&lt;/p&gt;
+&lt;p&gt;Magic Leap has been pioneering Augmented Reality (AR) technologies for more than a decade and is considered one of the leading companies in the XR industry. We’re very excited to bring Wolvic, the only multi-device, independent open-source XR browser to their device.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/3riUny4XWSg?si=rGSaUFfsYwC81ULB&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;This is another exciting new chapter in our development, and we’re looking forward to welcoming Magic Leap users to the pack.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Evolving the Wolvic interface</title>
+    <link href="https://wolvic.com/blog/ui-evolution/"/>
+    <updated>2024-04-17T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/ui-evolution/</id>
+    <content xml:lang="en" type="html">&lt;style&gt;
+main ol li {margin-block-end: 0.5em;}
+main ol li a img {max-width: 25%; float: right; clear: right; margin-inline: 1em -1em; margin-block-end: 1em;}
+div.gallery {display: flex; gap: 1em; width: 100%;}
+div.gallery figure {max-inline-size: 50%; margin: 0;}
+div.gallery figure:only-child {max-inline-size: 100%;}
+div.gallery figure img {display: block; max-inline-size: 100%; margin-block-end: 0.25em; border: 1px solid hsla(0deg,0%,0%,0.33);}
+div.gallery figcaption {text-align: center; font-style: italic;}
+video {max-width: 100%;}
+&lt;/style&gt;
+&lt;p&gt;Over the past year, we have been working hard at improving the user interface of Wolvic to make it more flexible and useful. This blog post looks back at what we have achieved so far (many arriving in 1.6) and outlines our plans for the future.&lt;/p&gt;
+&lt;h2 id=&quot;window-management&quot; tabindex=&quot;-1&quot;&gt;Window management&lt;/h2&gt;
+&lt;p&gt;We have added more flexibility to Wolvic’s window management, allowing you to move the browser windows closer or farther away, as well as supporting horizontal movement and vertical alignment.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/uievolution-windowmgmt.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/uievolution-windowmgmt.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/uievolution-windowmgmt.mp4&quot;&gt;Window management improvements&lt;/a&gt; (5.1 MB MP4, no audio)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;We have also implemented “head lock”, where the browser window remains centered in the field of view. This feature is particularly useful for watching videos and also comes in handy in the case of devices with a narrow field of view.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/uievolution-chaplin-headlock.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/uievolution-chaplin-headlock.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/uievolution-chaplin-headlock.mp4&quot;&gt;Headlock&lt;/a&gt; (7.0 MB MP4, no audio)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Our goal is to enable Wolvic to accommodate different types of tasks and workflows, with a user interface which is able to evolve from a simple and focused experience all the way to handling multiple documents simultaneously along with side windows for music, chat, or email.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/uievolution-spotify.jpg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/uievolution-spotify.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+&lt;figcaption&gt;Multitasking in Wolvic.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;The Wolvic user interface was originally conceived as having the windows placed on a cylinder around the user, with a maximum of three open at the same time. We intend to ease these limitations eventually, although this has to be done carefully so the application always remains clear and usable.&lt;/p&gt;
+&lt;h2 id=&quot;browsing-improvements&quot; tabindex=&quot;-1&quot;&gt;Browsing improvements&lt;/h2&gt;
+&lt;p&gt;Above all, Wolvic is a tool for browsing the Web and therefore we have strived to make that experience as great as possible.&lt;/p&gt;
+&lt;p&gt;Over the past months we have improved the resolution and detail of Web pages, making them much crispier and more detailed than before and giving websites more room to lay out their contents.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;two-up class=&quot;my-two-up&quot;&gt;
+  &lt;div&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/uievolution-sorolla768x432.jpg&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/uievolution-sorolla1280x720.jpg&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;
+&lt;/two-up&gt;
+&lt;script src=&quot;https://wolvic.com/assets/js/two-up-min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+const twoUp = document.querySelector(&#39;.my-two-up&#39;);
+&lt;/script&gt;
+&lt;figcaption&gt;&lt;a href=&quot;https://wolvic.com/assets/img/posts/uievolution-sorolla768x432.jpg&quot;&gt;Old (768x432)&lt;/a&gt; vs. &lt;a href=&quot;https://wolvic.com/assets/img/posts/uievolution-sorolla1280x720.jpg&quot;&gt;new (1280x720)&lt;/a&gt; resolution. Drag slide bar to compare.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Moreover, we have continued to add useful functionality like searching for text in the current page.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/uievolution-findinpage.jpg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/uievolution-findinpage.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+&lt;figcaption&gt;Search for text on any page.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;We are planning a number of changes to make Web brosing on Wolvic even more useful and convenient.&lt;/p&gt;
+&lt;p&gt;First of all, we will add zoom functionality, giving users more fine-grained control over how websites look.&lt;/p&gt;
+&lt;p&gt;Furthermore, we plan to introduce a New Tab page to provide direct access to search, recently visited sites, bookmarks, and so on.&lt;/p&gt;
+&lt;p&gt;Finally, we expand support for the WebXR APIs so you can experience a wider range of immersive and augmented experiences with improved performance.&lt;/p&gt;
+&lt;h2 id=&quot;personalization-and-3d-environment&quot; tabindex=&quot;-1&quot;&gt;Personalization and 3D environment&lt;/h2&gt;
+&lt;p&gt;On each release we add new environments so you can have more choices when it comes to personalizing the Wolvic workspace. Check out the repository at &lt;a href=&quot;https://github.com/Igalia/wolvic-3D-environments&quot;&gt;github.com/Igalia/wolvic-3D-environments&lt;/a&gt; for more information, as well as ways to contribute.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/uievolution-skyboxes.jpg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/uievolution-skyboxes.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+&lt;figcaption&gt;Some of the environments that we have recently added to Wolvic. &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Also related to the 3D environment is the “pass through” functionality, which brings the outside world inside the app.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/uievolution-passthrough.jpg&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/uievolution-passthrough.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/uievolution-passthrough.mp4&quot;&gt;Seeing Wolvic in reality&lt;/a&gt; (5.0MB MP4, no audio)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;input&quot; tabindex=&quot;-1&quot;&gt;Input&lt;/h2&gt;
+&lt;p&gt;We have iteratively improved the precision of hand tracking and the rendering of hands in the 3D world, and also introduced convenient gestures.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/uievolution-handtracking.jpg&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/uievolution-handtracking.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/uievolution-handtracking.mp4&quot;&gt;Hand tracking and gestures on Oculus Quest&lt;/a&gt; (6.7MB MP4, no audio)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;We have added voice recognition to the on-screen keyboard.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.5.1-pico-voice.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/pico_voice_01.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/pico_voice_01.mp4&quot;&gt;Using speech recognition to run a web search&lt;/a&gt; (4.8MB MP4, no audio)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Moreover, we have implemented text autocompletion for Latin and Asian languages.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.6-text_autocomplete.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.6-text_autocomplete.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.6-text_autocomplete.mp4&quot;&gt;Autocompleting text&lt;/a&gt; (5.9MB MP4, no audio)
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Even after all this progress, there is still a lot of work left to do in terms of input. We are working on supporting Bluetooth keyboards so that entering text becomes much easier, and we also intend to refine our voice recognition and use in as many places as possible throughout the app.&lt;/p&gt;
+&lt;h2 id=&quot;library&quot; tabindex=&quot;-1&quot;&gt;Library&lt;/h2&gt;
+&lt;p&gt;The Wolvic Library is available from the tray and includes different kinds of information: bookmarks, downloads, history, extensions, etc.&lt;/p&gt;
+&lt;p&gt;It might not be obvious to the user that the “Library” is the place to find all of these, so we are reorganizing the UI and moving each component to where it makes the most sense.&lt;/p&gt;
+&lt;p&gt;The Library button in the tray will be eventually replaced by direct access to your Bookmarks and Downloads. History will become a section in the Bookmarks. Search functionality will be added to Bookmarks, History, and Downloads.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/uievolution-librarychanges.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/uievolution-librarychanges.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/a&gt;
+&lt;figcaption&gt;Planned changes to Bookmarks and History.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Web Apps are a powerful concept that we want to evolve, making them feel more like real apps. We are considering adding a list of recent Web Apps to the tray, along with an Edit button to manage them.&lt;/p&gt;
+&lt;p&gt;Finally, Web Extensions will be accessed via the Settings window.&lt;/p&gt;
+&lt;p&gt;We already have an experimental implementation of these changes in this PR and we will keep on refining it over the coming months: &lt;a href=&quot;https://github.com/Igalia/wolvic/pull/881&quot;&gt;github.com/Igalia/wolvic/pull/881&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;tabs&quot; tabindex=&quot;-1&quot;&gt;Tabs&lt;/h2&gt;
+&lt;p&gt;Currently, tabs in Wolvic are hidden behind a button that displays them in a list. Furthermore, this list includes tabs from every window and is ordered by the most recently used, which means that tabs don’t stay in the same position and that there isn’t a clear spatial link between windows and tabs.&lt;/p&gt;
+&lt;p&gt;All of this makes it difficult to switch between open tabs; as a result, the browsing experience is not as fluid as it could be.&lt;/p&gt;
+&lt;p&gt;We intend to position tabs on the side of the window for better visibility, thus associating tabs with specific windows, which allows for easier organization. We also want to add customization options, so tabs can be displayed on different sides of the window and so they can be sorted according to different criteria.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/uievolution-tabs.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/uievolution-tabs.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/a&gt;
+&lt;figcaption&gt;
+Browser window with tabs on the side.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;conclusion&quot; tabindex=&quot;-1&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;A broad overview of our plans is detailed at &lt;a href=&quot;https://github.com/Igalia/wolvic/wiki/Future-UI-evolution&quot;&gt;github.com/Igalia/wolvic/wiki/Future-UI-evolution&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The field of XR is new and continuously evolving, so we expect that each new functionality will need to be iteratively improved over time. A key part of this is to gather feedback from our users. Here are some of the ways in which you can get in touch with the Wolvic team:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Social media: &lt;a href=&quot;https://floss.social/@WolvicXR&quot;&gt;Mastodon&lt;/a&gt;, &lt;a href=&quot;https://bsky.app/profile/wolvicxr.bsky.social/&quot;&gt;BlueSky&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/wolvicxr&quot;&gt;X/Twitter&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Filing &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;an issue on GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Our &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;feedback form&lt;/a&gt; - which can also be accessed easily from Wolvic.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://discord.com/invite/WAuqrbAVbX&quot;&gt;Wolvic Discord&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thank you so much for your support, and please get in touch with your suggestions and feedback.&lt;/p&gt;
+&lt;p&gt;This work has been funded through &lt;a href=&quot;https://nlnet.nl/entrust&quot;&gt;NGI0 Entrust&lt;/a&gt;, a fund established by &lt;a href=&quot;https://nlnet.nl/&quot;&gt;NLnet&lt;/a&gt; with financial support from the European Commission’s &lt;a href=&quot;https://ngi.eu/&quot;&gt;Next Generation Internet&lt;/a&gt; program, under the aegis of &lt;a href=&quot;https://commission.europa.eu/about-european-commission/departments-and-executive-agencies/communications-networks-content-and-technology_en&quot;&gt;DG Communications Networks, Content and Technology&lt;/a&gt; under grant agreement No 101069594. More details at &lt;a href=&quot;https://nlnet.nl/project/Wolvic/&quot;&gt;nlnet.nl/project/Wolvic&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://nlnet.nl/&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/partners/nlnet-banner.png&quot; alt=&quot;NLnet foundation logo&quot; width=&quot;20%&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://nlnet.nl/entrust&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/partners/nlnet-NGI0Entrust_tag.svg&quot; alt=&quot;NGI Zero Logo&quot; width=&quot;20%&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wolvic 1.6.1 Released</title>
+    <link href="https://wolvic.com/blog/release_1.6.1/"/>
+    <updated>2024-05-24T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/release_1.6.1/</id>
+    <content xml:lang="en" type="html">&lt;style&gt;
+main ol li {margin-block-end: 0.5em;}
+main ol li a img {max-width: 25%; float: right; clear: right; margin-inline: 1em -1em; margin-block-end: 1em;}
+main img.illus {float: right; max-width: 45%;
+	shape-outside: polygon(43.15% 0%, 100% 0%, 100% 100%, 42.24% 100%, 39.9% 90.86%, 41.75% 82.1%, 48.23% 74.83%, 62.25% 66.49%, 68.96% 58.64%, 73.46% 46.49%, 45.25% 46.42%, 26.29% 40.35%, 11.17% 28.45%, 6.13% 25.73%, 4.8% 15.61%);
+	shape-margin: 1em;
+	margin-inline: 0 -10%;
+	filter: drop-shadow(0 0 4px #FFF);
+	opacity: 0.9;}
+div.gallery {display: flex; flex-wrap: wrap; gap: 1em; width: 100%;}
+div.gallery figure {max-inline-size: 45%; margin: 0;}
+div.gallery figure:only-child {max-inline-size: 100%;}
+div.gallery figure img {display: block; max-inline-size: 100%; margin-block-end: 0.25em; border: 1px solid hsla(0deg,0%,0%,0.33);}
+div.gallery figcaption {text-align: center; font-style: italic; padding-block: 0 1.5em;}
+video {max-width: 100%;}
+&lt;/style&gt;
+&lt;p&gt;Greetings, and welcome to this first update release of the 1.6 family of Wolvic!  This continues our development of the Gecko-based branch of Wolvic.  (If you’re interested in Wolvic but need a Chromium-driven version, &lt;a href=&quot;https://wolvic.com/blog/Chromium_Beta_APKs/&quot;&gt;our beta release of WolviChromium&lt;/a&gt; should get an update in the near future.)&lt;/p&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.6.1-huawei-vision-glass.png&quot; class=&quot;illus&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;The big changes in this release are focused on the sizing of windows, and also the addition of support for the &lt;a href=&quot;https://www.huaweicentral.com/huawei-vision-glass-vr-ar-everything-you-need-to-know/&quot;&gt;Huawei Vision Glass&lt;/a&gt;, a set of smart glasses which are tethered to the smartphone and can display high-definition videos and immersive content. The phone itself can be used as a controller, with a new secondary UI that includes a touchpad and media controls.  We’ve restored the ability to go back a page using the B and Y buttons on the controller, at least for those controllers that have them, after hearing from a number of users who really valued that feature.&lt;/p&gt;
+&lt;p&gt;Viewing videos in VR environments can be a little challenging sometimes.  In 1.6.1, we’ve improved the logic around resizing video media so that the aspect ratio of the video is honored as much as possible, while keeping the window size within a sensible range.  This means both widescreen and vertical video should get a much better presentation when using “fullscreen” mode, as shown in the following videos.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.6.1-video_resize_godzilla.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.6.1-video_resize_godzilla.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;Improved “fullscreen” presentation of a cinema-size video (8.3 MB MP4, audio)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.6.1-vertical_video_eilish.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.6.1-vertical_video_eilish.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;“Fullscreen” vertical videos now appear larger and waste less screen space (6.5 MB MP4, audio)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;We’ve also made it so fully-immersive videos can be reoriented to have “forward” appear in front of you regardless of your physical position.  This fixes a problem some people may have had when lying down and discovering all they could see was the top of the skybox.&lt;/p&gt;
+&lt;p&gt;If you enjoy immersive experiences, we have four new environments coming with 1.6.1.  All four are now available through Wolvic’s &lt;strong&gt;Settings &amp;gt; Environment&lt;/strong&gt; dialog, where any new additions to the Wolvic 3D Environments GitHub repository will appear and be available for download.  Our thanks to &lt;a href=&quot;https://www.flickr.com/people/vitroids/&quot;&gt;Masakazu Matsumoto&lt;/a&gt;, &lt;a href=&quot;https://www.flickr.com/people/gadl/&quot;&gt;Alexandre Duret-Lutz&lt;/a&gt;, and &lt;a href=&quot;https://www.flickr.com/people/simoninns/&quot;&gt;Simon Inns&lt;/a&gt; for releasing their works under the &lt;a href=&quot;https://creativecommons.org/licenses/by/2.0/&quot;&gt;CC BY 2.0 license&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.6.1-double-arch.jpg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.6.1-double-arch.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Double Arch by Masakazu Matsumoto&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.6.1-japanese-garden.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.6.1-japanese-garden.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Japanese garden by Masakazu Matsumoto&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.6.1-ploumanach.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.6.1-ploumanach.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Ploumanac&#39;h by Alexandre Duret-Lutz&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.6.1-tullinge.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.6.1-tullinge.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Tullinge by Simon Inns&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Along with those changes, there were a &lt;em&gt;lot&lt;/em&gt; of bugs fixed and stabilities improved, as shown in the Notes section at the end of this post.  If you’ve found a new problem or have another issue, please &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;send us your feedback&lt;/a&gt; or, if you prefer, &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;file an issue on GitHub&lt;/a&gt;.  Thanks, and we hope you enjoy Wolvic 1.6.1!&lt;/p&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;Notes&lt;/h2&gt;
+&lt;h3 id=&quot;ui&quot; tabindex=&quot;-1&quot;&gt;UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Immersive videos can be reoriented along the vertical axis. A long press on the controller’s Home button will reorient the video in the direction of your gaze. Note that this works on pages that serve video content directly (e.g. YouTube) but not on those that use their own WebXr player.&lt;/li&gt;
+&lt;li&gt;Clearer logic for resizing: we set a maximum and minimum size and allow for consistent size changes between those boundaries, preserving the current aspect ratio as much as possible.&lt;/li&gt;
+&lt;li&gt;Preserve the suggested URL when you click the “go” button in the keyboard.&lt;/li&gt;
+&lt;li&gt;Widgets like dialogs and the keyboard will be displayed on a flat surface and oriented towards the user, which makes them more visible in all cases.&lt;/li&gt;
+&lt;li&gt;Fix some issues related to recentering and headlock.&lt;/li&gt;
+&lt;li&gt;Display an explanation before requesting a permission (HVR in China)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;input&quot; tabindex=&quot;-1&quot;&gt;Input&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The buttons B/Y can be used to go back to the previous page, when you are not inside an immersive WebXR application.&lt;/li&gt;
+&lt;li&gt;Enable the full range of hand motion, which improves the accuracy of hand tracking.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;content&quot; tabindex=&quot;-1&quot;&gt;Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Ensure that several websites work properly: Google Meet, Soundcloud, museodelprado.es, zingmp3.vn, nhaccuatui.com&lt;/li&gt;
+&lt;li&gt;Restart Wolvic after the user signs out from their Mozilla account and clears the contents of the Library.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;huawei-vision-glass&quot; tabindex=&quot;-1&quot;&gt;Huawei Vision Glass&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;This version introduces support for the Huawei Vision Glass, a set of AR glasses which are tethered to the smartphone and can display immersive content. The phone itself can be used as a controller, with a new secondary UI that includes a touchpad and media controls.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;others&quot; tabindex=&quot;-1&quot;&gt;Others&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The app version code will be autogenerated from now on, based on the date when a package was created.&lt;/li&gt;
+&lt;li&gt;Refresh battery levels less frequently, which helps preserve battery, and improve how the current battery level is displayed.&lt;/li&gt;
+&lt;li&gt;Remove the passthrough layer when entering immersive mode on Meta and other platforms, which improves performance and avoids glitches.&lt;/li&gt;
+&lt;li&gt;Many, many bugfixes and stability improvements.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Igalia and Wolvic at AWE USA 2024</title>
+    <link href="https://wolvic.com/blog/awe-announcements-2024/"/>
+    <updated>2024-06-17T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/awe-announcements-2024/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;The Wolvic team from Igalia will be attending &lt;a href=&quot;https://www.awexr.com/usa-2024/&quot;&gt;AWE USA&lt;/a&gt; in Long Beach, California on June 18-20, 2024. The team is looking forward to highlighting some of the work they’ve been doing with partners as well as showcasing the work with Wolvic on a Chromium backend. If you’re attending, please stop by the booth to chat with team or try out Wolvic on any of the devices they’ll have with them.&lt;/p&gt;
+&lt;h3 id=&quot;upcoming%3A-wolvic-on-chromium-1.0.0&quot; tabindex=&quot;-1&quot;&gt;Upcoming: Wolvic on Chromium 1.0.0&lt;/h3&gt;
+&lt;p&gt;Igalia is excited to announce the upcoming release of Wolvic on a Chromium backend. While Wolvic remains an engine-agnostic browser, the team has been hard at work to get Wolvic on Chromium to a stable place, and this backend switch brings us a more competitve edge with many benefits.&lt;/p&gt;
+&lt;p&gt;Wolvic gains a huge performance boost in switching to the Chromium backend, as well as new APIs and better support for the WebXR AR module and WebXR layers.&lt;/p&gt;
+&lt;p&gt;You can test out version 0.9.1 before 1.0.0 ships later this month. &lt;a href=&quot;https://github.com/Igalia/wolvic/releases/tag/v0.9.1-chromium-beta&quot;&gt;Find the APKs on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;partnering-with-magic-leap&quot; tabindex=&quot;-1&quot;&gt;Partnering with Magic Leap&lt;/h3&gt;
+&lt;p&gt;Back in April, we announced our partnership with Magic Leap to bring Wolvic to their AR devices. We’re excited to showcase what we’ve been working on with Magic Leap. If you’re attending AWE US, please stop by the Igalia booth to test out Wolvic on Magic Leap’s devices.&lt;/p&gt;
+&lt;h3 id=&quot;vision-glass-support&quot; tabindex=&quot;-1&quot;&gt;Vision Glass Support&lt;/h3&gt;
+&lt;p&gt;Wolvic has recently introduced support for another device, the Huawei Vision Glass, a set of AR glasses that are tethered to a smartphone and can display immersive content, while the phone itself can be used a controller. This new way of interacting with content features a new secondary UI with touchpad and media controls on the tethered phone. You can stop by the Igalia booth to also try out this device.&lt;/p&gt;
+&lt;p&gt;We’ll have a few other devices that showcase Wolvic so you can see what the team has been up to. We’re also interested in collecting feedback about Wolvic and will have a survey available. If you’re not attending AWE USA but would still like to participate, you can help us make Wolvic better by &lt;a href=&quot;https://forms.gle/QNerymYk3rcDEdZb7&quot;&gt;taking the survey&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wolvic Chromium 0.9.1 Released</title>
+    <link href="https://wolvic.com/blog/chromium_release_0.9.1/"/>
+    <updated>2024-06-17T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/chromium_release_0.9.1/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Hello, and welcome to the v0.9.1 Wolvic Chromium beta! We’ve been working to make improvements to Wolvic running on Chromium’s backend. This is a smaller update with bug fixes and enhancements before we get ready to launch v1.0 for Chromium later this month.&lt;/p&gt;
+&lt;p&gt;This is the second and last release of 0.9.x series of Wolvic with the Chromium backend. The next version, v1.0, will be released in some stores so you won’t have to sideload it.&lt;/p&gt;
+&lt;p&gt;This v0.9.1 brings all the latest bug fixes and enhancements from the &lt;a href=&quot;https://github.com/Igalia/wolvic/releases/tag/v1.6.1&quot;&gt;latest Gecko-based v1.6.1&lt;/a&gt; plus some specifics related to the use of Chromium as the Web Engine. The main highlights are the upgrade from Chromium M121 to M124 and also support for the OpenXR hand interaction profile for much better hand tracking in selected supported devices&lt;/p&gt;
+&lt;h2 id=&quot;chromium-improvements&quot; tabindex=&quot;-1&quot;&gt;Chromium improvements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Upgraded Chromium version from M121 to M124&lt;/li&gt;
+&lt;li&gt;Fixed a crash in media permissions&lt;/li&gt;
+&lt;li&gt;Fixed an orientation issue when entering WebXR experiences&lt;/li&gt;
+&lt;li&gt;Fixed a reference space reset happening on every frame&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;wolvic-improvements&quot; tabindex=&quot;-1&quot;&gt;Wolvic improvements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Everything mentioned in the &lt;a href=&quot;https://github.com/Igalia/wolvic/releases/tag/v1.6.1&quot;&gt;v1.6.1 release notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Added support for OpenXR hand interaction profile for devices supporting the &lt;code&gt;XR_EXT_hand_interaction&lt;/code&gt; extension&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wolvic 1.7 Released</title>
+    <link href="https://wolvic.com/blog/release_1.7/"/>
+    <updated>2024-08-23T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/release_1.7/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Welcome to Wolvic 1.7.  This release brings updated web engines, improved window handling, OpenXR-enabled hand tracking, and… OpenXR eye tracking!&lt;/p&gt;
+&lt;p&gt;Let’s take that last point first, because it’s a huge leap forward in user interaction even in early implementation.  You know how some XR devices use where you’re looking as a cue for what to do or activate?  Wolvic now supports this on any device that has eye tracking capabilities that are exposed via &lt;a href=&quot;https://www.khronos.org/OpenXR/&quot;&gt;OpenXR&lt;/a&gt;.  Look at a link, see its “hover” styles.  Pinch your fingers or click a controller button, and follow that link you’re looking at.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.7-openxr-eye-tracking.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.7-openxr-eye-tracking.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;OpenXR eye tracking, including preferences to enable it (8.4MB MP4, audio)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;You’ve probably seen this kind of thing in ads and reviews of Apple’s Vision Pro, and we’re beyond thrilled to have brought similar features to Wolvic.  This is still in its early implementation, so there may be oddities and glitches.  If you encounter them, please let us know using the &lt;a href=&quot;https://wolvic.com/blog/release_1.4/&quot;&gt;feedback feature built into Wolvic&lt;/a&gt;!  We plan to make eye tracking better and better, and knowing what goes awry is a big part of that.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you’re going to try out eye tracking, as we hope you do, please note that it requires good eye-tracking calibration for best results.  If you find that the tracking target seems off, please use your device’s calibration routines to make sure you have good tracking.  If you do and the tracking target is still off in Wolvic, we definitely want to know.&lt;/p&gt;
+&lt;p&gt;Beyond eye tracking, we’ve extended our OpenXR hand tracking, permitting the use of profiles that allow us to track input from hands the same way we track input from physical controllers.  This is currently being used on the Magic Leap 2; here’s a quick capture of using Wolvic’s OpenXR hand tracking on a Magic Leap 2.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.7-openxr-hand-tracking.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.7-openxr-hand-tracking.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;OpenXR pinch-dragging and -clicking (12.3MB MP4, no audio)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;The web rendering engine in the Gecko version of Wolvic is now up to Gecko 128 ESR, and our AndroidComponents engine version is also at v128.  This will bring Wolvic’s rendering up to par with the latest desktop and mobile browsers.&lt;/p&gt;
+&lt;p&gt;After some great feedback on the new window behaviors introduced in &lt;a href=&quot;https://wolvic.com/blog/release_1.6.1/&quot;&gt;Wolvic 1.6.1&lt;/a&gt;, we’ve refined window sizing and placement, both “fullscreen” and otherwise.  Along with that, we brought back the address bar for all windows, which includes media controls if the window is showing playable media.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.7-title-bar-and-media.jpg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.7-title-bar-and-media.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Address bars on both windows, including a play button for the paused video of that guy who kinda looks like Tony Hawk&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;In individual-device news, we’ve added support for various platform-specific features, such as voice search and input on VisionGlass.  And, as is becoming tradition, we’ve added some new VR environments, from a fountain park in Japan to Notre-Dame on a rainy night to the sunny Dutch countryside to a windswept California shore.  All four are now available through Wolvic’s &lt;strong&gt;Settings &amp;gt; Environment&lt;/strong&gt; dialog, where any new additions to the Wolvic 3D Environments GitHub repository will appear and be available for download.  Our thanks to &lt;a href=&quot;https://www.flickr.com/photos/54144402@N03/&quot;&gt;Bob Dass&lt;/a&gt;, &lt;a href=&quot;https://www.flickr.com/photos/gadl/&quot;&gt;Alexandre Duret-Lutz&lt;/a&gt;, &lt;a href=&quot;https://flickr.com/photos/aldo/&quot;&gt;Aldo Hoeben&lt;/a&gt;, and &lt;a href=&quot;https://www.flickr.com/photos/heiwa4126/&quot;&gt;Masato OHTA&lt;/a&gt; for releasing their works under the &lt;a href=&quot;https://creativecommons.org/licenses/by/2.0/&quot;&gt;CC BY 2.0&lt;/a&gt; or  &lt;a href=&quot;https://creativecommons.org/licenses/by-NC/2.0/&quot;&gt;CC BY-NC 2.0&lt;/a&gt; licenses.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.7-wadekura.jpg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.7-wadekura.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;“Wadakura fountain park - Lightopia 2009” by Masato OHTA&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Those are the highlights for 1.7, but as always, there are still more changes and updates listed in the notes below.  If you’ve found a new problem or have another issue, please &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;send us your feedback&lt;/a&gt; or, if you prefer, &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;file an issue on GitHub&lt;/a&gt;.  Thanks, and we hope you enjoy Wolvic 1.7!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(26 Aug 2024: Updated to more accurately describe the state of OpenXR hand tracking.)&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Bring back the title bar widget.&lt;/li&gt;
+&lt;li&gt;Add the hand interaction input profile.&lt;/li&gt;
+&lt;li&gt;Support eye-tracking navigation.&lt;/li&gt;
+&lt;li&gt;Update the Gecko version to v128.&lt;/li&gt;
+&lt;li&gt;Many bugfixes and stability improvements.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;Notes&lt;/h2&gt;
+&lt;h3 id=&quot;ui&quot; tabindex=&quot;-1&quot;&gt;UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Bring back the title bar widget, a small element that provides information and quick media actions for windows that don’t have the focus.&lt;/li&gt;
+&lt;li&gt;Don’t reduce the size of the window when we go to fullscreen, which used to happen in some cases.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;input&quot; tabindex=&quot;-1&quot;&gt;Input&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Add the hand interaction input profile, via OpenXR’s &lt;code&gt;XR_EXT_hand_interaction&lt;/code&gt; extension. This allows us to use the OpenXR input model for hand tracking and gestures, instead of relying on vendor-specific extensions.&lt;/li&gt;
+&lt;li&gt;Support eye-tracking navigation via OpenXR’s &lt;code&gt;XR_EXT_eye_gaze_interaction&lt;/code&gt; extension. Users are able to navigate with their gaze while using their hands or controllers for other input actions. Wolvic will ask for permission before enabling this feature.&lt;/li&gt;
+&lt;li&gt;Clean up and polish a lot of our input-related code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;content&quot; tabindex=&quot;-1&quot;&gt;Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Update the Gecko version to v128. This required updating some GeckoView APIs, as well as Mozilla’s Android Components to the new version.&lt;/li&gt;
+&lt;li&gt;Support OpenXR’s &lt;code&gt;XR_EXT_view_configuration_depth_range&lt;/code&gt; extension, which provides additional graphical information which will help us improve Wolvic’s performance.&lt;/li&gt;
+&lt;li&gt;Fix layout errors when YouTube and other pages are displayed on a very large screen.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;huawei-vision-glass&quot; tabindex=&quot;-1&quot;&gt;Huawei Vision Glass&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Voice input can be triggered from the phone UI. If the user is editing a text field, the spoken words will be added to it. Otherwise, the words will be used to launch a search.&lt;/li&gt;
+&lt;li&gt;The phone UI can be used for seeking backward and forward in the currently playing media, even if it is not in fullscreen.&lt;/li&gt;
+&lt;li&gt;Back button works as expected if used before we have entered immersive mode.&lt;/li&gt;
+&lt;li&gt;Multiple improvements in stability and functionality.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;others&quot; tabindex=&quot;-1&quot;&gt;Others&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Many bugfixes and stability improvements.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wolvic Chromium 1.0 Released</title>
+    <link href="https://wolvic.com/blog/chromium_release_1.0/"/>
+    <updated>2024-09-17T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/chromium_release_1.0/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Hello, and welcome to a major milestone: the 1.0 version of our Chromium-backed Wolvic is now available!  This release brings the Chromium variant much closer to parity with &lt;a href=&quot;https://wolvic.com/blog/release_1.7/&quot;&gt;Gecko Wolvic v1.7&lt;/a&gt; feature set. Among other things, this means Chromium Wolvic &lt;strong&gt;now supports navigation via eye tracking&lt;/strong&gt;.  Paired with the hand-tracking support that was already present, you can now look at what you want to activate and make a pinch gesture to do so.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/chr1.0-eye-tracking.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/chr1.0-eye-tracking.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;Eye tracking navigation, including how to enable it (13.4MB MP4, no audio)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;This is still in its early implementation, so there may be oddities and glitches. If you encounter them, please let us know using the &lt;a href=&quot;https://wolvic.com/blog/release_1.4/&quot;&gt;feedback feature built into Wolvic&lt;/a&gt;! We plan to make eye tracking better and better, and knowing what goes awry is a big part of that.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you try out eye tracking, as we hope you will, remember that it requires good eye-tracking calibration for best results. If you feel like the tracking is off, please use your device’s calibration routines to make sure you have good tracking. If you do that and the tracking target is still off in Wolvic, we definitely want to know.&lt;/p&gt;
+&lt;p&gt;We’ve also refined window sizing and placement, both “fullscreen” and otherwise. Along with that, we brought back the address bar for all windows, which includes media controls if the window is showing playable media.&lt;/p&gt;
+&lt;p&gt;If you ran into problems with setting the 3D environment before v1.0, we’ve addressed a glitch and added 18 new environments.  All of them are available through Wolvic’s &lt;strong&gt;Settings &amp;gt; Environment&lt;/strong&gt; dialog, where any new additions to the Wolvic 3D Environments GitHub repository are available for download.  Here are just a few!&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.6.1-double-arch.jpg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.6.1-double-arch.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Double Arch by Masakazu Matsumoto&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.6.1-japanese-garden.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.6.1-japanese-garden.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Japanese garden by Masakazu Matsumoto&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.6.1-ploumanach.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.6.1-ploumanach.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Ploumanac&#39;h by Alexandre Duret-Lutz&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.6.1-tullinge.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.6.1-tullinge.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Tullinge by Simon Inns&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Beyond all that, we’ve made a lot of stability fixes, added some OpenXR features, and brought support up to the latest OS versions.  We enabled password autocompletion in private browsing sessions.  There are also some device-specific fixes in this release, which you can read about in the Notes, below.&lt;/p&gt;
+&lt;p&gt;Those are the highlights for this milestone, but as always, there are still more changes and updates listed in the notes below. If you’ve found a new problem or have another issue, please &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;send us your feedback&lt;/a&gt; or, if you prefer, &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;file an issue on GitHub&lt;/a&gt;. Thanks, and we really hope you enjoy Wolvic Chromium 1.0!&lt;/p&gt;
+&lt;h2 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Eye tracking for navigation&lt;/li&gt;
+&lt;li&gt;Fullscreen windows enhancements&lt;/li&gt;
+&lt;li&gt;Title bar widget&lt;/li&gt;
+&lt;li&gt;Stability fixes&lt;/li&gt;
+&lt;li&gt;Support for newest OS&lt;/li&gt;
+&lt;li&gt;Added 18 new environments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;Notes&lt;/h2&gt;
+&lt;h3 id=&quot;ui&quot; tabindex=&quot;-1&quot;&gt;UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Eye tracking support for navigation&lt;/li&gt;
+&lt;li&gt;Improve fullscreen windows resizing&lt;/li&gt;
+&lt;li&gt;Enhanced calculation of fullscreen initial size&lt;/li&gt;
+&lt;li&gt;Bring back the title bar widget&lt;/li&gt;
+&lt;li&gt;Enable password autocomplete in private browsing sessions&lt;/li&gt;
+&lt;li&gt;Forward haptic feedback to the correct controller&lt;/li&gt;
+&lt;li&gt;Fix crashes when voice recogniser could not be properly initialised&lt;/li&gt;
+&lt;li&gt;Added 18 new environments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;chromium&quot; tabindex=&quot;-1&quot;&gt;Chromium&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix text input fields not getting keyboard focus&lt;/li&gt;
+&lt;li&gt;Prevent a crash when downloading files&lt;/li&gt;
+&lt;li&gt;Disable Gecko-only features in the UI&lt;/li&gt;
+&lt;li&gt;Added support for &lt;a href=&quot;https://matterport.com/&quot;&gt;matterport.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;openxr&quot; tabindex=&quot;-1&quot;&gt;OpenXR&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Always use hand interaction profile if available&lt;/li&gt;
+&lt;li&gt;Fix a regression when emulating a controller in WebXR&lt;/li&gt;
+&lt;li&gt;Do not process button states when not ready&lt;/li&gt;
+&lt;li&gt;Enable &lt;code&gt;XR_EXT_view_configuration_depth_range&lt;/code&gt; to improve near/far clipping&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;library%2Finfra-upgrades&quot; tabindex=&quot;-1&quot;&gt;Library/Infra upgrades&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Bump &lt;code&gt;com.android.tools:r8&lt;/code&gt; from 8.3.37 to 8.5.35&lt;/li&gt;
+&lt;li&gt;Bump &lt;code&gt;androidx.fragment:fragment&lt;/code&gt; from 1.7.1 to 1.8.2&lt;/li&gt;
+&lt;li&gt;Bump &lt;code&gt;gradle/actions&lt;/code&gt; from 3 to 4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;device-specific-features&quot; tabindex=&quot;-1&quot;&gt;Device Specific Features&lt;/h3&gt;
+&lt;h4 id=&quot;magic-leap-2&quot; tabindex=&quot;-1&quot;&gt;Magic Leap 2&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Added a workaround for a hand interaction bug in OpenXR runtime&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;vision-glass&quot; tabindex=&quot;-1&quot;&gt;Vision Glass&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Drastically improve phone controller accuracy and precision&lt;/li&gt;
+&lt;li&gt;Show legal terms in phone UI&lt;/li&gt;
+&lt;li&gt;Voice button can now be used for search and text input&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;meta-quest-2%2F3%2Fpro&quot; tabindex=&quot;-1&quot;&gt;Meta Quest 2/3/Pro&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Support for the upcoming v69 OS version&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;pico-4%2F4e&quot; tabindex=&quot;-1&quot;&gt;Pico 4/4E&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Added support for PicoOS 5.11.1&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;XR_BD_controller_interaction&lt;/code&gt; if available&lt;/li&gt;
+&lt;li&gt;Use a different Android property to get the OS version&lt;/li&gt;
+&lt;li&gt;Disable &lt;code&gt;XR_EXT_hand_interaction&lt;/code&gt; extension as it’s buggy&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wolvic Chromium 1.1 Released</title>
+    <link href="https://wolvic.com/blog/chromium_release_1.1/"/>
+    <updated>2024-10-29T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/chromium_release_1.1/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Hello, and welcome to the first Wolvic Chromium release after &lt;a href=&quot;https://wolvic.com/blog/chromium_release_1.0/&quot;&gt;our 1.0 release&lt;/a&gt;! This release brings support for the WebXR AR module, external environment support, session history purging, and more.  Let’s dig in!&lt;/p&gt;
+&lt;p&gt;Wolvic Chromium v1.1 brings long-awaited support for the WebXR AR (Augmented Reality) module. This module expands the WebXR core specification with specific features for AR use cases in the Web. Given the multi-platform and multi-device nature of Wolvic, we have implemented it to support devices with opaque-only blend modes (like Meta Quest devices) as well as headsets supporting alpha blend modes (like Pico4, Pico4U) and also devices using additive display technologies (like the MagicLeap2).&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=U6iXPKYF5qk&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/chr1.1-xr-ar-support.jpg&quot; /&gt;
+&lt;figcaption&gt;Experiences shown first in full VR and then in AR (YouTube video link)&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;In the Gecko version of Wolvic, Private Mode has had an initial explainer page that is shown when enabling Private Mode. In the case of the Chromium port, that explainer was not shown because we didn’t have support for loading &lt;code&gt;data://&lt;/code&gt; URIs, but now we do, so you’ll be able to read all About Private Mode at last!  We’ve also added the ability to purge your session history in both Private Mode and regular browsing, in case you feel the need to do so.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/chr1.1-private-mode-about.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/chr1.1-private-mode-about-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;About Private Mode&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Those of you who dug around in Wolvic’s configuration may have noticed a place for add-ons, even though those only work in the Gecko version.  If not, don’t worry about it and definitely don’t go looking for it, because we’ve removed it as of this release.  It will return only when add-on support is added to Chromium Wolvic.&lt;/p&gt;
+&lt;p&gt;On a somewhat similar note, previous versions of Wolvic Chromium only allowed you to select among the three environments included in the package. From v1.1, users can pick environments from a larger list that includes environments that are downloaded on demand.  This means you can take advantage of the four new VR environments we’ve added, all of which are available through Wolvic’s &lt;strong&gt;Settings &amp;gt; Environment&lt;/strong&gt; dialog, where any new additions to the Wolvic 3D Environments GitHub repository will appear and be available for download.  Our thanks to &lt;a href=&quot;https://sketchfab.com/giimann&quot;&gt;Giimann&lt;/a&gt;, &lt;a href=&quot;https://www.flickr.com/photos/simonwaldherr/&quot;&gt;Simon Waldherr&lt;/a&gt;, and &lt;a href=&quot;https://www.flickr.com/photos/thelastminute/&quot;&gt;Duncan Rawlinson&lt;/a&gt; for releasing their works under the &lt;a href=&quot;https://creativecommons.org/licenses/by/2.0/&quot;&gt;CC BY 2.0&lt;/a&gt; or  &lt;a href=&quot;https://creativecommons.org/licenses/by-NC/2.0/&quot;&gt;CC BY-NC 2.0&lt;/a&gt; licenses.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.7.1-fantasy-landscape.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.7.1-fantasy-landscape-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Fantasy Landscape 3&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.7.1-fuerteventura.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.7.1-fuerteventura-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Lobos, Fuerteventura&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.7.1-nostalgia-blue.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.7.1-nostalgia-blue-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Colors of Nostalgia (Blue)&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.7.1-nostalgia-orange.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.7.1-nostalgia-orange-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Colors of Nostalgia (Orange)&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Those are the big changes in 1.1, but as always, there are still more updates listed in the notes below.  If you’ve found a new problem or have another issue, please &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;send us your feedback&lt;/a&gt; or, if you prefer, &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;file an issue on GitHub&lt;/a&gt;.  Thanks, and we hope you enjoy Wolvic 1.1!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wolvic 1.7.1 Released</title>
+    <link href="https://wolvic.com/blog/release_1.7.1/"/>
+    <updated>2024-10-29T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/release_1.7.1/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Hello, and welcome to Wolvic 1.7.1! This latest release of the Gecko-based version of Wolvic brings a long list of updates, additions, and changes.  Some of the highlights include eye tracking support in the Meta Quest Pro, support for the Pico4 Ultra, going straight into WebXR experiences at launch, rendering of select Bluetooth keyboards in XR, UI improvements, and more.  Let’s get into the details!&lt;/p&gt;
+&lt;p&gt;First up, the &lt;a href=&quot;https://www.meta.com/quest/quest-pro/&quot;&gt;Meta Quest Pro&lt;/a&gt; joins the Pico4E and MagicLeap 2 in supporting eye-tracked navigation, so all you Pro users, check our &lt;a href=&quot;https://wolvic.com/blog/release_1.7/&quot;&gt;v1.7 release notes&lt;/a&gt; for information on where to go to enable eye-tracking in Wolvic.  We’ve also added a new supported device: the &lt;a href=&quot;https://www.picoxr.com/global/products/pico4-ultra&quot;&gt;Pico4 Ultra&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;What other devices do we support?  Some selected Bluetooth keyboards, which are rendered in-scene as reasonable analogues of their physical selves.  You’ll get the keys present on the keyboard, be able to type physically and see your virtual hands on the virtual keyboard, and even pick it up!&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.7.1-bluetooth-keyboard.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.7.1-external-keyboard-quest2.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;An external Bluetooth keyboard represented in XR (no audio, 5MB)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;For home apps that launch XR sites that feature immersive experiences, Wolvic can now launch directly into the immersive mode, freeing you from having to hunt down the “Open in XR” button (or nearest equivalent thereof) in order to be immersed.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.7.1-launch-to-xr.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;Launching straight to XR at startup (no audio, 3.1MB)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;We’ve been hard at work on the user interface of Wolvic itself, adding capabilites like batch bookmarking and the ability to search your browsing history.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.7.1-history-search.jpeg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.7.1-history-search.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;Searching your browsing history (no audio, 3.3MB)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;And on the OpenXR front, we’ve added support for the Khronos OpenXR loader for all systems that support it.  Previously, we were relying on propietary pieces of software distributed by vendors that we had to include in our third_parties private repo.  By adding support for the Khronos loader, we’ve been to shed that dependency for most devices (Pico still pending).&lt;/p&gt;
+&lt;p&gt;Finally, in keeping with tradition, we’ve added four new VR environments in this release, all of which are now available through Wolvic’s &lt;strong&gt;Settings &amp;gt; Environment&lt;/strong&gt; dialog, where any new additions to the Wolvic 3D Environments GitHub repository will appear and be available for download.  Our thanks to &lt;a href=&quot;https://sketchfab.com/giimann&quot;&gt;Giimann&lt;/a&gt;, &lt;a href=&quot;https://www.flickr.com/photos/simonwaldherr/&quot;&gt;Simon Waldherr&lt;/a&gt;, and &lt;a href=&quot;https://www.flickr.com/photos/thelastminute/&quot;&gt;Duncan Rawlinson&lt;/a&gt; for releasing their works under the &lt;a href=&quot;https://creativecommons.org/licenses/by/2.0/&quot;&gt;CC BY 2.0&lt;/a&gt; or  &lt;a href=&quot;https://creativecommons.org/licenses/by-NC/2.0/&quot;&gt;CC BY-NC 2.0&lt;/a&gt; licenses.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.7.1-fantasy-landscape.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.7.1-fantasy-landscape-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Fantasy Landscape 3&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.7.1-fuerteventura.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.7.1-fuerteventura-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Lobos, Fuerteventura&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.7.1-nostalgia-blue.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.7.1-nostalgia-blue-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Colors of Nostalgia (Blue)&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.7.1-nostalgia-orange.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.7.1-nostalgia-orange-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Colors of Nostalgia (Orange)&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Those are the big changes in 1.7.1, but as always, there are still more updates listed in the notes below.  If you’ve found a new problem or have another issue, please &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;send us your feedback&lt;/a&gt; or, if you prefer, &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;file an issue on GitHub&lt;/a&gt;.  Thanks, and we hope you enjoy Wolvic 1.7.1!&lt;/p&gt;
+&lt;h2 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Added support for automatically entering WebXR experiences on application launch&lt;/li&gt;
+&lt;li&gt;Eye tracking support for Meta Quest Pro&lt;/li&gt;
+&lt;li&gt;New device: Pico4 Ultra&lt;/li&gt;
+&lt;li&gt;Added support for rendering selected bluetooth keyboards in VR&lt;/li&gt;
+&lt;li&gt;UI improvements: library search, batch bookmarking, experimental tabs bar widget&lt;/li&gt;
+&lt;li&gt;Use Khronos OpenXR loader whenever provided by the system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;Notes&lt;/h2&gt;
+&lt;h3 id=&quot;ui&quot; tabindex=&quot;-1&quot;&gt;UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added a search bar for Bookmarks, History, and Downloads, allowing users to filter items as they type. Additional improvements and polishing of these sections of the app.&lt;/li&gt;
+&lt;li&gt;It is now possible to bookmark multiple tabs directly from the tabs dialog.&lt;/li&gt;
+&lt;li&gt;Added a back button in the restart dialog, allowing users to cancel their selection and revert any changes made.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;input&quot; tabindex=&quot;-1&quot;&gt;Input&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Enabled eye tracking scrolling with both hands/controllers.&lt;/li&gt;
+&lt;li&gt;Use the same thresholds to recognize a pinch event and to update the color of the pointer; previously these two were not always in sync.&lt;/li&gt;
+&lt;li&gt;Improved system gesture detection with hand interaction profiles to properly detect pinches and squeezes when performing gestures like going back or exiting.&lt;/li&gt;
+&lt;li&gt;Introduced a new controller setting to disable hand tracking.&lt;/li&gt;
+&lt;li&gt;Added support for rendering in VR Bluetooth keyboards via OpenXR’s &lt;code&gt;XR_FB_keyboard_tracking&lt;/code&gt; extension.&lt;/li&gt;
+&lt;li&gt;Restarting Wolvic is no longer required when external bluetooth keyboards are connected/disconnected.&lt;/li&gt;
+&lt;li&gt;Remove the need to click on a window before interacting with it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;content&quot; tabindex=&quot;-1&quot;&gt;Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Wolvic can now launch directly into an inmersive experience. The details are specified in the Intent parameters.&lt;/li&gt;
+&lt;li&gt;Private mode “about” page in the Chromium backend.&lt;/li&gt;
+&lt;li&gt;Fixed an error when visiting YouTube for the first time, caused by consent.youtube.com&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;meta&quot; tabindex=&quot;-1&quot;&gt;Meta&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added eye tracking support via the &lt;code&gt;XR_EXT_eye_gaze_interaction&lt;/code&gt; extension on devices like the Meta Quest Pro (OS v71 beta).&lt;/li&gt;
+&lt;li&gt;Fixed immersive environments on Meta devices by forcing them to load from PNG files instead of KTX. This was caused by a system bug affecting compressed textures on cubemap layers.&lt;/li&gt;
+&lt;li&gt;Removed specific code for handling volume keys, as the previous issues have been resolved.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;pico&quot; tabindex=&quot;-1&quot;&gt;PICO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added support for Pico4 Ultra.&lt;/li&gt;
+&lt;li&gt;Use compressed ETC2 textures to distribute the immersive environments on PICO devices.&lt;/li&gt;
+&lt;li&gt;Added an OS version check for Pico. We now support Pico OS versions ≥ v5.7.1; this has allowed us to remove workarounds for bugs in older versions.&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;XR_BD_controller_interaction&lt;/code&gt; extension if available, which provides an updated interaction profile.&lt;/li&gt;
+&lt;li&gt;Disable the &lt;code&gt;XR_EXT_hand_interaction&lt;/code&gt; extension as it was causing issues with the controllers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;huawei-vision-glass&quot; tabindex=&quot;-1&quot;&gt;Huawei Vision Glass&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix controller orientation issues when the user turns around (gimbal lock).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;magic-leap&quot; tabindex=&quot;-1&quot;&gt;Magic Leap&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added support for external Bluetooth keyboards.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;others&quot; tabindex=&quot;-1&quot;&gt;Others&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the Khronos OpenXR loader from Maven when supported, simplifying the build process.&lt;/li&gt;
+&lt;li&gt;Performance improvements.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wolvic 2024: A Year in Review</title>
+    <link href="https://wolvic.com/blog/2024-wolvic-review/"/>
+    <updated>2024-12-10T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/2024-wolvic-review/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;2024 has been a transformative year for Wolvic with the team accomplishing some huge milestones for the open source XR browser. Without the funding from our partners, Wolvic would not be able to progress like it has. Let’s take a look at a few of the larger things the team accomplished this year.&lt;/p&gt;
+&lt;h2 id=&quot;chromium-backend&quot; tabindex=&quot;-1&quot;&gt;Chromium Backend&lt;/h2&gt;
+&lt;p&gt;The team released a Chromium backend beta of Wolvic in April and rolled out v1.0 in September, available for sideloading on our &lt;a href=&quot;https://wolvic.com/dl/&quot;&gt;downloads page&lt;/a&gt;. The Chromium backend offers a slew of technical advantages including performance improvements and better feature support for things like the WebXR AR module and hand-tracking to name a few.&lt;/p&gt;
+&lt;p&gt;Maintaining and supporting one web engine is a lot of work, and the Wolvic team is small, so rolling out this additional version is a huge accomplishment. Additional updates have rolled out for both Gecko and Chromium since the v1.0 launch and we’re hoping to make the Chromium backend the main release in stores starting Q2 2025.&lt;/p&gt;
+&lt;h2 id=&quot;new-devices-supported-in-2024&quot; tabindex=&quot;-1&quot;&gt;New Devices Supported in 2024&lt;/h2&gt;
+&lt;p&gt;In 2024 we added support for multiple new devices including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pico Neo3&lt;/li&gt;
+&lt;li&gt;Pico4 Ultra&lt;/li&gt;
+&lt;li&gt;Huawei Vision Glass&lt;/li&gt;
+&lt;li&gt;Magic Leap 2&lt;/li&gt;
+&lt;li&gt;Meta Quest 3S&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The primary drivers of which devices Wolvic is enabled on are partnerships with device manufacturers, open source contributions and install base.  Device support is more than just initially enabling Wolvic on the device: it’s also making sure updates are sent to each app store or release channel across all the different marketplaces and that unique bugs are investigated. We’d like to thank those who have partnered with us in the past year to bring Wolvic to those devices.&lt;/p&gt;
+&lt;h3 id=&quot;maintaining-wolvic-across-devices-and-stores&quot; tabindex=&quot;-1&quot;&gt;Maintaining Wolvic Across Devices and Stores&lt;/h3&gt;
+&lt;p&gt;Maintaining a single engine is already a significant challenge for a small team, but supporting Wolvic across multiple devices amplifies the workload exponentially, consuming 50% of our development time. This effort includes managing Wolvic across various app stores, addressing compatibility issues when updates disrupt functionality, and ensuring a seamless experience on each platform.&lt;/p&gt;
+&lt;p&gt;With limited resources, testing every new OS upgrade thoroughly is often a race against time, and much of our work happens behind the scenes to keep Wolvic running smoothly on an ever-growing range of devices.&lt;/p&gt;
+&lt;h2 id=&quot;eye-tracking-support&quot; tabindex=&quot;-1&quot;&gt;Eye Tracking Support&lt;/h2&gt;
+&lt;p&gt;Eye tracking support was an exciting development this year in both the Chromium and Gecko versions of Wolvic. With the addition of eye tracking, users can control the browser’s cursor by looking at what they want to interact with, making browsing more intuitive in this space.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.7-openxr-eye-tracking.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.7-openxr-eye-tracking.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption&gt;OpenXR eye tracking, including preferences to enable it (8.4MB MP4, audio)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;One of the engineers working on Wolvic did a deep dive on eye tracking support. You can &lt;a href=&quot;https://blogs.igalia.com/svillar/post/wolvic-eye-tracking/&quot;&gt;read it over on his blog&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;initial-augmented-reality-support&quot; tabindex=&quot;-1&quot;&gt;Initial Augmented Reality Support&lt;/h2&gt;
+&lt;p&gt;The Chromium 1.1 release brought with it initial (and long awaited) AR Support to the browser through the WebXR AR module. The team implemented it to support devices with a wide range of approaches: opaque-only blend modes (for devices like Meta Quest), headsets supporting alpha blend modes (like Pico4, Pico4U) and also devices using additive display technologies (like the MagicLeap2).&lt;/p&gt;
+&lt;h2 id=&quot;input-improvements&quot; tabindex=&quot;-1&quot;&gt;Input improvements&lt;/h2&gt;
+&lt;p&gt;There has been a lot of work this year on, broadly speaking, input handling. This includes things like keyboard responsiveness and stability, auto-completion support for Latin keyboards, but also external Bluetooth keyboard support, improved system gesture detection and much more.  Some keyboards are even rendered in-scene as reasonable analogues of their physical selves, with the keys present on the physical keyboard, and users are able to type physically, see their virtual hands on the virtual keyboard, and even pick it up!&lt;/p&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.7.1-bluetooth-keyboard.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.7.1-external-keyboard-quest2.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;figcaption tts-paragraph-index=&quot;5&quot;&gt;&lt;span class=&quot;tts-paragraph-player&quot;&gt;&lt;span class=&quot;tts-circle&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tts-paragraph-player-button tts-play-icon&quot; title=&quot;Play/Pause&quot;&gt;&lt;/span&gt;&lt;/span&gt;An external Bluetooth keyboard represented in XR (no audio, 5MB)&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&quot;ongoing-ui-updates&quot; tabindex=&quot;-1&quot;&gt;Ongoing UI Updates&lt;/h2&gt;
+&lt;p&gt;Throughout the year there have also been continuous UI improvements both from design and functionality perspectives. Most recently, we added a search bar for Bookmarks, History, and Downloads, allowing users to filter items as they type. We’ve also added more than 20 new beautiful virtual environments to choose from.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.7.1-fantasy-landscape.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.7.1-fantasy-landscape-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Fantasy Landscape 3&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.7.1-fuerteventura.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.7.1-fuerteventura-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Lobos, Fuerteventura&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Additional improvements are planned in the coming months to help make Wolvic the best browser for XR experiences on the web.  For example, we are also currently working on allowing windows to be positionined in more flexible ways, and adding buttons to the navigation bar to improve discoverability, and generally improving the situation with bookmarks, addons, history and downloads.  We are also working on improving tabbed browsing by introducing a more familliar desktop-like tabbed interface (with both horizontal and vertical tab support).&lt;/p&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/2024-wip-tabs.jpeg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/2024-wip-tabs.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Work in progress side-tabs we hope to launch in 2025.  A vertical tabbed interface will also be available.&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;hr /&gt;
+&lt;p&gt;The highlights listed here are just that, highlights. It would be a much longer post if we listed out every single improvement, enhancement and new feature released this year. If you are interested in what else was worked on, you can always check old release posts for all the details about what our engineering team has accomplished this year.&lt;/p&gt;
+&lt;h2 id=&quot;looking-ahead-%26-the-future-of-wolvic&quot; tabindex=&quot;-1&quot;&gt;Looking ahead &amp;amp; the future of Wolvic&lt;/h2&gt;
+&lt;p&gt;Partnerships are vital for Igalia to continue developing Wolvic as an additional browser option across the XR ecosystem. Maintaining and improving a browser is already a big task, and without continued funding, the XR ecosystem is at risk of losing Wolvic.&lt;/p&gt;
+&lt;p&gt;While our main partner is shifting gears and will continue to support an iteration of Wolvic, it will not be Wolvic on Android, so the XR Ecosystem is on the cusp of losing an evolving browser designed with XR in mind.&lt;/p&gt;
+&lt;p&gt;Browser choice in any form factor is important to ensuring a healthy ecosystem, and in such a new and evolving space, pushing the web forward in Extended Reality is more important than ever.&lt;/p&gt;
+&lt;p&gt;Building a browser from the ground up is a huge task, and if you’re a device manufacturer in the XR space, providing a portal to the web for your customers is key. After all, Meta reports that 50% of their customers spend their time in the browser.&lt;/p&gt;
+&lt;p&gt;Not having a browser solution is going to be a huge miss for your device experience. This is where Wolvic comes in. Partnering with Igalia to bring Wolvic to your device enables your customers to have access to the web without having to build and maintain your own solution.&lt;/p&gt;
+&lt;p&gt;If you’re interested in enabling Wolvic on your device or for any other business inquires, please &lt;a href=&quot;https://www.igalia.com/contact/&quot;&gt;get in touch&lt;/a&gt; to discuss potential partnership opportunities. If you want to help the web progress and evolve in Extended Reality, you can also support the browser via &lt;a href=&quot;https://opencollective.com/wolvic&quot;&gt;Open Collective&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Gecko Wolvic 1.8.0 and Chromium Wolvic 1.2 Released</title>
+    <link href="https://wolvic.com/blog/release_1.8.0/"/>
+    <updated>2025-01-30T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/release_1.8.0/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Welcome to (Gecko-based) Wolvic 1.8.0 and (Chromium-based) 1.2 -  we’re excited to share the latest updates! Let’s have a look at what’s inside.&lt;/p&gt;
+&lt;h2 id=&quot;window-management&quot; tabindex=&quot;-1&quot;&gt;Window Management&lt;/h2&gt;
+&lt;p&gt;In this version, window management has taken some big steps forward.  With the move bar, you can easily move the Wolvic window (or set of windows) to anywhere you want in the environment, and then leave it there.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.8.0-moving-a-window.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.8.0-moving-a-window.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.8.0-moving-a-window.mp4&quot;&gt;
+&lt;figcaption&gt;Moving a window in 3D space (2.3 MB, no audio)&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.8.0-moving-three-windows.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.8.0-moving-three-windows.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.8.0-moving-three-windows.mp4&quot;&gt;
+&lt;figcaption&gt;Moving a set of three windows in 3D space (4.8 MB, no audio)&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Once you’ve placed the window, you might want to change its size.  This was possible before, but we’ve redesigned the resizing interface for better looks and usability.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.8.0-window-resize.jpeg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.0-window-resize-thumb.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;New style for the windows resizing UI&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;new-display-options&quot; tabindex=&quot;-1&quot;&gt;New Display Options&lt;/h2&gt;
+&lt;p&gt;We’ve overhauled the &lt;strong&gt;Settings &amp;gt; Display&lt;/strong&gt; panel, putting the most commonly-used settings at the top as well as adding some new features.  For example, you can choose from one of four default window sizes: 800×450, 700×500, 825×550, and 900×600.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.8.0-reordered-display.jpeg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.0-reordered-display-thumb.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;The Tabs location preference&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;This is also where you’ll find the settings for a new Tabs feature that can be used three ways.  You can put a Tabs button in the task tray; when you click it, a dialog window pops up showing a list of tabbed pages.  If having the tabs always visible is more your style, you can have the tabs horizontally across the top of the window, or vertically down the left side.  You can make (or change) your choice in the Display settings panel as well.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.8.0-tabs-dialog.jpeg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.0-tabs-dialog-thumb.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;The Tabs dialog that’s used when the Tabs are kept in the application tray&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.8.0-tabs-horizontal.jpeg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.0-tabs-horizontal-thumb.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Horizontal tabs across the top of the window&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.8.0-tabs-vertical.jpeg&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.0-tabs-vertical-thumb.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Vertical tabs along the left side of the window&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;While we were working in the tray to support the Tabs button, we also added dedicated buttons for Bookmarks and Downloads, and the size and spacing of the elements in the navigation bar have been adjusted for better usability.&lt;/p&gt;
+&lt;p&gt;Other changes: built-in extensions are now hidden from the hamburger menu since they are not user-configurable, and we lowered the sensitivity required by the controller buttons to trigger a click in the tray. Overall, we did quite a bit of work under the hood to ensure that the state of the tray UI always remains consistent no matter what else is going on.&lt;/p&gt;
+&lt;h2 id=&quot;settings-improvements&quot; tabindex=&quot;-1&quot;&gt;Settings Improvements&lt;/h2&gt;
+&lt;p&gt;The Settings window now links to our regular feedback page and provides direct access to Add-ons management. The “What’s New” button has been relocated near the version details, and the UI in the Language settings dialog has been adjusted.&lt;/p&gt;
+&lt;h2 id=&quot;browser-and-device-support&quot; tabindex=&quot;-1&quot;&gt;Browser and Device Support&lt;/h2&gt;
+&lt;p&gt;The rendering engine has been updated to &lt;a href=&quot;https://www.mozilla.org/en-US/firefox/128.5.1/releasenotes/&quot;&gt;Gecko ESR 128.5.1&lt;/a&gt;.  This release of Wolvic also includes support for the new &lt;a href=&quot;https://www.meta.com/quest/quest-3s/&quot;&gt;Meta Quest 3S&lt;/a&gt;, which had already released in the Meta store with the previous version. Wolvic 1.8.0 also improves the accuracy of hand tracking, restores support for hand gestures, and fixes the pointer ray so it’s emerging from the virtual hands on the PICO.&lt;/p&gt;
+&lt;h2 id=&quot;chromium-wolvic-improvements&quot; tabindex=&quot;-1&quot;&gt;Chromium Wolvic Improvements&lt;/h2&gt;
+&lt;p&gt;In Chromium 1.2, we’ve added support for PWAs (Progressive Web Apps), and as usual, stability and maintenance fixes.  One notable change is that we’ve implemented several abstractions in the browser’s context initialization, including &lt;code&gt;KeyedService&lt;/code&gt; factories for different layered components, to prepare the way for new features.&lt;/p&gt;
+&lt;h2 id=&quot;additional-improvements&quot; tabindex=&quot;-1&quot;&gt;Additional Improvements&lt;/h2&gt;
+&lt;p&gt;We have a new localization announcement: Tamil is now available as an interface language, with 100% translation for the entire UI.&lt;/p&gt;
+&lt;p&gt;We’ve added four new and frankly stunning 3D environments in this release, all of which are available to choose from in &lt;strong&gt;Settings &amp;gt; Environment&lt;/strong&gt;. Our thanks to &lt;a href=&quot;https://www.flickr.com/photos/herbraab/&quot;&gt;H. Raab&lt;/a&gt;, &lt;a href=&quot;https://www.flickr.com/photos/kanalu/&quot;&gt;Kaleomokuokanalu Chock&lt;/a&gt;, and &lt;a href=&quot;https://www.flickr.com/photos/54144402@N03/&quot;&gt;Bob Cass&lt;/a&gt; for releasing their works under Creative Commons 2.0 licenses.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://www.flickr.com/photos/herbraab/53768758722/&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.0-Myzithres-Rocks-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Myzithres Rocks by H. Raab&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://www.flickr.com/photos/herbraab/53864577512/&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.0-Kleiner-Ankogel-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Kleiner Ankogel by H. Raab&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://www.flickr.com/photos/kanalu/31192933158/&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.0-Ka&#39;iwi-Coast-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Ka&#39;iwi Coast by Kaleomokuokanalu Chock&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://www.flickr.com/photos/54144402@N03/31271410664&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.0-Valley-of-Fire-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Valley of Fire State Park by Bob Cass&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;There has also been the usual round of bugfixing and improvements to stability, performance, and build infrastructure.&lt;/p&gt;
+&lt;p&gt;Those are the highlights for 1.8.0, but as always, there are still more changes and updates listed in the notes below.  If you’ve found a new problem or have another issue, please &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;send us your feedback&lt;/a&gt; or, if you prefer, &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;file an issue on GitHub&lt;/a&gt;.  Thanks, and we hope you enjoy Wolvic 1.8.0!&lt;/p&gt;
+&lt;h2 id=&quot;gecko-wolvic-1.8.0-and-chromium-wolvic-1.2-release-notes&quot; tabindex=&quot;-1&quot;&gt;Gecko Wolvic 1.8.0 and Chromium Wolvic 1.2 Release Notes&lt;/h2&gt;
+&lt;h3 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A new move bar under the window allows it to be easily repositioned.&lt;/li&gt;
+&lt;li&gt;The new tabs bar presents the list of open tabs either horizontally at the top of the window or vertically on the side.&lt;/li&gt;
+&lt;li&gt;Multiple improvements to the Settings.&lt;/li&gt;
+&lt;li&gt;Bookmarks and Downloads now have dedicated buttons in the tray for direct access.&lt;/li&gt;
+&lt;li&gt;The browser engine in Gecko Wolvic has been updated to Gecko ESR 128.5.1.&lt;/li&gt;
+&lt;li&gt;In general, a lot of effort has been devoted to polish the UI and improve the reliability of Wolvic.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;window-management-1&quot; tabindex=&quot;-1&quot;&gt;Window management&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A new move bar under the window allows it to be easily repositioned.&lt;/li&gt;
+&lt;li&gt;It is now possible to choose from four preset window sizes in Settings &amp;gt; Display.&lt;/li&gt;
+&lt;li&gt;The window resizer has been redesigned for improved appearance and usability.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;tabs&quot; tabindex=&quot;-1&quot;&gt;Tabs&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The new tabs bar presents the list open tabs either horizontally at the top of the window or vertically on the side.&lt;/li&gt;
+&lt;li&gt;The location of tabs can be configured in Settings &amp;gt; Display.&lt;/li&gt;
+&lt;li&gt;A new Sync button in the tabs bar allows to receive tabs from Firefox Sync.&lt;/li&gt;
+&lt;li&gt;The tabs list dialog now appears closer to its associated tray button for better visual context.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;content&quot; tabindex=&quot;-1&quot;&gt;Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The browser engine in Gecko Wolvic has been updated to Gecko ESR 128.5.1.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;settings-and-sync&quot; tabindex=&quot;-1&quot;&gt;Settings and Sync&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The Settings window now links to our regular feedback page and provides direct access to Add-ons management.&lt;/li&gt;
+&lt;li&gt;The “What’s New” button has been relocated near the version details, and the UI in the Language settings dialog has been adjusted.&lt;/li&gt;
+&lt;li&gt;Sound feedback settings have been moved to the Controllers section.&lt;/li&gt;
+&lt;li&gt;On Chromium-based builds, the Add-ons and Enhanced Tracking Protection buttons have been removed until that functionality is available.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;other-ui-changes&quot; tabindex=&quot;-1&quot;&gt;Other UI Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Bookmarks and Downloads now have dedicated buttons in the tray for direct access.&lt;/li&gt;
+&lt;li&gt;We have done quite a bit of work under the hood to ensure that the state of the UI always remains consistent.&lt;/li&gt;
+&lt;li&gt;The size and spacing of the elements in the navigation bar have been adjusted for better usability.&lt;/li&gt;
+&lt;li&gt;Built-in extensions are now hidden from the hamburger menu since they are not user-configurable.&lt;/li&gt;
+&lt;li&gt;We have lowered the sensitivity required by the controller buttons to trigger a click.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;meta&quot; tabindex=&quot;-1&quot;&gt;Meta&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Allow installing Add-ons from locally downloaded files.&lt;/li&gt;
+&lt;li&gt;This release includes support for the new Meta Quest 3S (already released in the Meta store with the previous version).&lt;/li&gt;
+&lt;li&gt;Unfortunately, Meta has removed support for the OpenXR extension that Wolvic uses to display external keyboards in the 3D environment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;pico&quot; tabindex=&quot;-1&quot;&gt;PICO&lt;/h3&gt;
+&lt;p&gt;We fixed several bugs affecting PICO devices, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Restored passthrough support for PICO OS version 5.9 and above.&lt;/li&gt;
+&lt;li&gt;Disabling hand tracking no longer disables controllers.&lt;/li&gt;
+&lt;li&gt;Hand tracking is more accurate.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;huawei-vision-glass&quot; tabindex=&quot;-1&quot;&gt;Huawei Vision Glass&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Improved pointer accuracy and reduced shift.&lt;/li&gt;
+&lt;li&gt;Improved the accuracy and flexibility of the UI.&lt;/li&gt;
+&lt;li&gt;A new widget in the phone UI allows the user to change the window distance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;others&quot; tabindex=&quot;-1&quot;&gt;Others&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Bugfixing and improvements to stability, performance, and build infrastructure.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;deprecations&quot; tabindex=&quot;-1&quot;&gt;Deprecations&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;WaveVR backend.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Gecko Wolvic 1.8.1 and Chromium Wolvic 1.2.1 Released</title>
+    <link href="https://wolvic.com/blog/release_1.8.1/"/>
+    <updated>2025-02-17T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/release_1.8.1/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Today we’re releasing Gecko Wolvic 1.8.1 and Chromium Wolvic 1.2.1, which are mostly bug fixes with a little bit of enhancement added in, as a treat.&lt;/p&gt;
+&lt;p&gt;In the previous release, we made a change to how new tabs were opened, making opening in the foreground the default.  This change was more controversial than we expected, so in this release, we’re restoring the default behavior to opening new tabs in the background.  If you liked the foreground-opening behavior, we added a new preference where you can choose whether you want foreground or background as the default.&lt;/p&gt;
+&lt;p&gt;While we were doing work in that area of the codebase, we also added tab-order memory—Wolvic now correctly preserves the order and placement of tabs between sessions, so they match what you saw last, both in order and in foreground/background state.&lt;/p&gt;
+&lt;p&gt;Beyond that, the list below covers all the fixes we landed in these releases.  As always, if you’ve found a new problem or have another issue, please &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;send us your feedback&lt;/a&gt; or, if you prefer, &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;file an issue on GitHub&lt;/a&gt;.  Thanks, and we hope you continue to enjoy Wolvic!&lt;/p&gt;
+&lt;h2 id=&quot;gecko-wolvic-1.8.1-and-chromium-wolvic-1.2.1-release-notes&quot; tabindex=&quot;-1&quot;&gt;Gecko Wolvic 1.8.1 and Chromium Wolvic 1.2.1 Release Notes&lt;/h2&gt;
+&lt;h3 id=&quot;tabs&quot; tabindex=&quot;-1&quot;&gt;Tabs&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Open tabs in background by default.&lt;/li&gt;
+&lt;li&gt;Add an option in &lt;strong&gt;Settings &amp;gt; Display&lt;/strong&gt; to open new tabs in the background or in the foreground.&lt;/li&gt;
+&lt;li&gt;Preserve the order of tabs when reopening Wolvic.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;content&quot; tabindex=&quot;-1&quot;&gt;Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Disable headlock when in VR videos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;gecko&quot; tabindex=&quot;-1&quot;&gt;Gecko&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix an endless redirection bug that prevented the user from accessing sites protected by Cloudflare.&lt;/li&gt;
+&lt;li&gt;Updated User Agent to reflect our current Firefox/Gecko version.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;pico&quot; tabindex=&quot;-1&quot;&gt;PICO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Allow downloading environments in the PICO 4 Ultra.&lt;/li&gt;
+&lt;li&gt;Use the correct input profile, fixing problems with the controllers.&lt;/li&gt;
+&lt;li&gt;Disable and hide the controller when positioning information is unavailable, which typically happens after the controller has been inactive for a while.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;huawei-vision-glass&quot; tabindex=&quot;-1&quot;&gt;Huawei Vision Glass&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Keep the phone screen on while the glasses are connected to it.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Gecko Wolvic 1.8.2 and Chromium Wolvic 1.2.2 Released</title>
+    <link href="https://wolvic.com/blog/release_1.8.2/"/>
+    <updated>2025-06-12T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/release_1.8.2/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Welcome to the new release of Wolvic! Today we are announcing Wolvic 1.8.2 (Gecko) and 1.2.2 (Chromium).&lt;/p&gt;
+&lt;h2 id=&quot;firefox-accounts&quot; tabindex=&quot;-1&quot;&gt;Firefox Accounts&lt;/h2&gt;
+&lt;p&gt;We have resolved the authentication issues with Firefox Accounts that prevented many users from signing in. While authentication now works reliably, you may occasionally see error messages from Firefox’s authentication website even when sign-in has actually succeeded. We continue working to make the whole experience clearer and smoother.&lt;/p&gt;
+&lt;h2 id=&quot;cloudflare-challenges&quot; tabindex=&quot;-1&quot;&gt;Cloudflare challenges&lt;/h2&gt;
+&lt;p&gt;In collaboration with Cloudflare, we have resolved the challenge issues that prevented users from accessing sites across the Web. Security challenges now complete successfully, granting users proper access.&lt;/p&gt;
+&lt;h2 id=&quot;new-tab&quot; tabindex=&quot;-1&quot;&gt;New Tab&lt;/h2&gt;
+&lt;p&gt;This release introduces our completely redesigned New Tab page. When you open a new tab, you’ll now be able to see your most visited sites for quick access, curated web experiences organized by category, and our latest announcements about Wolvic updates, all in a clean native interface that loads instantly.&lt;/p&gt;
+&lt;p&gt;You can enable this new feature in &lt;strong&gt;Settings &amp;gt; Display&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.8.2-new-tab-ui.jpg&quot;&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.2-new-tab-ui-thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;New Tab UI&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.8.2-scrolling-new-tab-thumb.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.8.2-scrolling-new-tab.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.8.2-scrolling-new-tab.mp4&quot;&gt;
+&lt;figcaption&gt;Scrolling the New Tab (8.4 MB, no audio)&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;hover-to-focus&quot; tabindex=&quot;-1&quot;&gt;Hover to focus&lt;/h2&gt;
+&lt;p&gt;Working with multiple windows just got easier too. In multiwindow mode, windows now automatically gain focus when you hover over them: no more clicking required. This makes switching between windows feel more natural and responsive.&lt;/p&gt;
+&lt;p&gt;If you prefer the old click-to-focus behavior, you can switch back in &lt;strong&gt;Settings &amp;gt; Controller&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.8.2-hover-thumb.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.8.2-hover.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.8.2-hover.mp4&quot;&gt;
+&lt;figcaption&gt;Hover to focus (9.3 MB, no audio)&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;hardware-adaptations&quot; tabindex=&quot;-1&quot;&gt;Hardware adaptations&lt;/h2&gt;
+&lt;p&gt;The new version of Wolvic includes specific UI refinements for lightweight AR glasses. On the Huawei Vision Glass, the phone UI has been redesigned with a new quick-access tray widget.&lt;/p&gt;
+&lt;p&gt;MagicLeap devices benefit from custom UI dimensions and higher contrast colors for better visibility.&lt;/p&gt;
+&lt;h2 id=&quot;web-payments&quot; tabindex=&quot;-1&quot;&gt;Web Payments&lt;/h2&gt;
+&lt;p&gt;We have added initial support for &lt;a href=&quot;https://web.dev/explore/payments&quot;&gt;Web Payments&lt;/a&gt; in the Chromium version of Wolvic. This W3C standard enables sites to suport different payment services and methods, enabling smooth and secure payments on the Web.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;video controls=&quot;&quot; poster=&quot;https://wolvic.com/assets/img/posts/1.8.2-webpayments-thumb.jpg&quot; muted=&quot;&quot;&gt;
+&lt;source src=&quot;https://wolvic.com/assets/img/posts/1.8.2-webpayments.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+&lt;a href=&quot;https://wolvic.com/assets/img/posts/1.8.2-webpayments.mp4&quot;&gt;
+&lt;figcaption&gt;Web payments demo (16.1 MB, no audio)&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;As this is a first implementation, you may encounter errors on sites that use the Web Payments API.  If you do, please don’t hesitate to let us know which sites so we can investigate further!&lt;/p&gt;
+&lt;h2 id=&quot;other&quot; tabindex=&quot;-1&quot;&gt;Other&lt;/h2&gt;
+&lt;p&gt;This release brings better YouTube compatibility, as well as Ukrainian language support.&lt;/p&gt;
+&lt;p&gt;On Chromium, we have improved the browsing experience with updated interface sounds, including for keyboard typing.&lt;/p&gt;
+&lt;p&gt;Under the hood, we’ve overhauled our build system and polished many details across the UI.&lt;/p&gt;
+&lt;p&gt;Finally, we’ve added four new 3D environments, available in &lt;strong&gt;Settings &amp;gt; Environment&lt;/strong&gt;. Our thanks to &lt;a href=&quot;https://polyhaven.com/all?a=Andreas%20Mischok&quot;&gt;Andreas Mischok&lt;/a&gt;, &lt;a href=&quot;https://www.flickr.com/photos/herbraab/&quot;&gt;H. Raab&lt;/a&gt;, &lt;a href=&quot;https://polyhaven.com/all?a=Dimitrios%20Savva&quot;&gt;Dimitrios Savva&lt;/a&gt;, &lt;a href=&quot;https://polyhaven.com/all?a=Greg%20Zaal&quot;&gt;Greg Zaal&lt;/a&gt;, and &lt;a href=&quot;https://polyhaven.com/all?a=Jarod%20Guest&quot;&gt;Jarod Guest&lt;/a&gt; for releasing their works under Creative Commons 2.0 licenses.&lt;/p&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://www.flickr.com/photos/herbraab/53760633242/&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.2-lilienstein.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Lilienstein by Andreas Mischok&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://polyhaven.com/a/lilienstein&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.2-goldengatehills.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Golden Gate Hills by Dimitrios Savva, Jarod Guest&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://polyhaven.com/a/lakeside_night&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.2-navagio.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Navagio by H. Raab&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;a href=&quot;https://polyhaven.com/a/golden_gate_hills&quot;&gt;&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.2-lakeside.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;Lakeside Night by Greg Zaal, Jarod Guest&lt;/figcaption&gt;
+&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Wolvic 1.8.2 is available now on all supported platforms. As always, you are welcome to send us your feedback through the &lt;a href=&quot;https://wolvic.com/en/feedback/&quot;&gt;online form&lt;/a&gt; or, if you prefer, by opening an &lt;a href=&quot;https://github.com/Igalia/wolvic/issues&quot;&gt;issue on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thank you, and we hope you continue to enjoy Wolvic!&lt;/p&gt;
+&lt;h2 id=&quot;gecko-wolvic-1.8.2-and-chromium-wolvic-1.2.2-release-notes&quot; tabindex=&quot;-1&quot;&gt;Gecko Wolvic 1.8.2 and Chromium Wolvic 1.2.2 Release Notes&lt;/h2&gt;
+&lt;h3 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix authentication issues with Firefox Accounts.&lt;/li&gt;
+&lt;li&gt;Fix Cloudflare challenges.&lt;/li&gt;
+&lt;li&gt;New Tab native UI.&lt;/li&gt;
+&lt;li&gt;Hover-to-focus windows.&lt;/li&gt;
+&lt;li&gt;Initial Web Payments support.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;ui&quot; tabindex=&quot;-1&quot;&gt;UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;New Tab: a native UI which provides access to announcements, top sites, and suggested experiences from all over the Web. The new New Tab page can be enabled in Settings/Display.&lt;/li&gt;
+&lt;li&gt;Hover-to-focus windows: in multiwindow mode, windows now gain focus on hover instead of requiring a click. Configurable in Settings/Controller.&lt;/li&gt;
+&lt;li&gt;Adjusted the pitch and volume of audio effects.&lt;/li&gt;
+&lt;li&gt;Added Ukrainian language support.&lt;/li&gt;
+&lt;li&gt;Lots of polish and bug fixing all over the UI.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;content&quot; tabindex=&quot;-1&quot;&gt;Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fix authentication issues with Firefox Accounts.&lt;/li&gt;
+&lt;li&gt;Fix Cloudflare challenges.&lt;/li&gt;
+&lt;li&gt;Desktop mode override for nowtv.com .&lt;/li&gt;
+&lt;li&gt;Fixed YouTube compatibility issues.&lt;/li&gt;
+&lt;li&gt;Prevent the WebRTC protocol from leaking local IP addresses.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;chromium&quot; tabindex=&quot;-1&quot;&gt;Chromium&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Initial support for the Web Payments standard, which aims to provide frictionless payment experience on the web.&lt;/li&gt;
+&lt;li&gt;Keyboard typing sounds: added audio feedback for keyboard input.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;huawei-vision-glass&quot; tabindex=&quot;-1&quot;&gt;Huawei Vision Glass&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Redesigned Phone UI, with a new tray widget with quick access buttons.&lt;/li&gt;
+&lt;li&gt;Buttons now disable appropriately during immersive and fullscreen experiences.&lt;/li&gt;
+&lt;li&gt;Improved stability.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;magicleap&quot; tabindex=&quot;-1&quot;&gt;MagicLeap&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Device-specific UI dimensions and colors for better visibility.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;other-1&quot; tabindex=&quot;-1&quot;&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Initial OpenTelemetry integration.&lt;/li&gt;
+&lt;li&gt;Migrated build system to version catalogs.&lt;/li&gt;
+&lt;li&gt;Removed deprecated WaveVR backend.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Next Steps for Wolvic</title>
+    <link href="https://wolvic.com/blog/next-steps/"/>
+    <updated>2025-11-26T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/next-steps/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Back in 2018, &lt;a href=&quot;https://www.cnet.com/culture/mozilla-new-firefox-reality-browser-is-where-vr-meets-the-web/&quot;&gt;Mozilla Labs announced its Firefox Reality XR Browser&lt;/a&gt;. Over the next 4 years there were significant shifts in the market, in the world, at Mozilla and in the standards space. While coined “Firefox Reality”, it was never an official project, and ultimately fell behind, suffering from funding and priority changes. Many in the community expressed concern that this likely left many devices without a browser at all, and left all XR devices without an open source browser choice, at a critical time. Based on discussions with companies in the community and Mozilla, Igalia worked to take over stewardship of the project in &lt;a href=&quot;https://www.cnet.com/tech/computing/mozilla-is-shuttering-its-firefox-reality-vr-browser/&quot;&gt;early 2022&lt;/a&gt;. Since then, we’ve brought it up to date and onto several popular platforms.&lt;/p&gt;
+&lt;h2 id=&quot;reimagining-the-role-of-browsers-in-xr&quot; tabindex=&quot;-1&quot;&gt;Reimagining the Role of Browsers in XR&lt;/h2&gt;
+&lt;p&gt;From the outset, our goal was clear: &lt;strong&gt;establish that browsers in the XR space must be a norm&lt;/strong&gt;, not an exception. We believed strongly that open source browsers should not only exist in XR, but thrive—and even become the default experience on XR platforms. We saw a future where users could rely on the web as a first-class citizen in immersive environments, and we worked hard to make that vision real.&lt;/p&gt;
+&lt;p&gt;We invested in development, modernized the codebase, and brought Wolvic to life across multiple new devices. We engaged with partners, hoping to build a coalition around this idea. With our partners’ help, we were able to deliver solutions for their use cases, advance Wolvic, and gain a lot of experience. Indeed, Wolvic became the default web browser on a number of XR devices.&lt;/p&gt;
+&lt;p&gt;Over time, however, our partners’ strategies shifted. Some have moved to AndroidXR, some to Harmony OS, and some have left the XR space altogether. With those changes in strategy have come changes in priority, and thus, one by one, the partnerships have ended.&lt;/p&gt;
+&lt;h2 id=&quot;a-challenging-landscape&quot; tabindex=&quot;-1&quot;&gt;A Challenging Landscape&lt;/h2&gt;
+&lt;p&gt;This reality is compounded by several factors:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;engine in production is Gecko&lt;/strong&gt;, which lacks investment in the core XR features we need to be competitive.&lt;/li&gt;
+&lt;li&gt;We did focus on a Chromium-based version due to its better performance and stronger feature set for XR, but during that time, &lt;strong&gt;Google announced its own XR browser efforts&lt;/strong&gt;, further shifting the landscape.&lt;/li&gt;
+&lt;li&gt;When the original architecture was conceived, &lt;strong&gt;there were no standard OS-level UI/UX expectations&lt;/strong&gt; for XR. Wolvic’s architecture was designed to answer those questions—but now, those answers are duplicative and costly to maintain.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In short, the environment has changed. The technical and strategic assumptions that once made Wolvic viable have evolved, and without strong partnerships or engine-level support, it’s increasingly difficult to make Wolvic truly competitive.&lt;/p&gt;
+&lt;h2 id=&quot;what%E2%80%99s-next-for-wolvic&quot; tabindex=&quot;-1&quot;&gt;What’s Next for Wolvic&lt;/h2&gt;
+&lt;p&gt;Given these realities, &lt;strong&gt;Igalia is moving the main Wolvic project into maintenance mode&lt;/strong&gt;. This means:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We’ll continue to provide &lt;strong&gt;security updates a few times a year&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;We’ll do &lt;strong&gt;minor maintenance work&lt;/strong&gt; to ensure stability&lt;/li&gt;
+&lt;li&gt;We’ll remain &lt;strong&gt;open to new partnerships and opportunities&lt;/strong&gt; that could help reinvigorate the project&lt;/li&gt;
+&lt;li&gt;We’ll use the money in the &lt;strong&gt;&lt;a href=&quot;https://opencollective.com/wolvic&quot;&gt;Wolvic Open Collective&lt;/a&gt;&lt;/strong&gt; to cover a portion of the maintenance costs; Igalia will cover the rest&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;We still believe in the importance of open source browsers in XR.&lt;/strong&gt; We still believe in the web as a platform for immersive experiences. But to make that vision sustainable, we need a new path forward—one that includes committed partners, shared investment, and a renewed architecture that aligns with today’s expectations. If you’re interested in helping shape that future, we’d love to talk.  And to all our supporters, thank you.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;em&gt;Wolvic remains &lt;a href=&quot;https://wolvic.com/dl&quot;&gt;available in stores&lt;/a&gt; today, and we’re proud of what it represents. But the next chapter will require collaboration, vision, and a shared commitment to making the open web thrive in XR.&lt;/em&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Gecko Wolvic 1.8.3 and Chromium Wolvic 1.2.3 Released</title>
+    <link href="https://wolvic.com/blog/release_1.8.3/"/>
+    <updated>2025-11-26T00:00:00Z</updated>
+    <id>https://wolvic.com/blog/release_1.8.3/</id>
+    <content xml:lang="en" type="html">&lt;p&gt;Welcome to this new release of Wolvic: today we are announcing Wolvic 1.8.3 (Gecko) and 1.2.3 (Chromium).&lt;/p&gt;
+&lt;p&gt;This new version drastically improves the accuracy of controller positioning, which means they should now pretty much exactly match their positions in the physical world.  We also gave the orientation code a major overhaul.  The upshot of that overhaul is that the controllers should now rotate around their axis of orientation, whatever it happens to be at any given moment, instead of always rotating around the vertical axis like they used to do.&lt;/p&gt;
+&lt;p&gt;In the Wolvic user interface, we made a bunch of tiny improvements: a visible status improvement here, some larger buttons there, a warning dialog when disabling hand tracking, updated translations in a number of languages, and more.&lt;/p&gt;
+&lt;p&gt;There were a number of VR video sites that started rejecting any browser not made by Meta, which definitely includes Wolvic.  Taking a page from world of desktop browsers, Wolvic now pretends to be a different browser than it is, once again allowing users to access the sites in question.&lt;/p&gt;
+&lt;p&gt;In the Chromium version (1.2.3) of Wolvic, the “find in page” feature has been enabled, so you won’t have to scroll-and-scan any longer.  Just give Wolvic the text you’re looking for, and it will find it for you.&lt;/p&gt;
+&lt;p&gt;Speaking of giving Wolvic text (or URLs or anything else), we’ve improved the stability of voice recognition and simplified some backend implementation, which should hopefully make voice input faster and more robust.&lt;/p&gt;
+&lt;p&gt;If you found things a little too bright on Pico devices, we turned the gamma value down a bit, which should make things better.  We also fixed a few crashes in the Bookmarks pane that could be caused by bookmarks to pages that didn’t have titles.&lt;/p&gt;
+&lt;p&gt;Finally, we’ve added four new 3D environments, available in &lt;strong&gt;Settings &amp;gt; Environment&lt;/strong&gt;. Our thanks to
+&lt;a href=&quot;https://polyhaven.com/all?a=Alexander%20Scholten&quot;&gt;Alexander Scholten&lt;/a&gt;,
+&lt;a href=&quot;https://sketchfab.com/mozillareality&quot;&gt;MozillaHubs&lt;/a&gt;,
+&lt;a href=&quot;https://sketchfab.com/paul_paul_paul&quot;&gt;Paul&lt;/a&gt;, and
+&lt;a href=&quot;https://sketchfab.com/jungle_jim&quot;&gt;Jungle Jim&lt;/a&gt;
+for releasing their works under Creative Commons 2.0 licenses.&lt;/p&gt;
+&lt;style&gt;
+div.gallery.new-env figure {
+    max-width: 256px;
+}
+&lt;/style&gt;
+&lt;div class=&quot;gallery new-env&quot;&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.3-eveningroad.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;&lt;strong&gt;Rural Evening Road&lt;/strong&gt; by Alexander Scholten&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.3-malibuoverlook.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;&lt;strong&gt;Malibu Overlook&lt;/strong&gt; by MozillaHubs&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;div class=&quot;gallery&quot;&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.3-nebula.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;&lt;strong&gt;Nebula&lt;/strong&gt; by Jungle Jim&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://wolvic.com/assets/img/posts/1.8.3-snowycabin.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;figcaption&gt;&lt;strong&gt;Snowy Cabin&lt;/strong&gt; by Paul&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+&lt;p&gt;Wolvic 1.8.3/1.2.3 is available now on all supported platforms.&lt;/p&gt;
+&lt;h2 id=&quot;gecko-wolvic-1.8.3-and-chromium-wolvic-1.2.3-release-notes&quot; tabindex=&quot;-1&quot;&gt;Gecko Wolvic 1.8.3 and Chromium Wolvic 1.2.3 Release Notes&lt;/h2&gt;
+&lt;h3 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Restored support for several VR video sites that started blocking non-Meta browsers such as Wolvic&lt;/li&gt;
+&lt;li&gt;High fidelity positioning and rotation of controllers&lt;/li&gt;
+&lt;li&gt;Fixed a few crashes in bookmarks pane and refresh rate selection code&lt;/li&gt;
+&lt;li&gt;Tons of little UI adjustments and enhancements&lt;/li&gt;
+&lt;li&gt;Find in page in Chromium version&lt;/li&gt;
+&lt;li&gt;New environments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;web-content&quot; tabindex=&quot;-1&quot;&gt;Web Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Make VR videos available in some sites. They recently started to filter out non-Meta browsers, so we have to spoof the user agent to pretend to be another VR browser.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;ui-improvements&quot; tabindex=&quot;-1&quot;&gt;UI Improvements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Set the pressed status for the Settings button in the tray when clicked&lt;/li&gt;
+&lt;li&gt;Added a delay when switching windows in hover-to-focus mode to avoid glitches&lt;/li&gt;
+&lt;li&gt;Use the orientation of the focused controller to move windows&lt;/li&gt;
+&lt;li&gt;Show a warning when disabling hand tracking to notify users that it will be reset on next launch&lt;/li&gt;
+&lt;li&gt;Keyboard layout update, larger buttons for voice and close actions and theming improvements&lt;/li&gt;
+&lt;li&gt;Horizontal scrolling behaviour now matches vertical’s&lt;/li&gt;
+&lt;li&gt;Do not show “Find in Page” option for the start page&lt;/li&gt;
+&lt;li&gt;Added 4 new environments&lt;/li&gt;
+&lt;li&gt;Updated translations: gl, ru, fr, es, uk, pt…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;usability&quot; tabindex=&quot;-1&quot;&gt;Usability&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Drastically improved the accuracy of controllers position, they almost completely match their real world position&lt;/li&gt;
+&lt;li&gt;Revamped the controllers’ orientation code, they properly rotate now around their rotation axis (whatever it is) instead of always rotating around the bottom&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;privacy-%26-security&quot; tabindex=&quot;-1&quot;&gt;Privacy &amp;amp; Security&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Show the Enhanced Tracking Protection widget when clicking on the Advanced button&lt;/li&gt;
+&lt;li&gt;Harness the refresh rate selection code to prevent crashes with some runtimes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;voice-search&quot; tabindex=&quot;-1&quot;&gt;Voice Search&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Improved stability of voice recognition by adding extra status checks&lt;/li&gt;
+&lt;li&gt;Simplified VoiceSearchWidget implementation. Also improved responses to state changes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;chromium&quot; tabindex=&quot;-1&quot;&gt;Chromium&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added find-in-page support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;stability&quot; tabindex=&quot;-1&quot;&gt;Stability&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed a crash in bookmarks view caused by bookmarks with no title&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;pico&quot; tabindex=&quot;-1&quot;&gt;Pico&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed WebXR gamma (content too bright) in Pico devices by adding a specific shader for the blitter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;other&quot; tabindex=&quot;-1&quot;&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Moved Openxr layer support detection to the backend avoiding hardcoding it in the app&lt;/li&gt;
+&lt;li&gt;Improvements and fixes for the build system&lt;/li&gt;
+&lt;li&gt;Added new manifest permission strings for hand tracking for Meta’s HorizonOS&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+</feed>
