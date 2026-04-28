@@ -1,0 +1,3 @@
+[submodule "WebXRSample/vr"]
+	path = WebXRSample/vr
+	url = https://github.com/Leuconoe/webxr-vr-demos
