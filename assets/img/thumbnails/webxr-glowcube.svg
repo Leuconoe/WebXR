@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img" aria-labelledby="title desc">
+  <title id="title">WebXR Glow Cube thumbnail</title>
+  <desc id="desc">A glowing cube on a black transparent-style background.</desc>
+  <rect width="480" height="270" fill="#000"/>
+  <defs>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#glow)">
+    <path d="M240 58 328 108v101l-88 50-88-50V108z" fill="#0b1c22" stroke="#00e5ff" stroke-width="5"/>
+    <path d="M240 58v100l88 51M240 158l-88 51" fill="none" stroke="#7cff8a" stroke-width="4"/>
+    <path d="M152 108l88 50 88-50" fill="none" stroke="#fff" stroke-width="3" opacity=".8"/>
+  </g>
+  <circle cx="240" cy="158" r="8" fill="#fff"/>
+</svg>
