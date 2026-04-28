@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img" aria-labelledby="title desc">
-  <title id="title">Immersive AR Session thumbnail</title>
-  <desc id="desc">A dark immersive AR session panel with spatial anchors.</desc>
+  <title id="title">Immersive VR Session thumbnail</title>
+  <desc id="desc">A dark immersive VR session panel with spatial anchors.</desc>
   <rect width="480" height="270" fill="#000"/>
   <rect x="120" y="62" width="240" height="146" rx="12" fill="#051014" stroke="#00e5ff" stroke-width="4"/>
   <g fill="none" stroke="#7cff8a" stroke-width="4" stroke-linecap="round">

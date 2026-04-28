@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img" aria-labelledby="title desc">
+  <title id="title">Hand Input Pointer Drag thumbnail</title>
+  <desc id="desc">A dark WebXR hand pointer dragging floating cubes.</desc>
+  <rect width="480" height="270" fill="#000"/>
+  <g stroke="#24383f" stroke-width="3" fill="none">
+    <path d="M68 218h344"/>
+    <path d="M108 218 176 82"/>
+    <path d="M372 218 304 82"/>
+    <path d="M152 180h176"/>
+    <path d="M178 130h124"/>
+  </g>
+  <g filter="url(#glow)">
+    <rect x="287" y="74" width="58" height="58" rx="8" fill="#0b1c22" stroke="#00e5ff" stroke-width="5"/>
+    <rect x="188" y="142" width="66" height="66" rx="9" fill="#111b14" stroke="#7cff8a" stroke-width="5"/>
+  </g>
+  <path d="M142 201c15-42 42-59 70-48 23 9 29 32 47 41 17 9 37 2 61-19" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M321 176l-15-2 9 12" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="142" cy="201" r="9" fill="#fff"/>
+  <defs>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
