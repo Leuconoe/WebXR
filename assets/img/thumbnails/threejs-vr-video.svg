@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img" aria-labelledby="title desc">
+  <title id="title">VR Video thumbnail</title>
+  <desc id="desc">A dark immersive video frame with a play symbol.</desc>
+  <rect width="480" height="270" fill="#000"/>
+  <rect x="72" y="44" width="336" height="182" rx="16" fill="#061014" stroke="#00e5ff" stroke-width="5"/>
+  <path d="M104 81c68-30 204-30 272 0" fill="none" stroke="#244d57" stroke-width="4" stroke-linecap="round"/>
+  <path d="M104 189c68 30 204 30 272 0" fill="none" stroke="#244d57" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="240" cy="135" r="44" fill="#ffffff" opacity=".95"/>
+  <path d="M228 108v54l46-27z" fill="#000"/>
+  <g stroke="#7cff8a" stroke-width="4" stroke-linecap="round">
+    <path d="M123 135h42"/>
+    <path d="M315 135h42"/>
+  </g>
+</svg>

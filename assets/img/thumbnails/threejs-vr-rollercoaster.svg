@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img" aria-labelledby="title desc">
+  <title id="title">VR Rollercoaster thumbnail</title>
+  <desc id="desc">A dark rollercoaster track with a glowing cart.</desc>
+  <rect width="480" height="270" fill="#000"/>
+  <path d="M28 198c52-2 79-42 118-81 43-43 87-59 129-27 35 27 44 77 77 88 32 10 62-25 100-72" fill="none" stroke="#00e5ff" stroke-width="8" stroke-linecap="round"/>
+  <path d="M28 219c52-2 82-38 124-77 45-41 82-48 118-20 35 27 45 75 79 86 34 11 66-22 103-66" fill="none" stroke="#7cff8a" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+  <g stroke="#30383d" stroke-width="4">
+    <path d="M83 204v38"/>
+    <path d="M148 134v108"/>
+    <path d="M224 83v159"/>
+    <path d="M306 139v103"/>
+    <path d="M388 181v61"/>
+  </g>
+  <g transform="translate(265 95) rotate(34)">
+    <rect x="-35" y="-17" width="70" height="34" rx="7" fill="#f9f9f9"/>
+    <rect x="-25" y="-29" width="50" height="18" rx="5" fill="#ff4f70"/>
+    <circle cx="-22" cy="20" r="7" fill="#111"/>
+    <circle cx="22" cy="20" r="7" fill="#111"/>
+  </g>
+</svg>

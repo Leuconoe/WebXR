@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img" aria-labelledby="title desc">
+  <title id="title">VR Panorama Depth thumbnail</title>
+  <desc id="desc">A dark depth panorama with layered glowing contours.</desc>
+  <rect width="480" height="270" fill="#000"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M54 178c46-53 95-79 146-76 34 2 56 22 86 23 42 2 70-38 139-48" stroke="#00e5ff" stroke-width="6"/>
+    <path d="M61 197c53-44 99-58 138-51 42 7 64 35 104 33 43-2 67-35 121-42" stroke="#8dff5a" stroke-width="5" opacity=".9"/>
+    <path d="M80 217c55-24 103-27 143-10 42 18 68 29 110 21 31-6 55-23 86-26" stroke="#ffef5a" stroke-width="4" opacity=".85"/>
+  </g>
+  <g stroke="#27323a" stroke-width="2">
+    <path d="M40 224h400"/>
+    <path d="M86 224 240 66l154 158"/>
+    <path d="M130 224 240 96l110 128"/>
+  </g>
+  <rect x="199" y="74" width="82" height="82" rx="8" fill="#fff" opacity=".08" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="240" cy="115" r="20" fill="#fff" opacity=".95"/>
+</svg>

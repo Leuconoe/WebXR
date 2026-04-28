@@ -158,16 +158,12 @@ $html = $html -replace '(?s)\s*let params = new URLSearchParams\(window\.locatio
 $html = $html -replace '(?s)\s*function shuffle\(array\) \{.*?\}\s*(?=function startup\(\))', "`n"
 $html = $html.Replace("let categories = document.querySelectorAll('spicy-sections > div');function filter", "let categories = document.querySelectorAll('spicy-sections > div');`n`n`tfunction filter")
 $html = $html.Replace("// Random ordering is disabled during sample validation.`nlet headers", "// Random ordering is disabled during sample validation.`n`tlet headers")
-
-$itemPattern = '<a class="item([^"]*)" href="([^"]+)"[\s\S]*?<h4>([\s\S]*?)</h4>'
-$matches = ([regex]$itemPattern).Matches($html)
-for ($i = $matches.Count - 1; $i -ge 0; $i--) {
-  $match = $matches[$i]
-  $classes = ($match.Groups[1].Value.Trim() -replace "\s+", " ").Trim()
-  $title = [System.Net.WebUtility]::HtmlDecode(($match.Groups[3].Value -replace "<[^>]+>", "").Trim())
-  $comment = "<!-- SAMPLE: $title | classes: item $classes | 제외하려면 바로 아래 <a class=`"item...`"> 전체 블록을 HTML 주석으로 감싸세요. -->`n"
-  $html = $html.Insert($match.Index, $comment)
-}
+$html = $html.Replace('<spicy-sections class="tags">', '<div class="tags sections-list">')
+$html = $html.Replace('</spicy-sections>', '</div>')
+$html = $html -replace '\s*<script src="assets/js/SpicySections.js" type="module"></script>', ''
+$html = $html -replace '(?s)\s*spicy-sections \{.*?\}\s*:where\(spicy-sections > \[affordance\*="collapse"\]\)::before \{.*?\}\s*\[affordance="tab-bar"\] h3 \{.*?\}\s*\[affordance="collapse"\] :nth-child\(2n\) \{.*?\}\s*\[affordance="tab-bar"\] h2:not\(\[tabindex="0"\]\) \{.*?\}', ''
+$html = $html.Replace("`n.tags.filtering {", "`n.sections-list h3 {`n`tcursor: default;`n`tborder-radius: 0;`n`tborder: 0;`n`tborder-bottom: 2px solid #555;`n`tbackground: transparent;`n`tmargin: 2rem 0 1rem;`n`tpadding: 0 0 0.5rem;`n`tfont-size: 1.4em;`n`ttext-align: left;`n}`n`n.tags.filtering {")
+$html = $html -replace '(?s)function startup\(\) \{.*?\}\s*const galleryDiv = document\.getElementById\(''gallery''\);\s*let items =\s*document\.querySelectorAll\(''#gallery \.item''\);\s*startup\(\)', "function startup() {`n`t// Random ordering is disabled during sample validation.`n}`n`nstartup()"
 
 $html = $html -replace '<link rel="shortcut icon" type="image/x-icon" href="[^"]+">', '<link rel="icon" type="image/png" href="assets/img/metalense-favicon.png">'
 $html = $html -replace '<meta property="og:image" content="[^"]+">', '<meta property="og:image" content="assets/img/metalense-logo.png">'
